@@ -7,4 +7,6 @@ app = Flask(__name__)
 def hello():
     return 'Hello World!'
 
-
+@app.route('/esther_sucks')
+def goodbye():
+    return "Esther Sucks"
