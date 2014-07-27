@@ -3,3 +3,4 @@ Jinja2==2.6
 Werkzeug==0.8.3
 gunicorn==0.17.2
 requests==2.3.0
+json==2.6.0
