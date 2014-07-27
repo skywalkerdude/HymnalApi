@@ -96,7 +96,6 @@ def get_lyrics(content):
 
 @app.route('/hymn/<path:hymn_path>')
 def hymn_path(hymn_path):
-    log(sys.version)
     r = requests.get(URL_FORMAT % hymn_path)
     log('request sent for: %s' % hymn_path)
     title = re.compile(TITLE_REGEX).findall(r.content)[0]
@@ -116,8 +115,10 @@ def hymn_path(hymn_path):
     scriptures = get_meta_data(SCRIPTURES_REGEX, r.content, True)
     log('scriptures: %s' % scriptures)
     #lyrics = get_lyrics(r.content)
+    lyrics = 'blah_lyrics'
     #log('lyrics: %s' % lyrics)
     #chorus = get_data(CHORUS_REGEX, r.content)
+    chorus = 'blah_chorus'
     #log('chorus: %s' % chorus)
     piano_sheet_url = get_data(SHEET_MUSIC_REGEX % 'piano', r.content)
     log('piano_sheet_url: %s' % piano_sheet_url)
@@ -125,8 +126,8 @@ def hymn_path(hymn_path):
     log('guitar_sheet_url: %s' % guitar_sheet_url)
     mp3_url = get_data(MP3_REGEX, r.content)
     log('mp3_url: %s' % mp3_url)
-    #data = {'title': title, 'category': category, 'subcategory': subcategory, 'key': key, 'time': time, 'meter': meter, 'hymn_code': hymn_code, 'scriptures': scriptures, 'lyrics': lyrics, 'chorus': chorus, 'piano_sheet_url': piano_sheet_url, 'guitar_sheet_url': guitar_sheet_url, 'mp3_url': mp3_url}
-    #log('data: %s' % data)
+    data = {'title': title, 'category': category, 'subcategory': subcategory, 'key': key, 'time': time, 'meter': meter, 'hymn_code': hymn_code, 'scriptures': scriptures, 'lyrics': lyrics, 'chorus': chorus, 'piano_sheet_url': piano_sheet_url, 'guitar_sheet_url': guitar_sheet_url, 'mp3_url': mp3_url}
+    log('data: %s' % data)
     return title
 
 @app.route('/esther_sucks')
