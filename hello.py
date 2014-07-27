@@ -117,9 +117,8 @@ def hymn_path(hymn_path):
     #lyrics = get_lyrics(r.content)
     lyrics = 'blah_lyrics'
     #log('lyrics: %s' % lyrics)
-    #chorus = get_data(CHORUS_REGEX, r.content)
-    chorus = 'blah_chorus'
-    #log('chorus: %s' % chorus)
+    chorus = get_data(CHORUS_REGEX, r.content)
+    log('chorus: %s' % chorus)
     piano_sheet_url = get_data(SHEET_MUSIC_REGEX % 'piano', r.content)
     log('piano_sheet_url: %s' % piano_sheet_url)
     guitar_sheet_url = get_data(SHEET_MUSIC_REGEX % 'guitar', r.content)
