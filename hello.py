@@ -22,6 +22,11 @@ MP3_REGEX = '<source src="(.*?)" type="audio/mpeg"/>'
 TAG_REGEX = r'<%(TAG)s\b[^>]*>(.*?)</%(TAG)s>'
 EXTERNAL_LYRICS_URL_REGEX = '<div class="col-xs-12 lyrics">.*?<a href="(.*?)".*?>.*View Lyrics (external site)</a>'
 EXTERNAL_LYRICS_TABLE_REGEX = '<table width=500>(.*?)</table>'
+debug = False
+
+def log(msg):
+    if (debug):
+        print msg
 
 @app.route('/')
 def intro():
@@ -72,6 +77,7 @@ def convert_whitespaces(string):
 
 def get_lyrics(content):
     match = re.search(EXTERNAL_LYRICS_URL_REGEX, content, re.DOTALL)
+    log('match = %s' % match)
     if match:
         return fetch_external(match.group(1))
     lyrics = get_data(LYRICS_REGEX, content)
@@ -91,9 +97,9 @@ def get_lyrics(content):
 @app.route('/hymn/<path:hymn_path>')
 def hymn_path(hymn_path):
     r = requests.get(URL_FORMAT % hymn_path)
-    print 'request sent for: %s' % hymn_path
+    log('request sent for: %s' % hymn_path)
     title = re.compile(TITLE_REGEX).findall(r.content)[0]
-    print 'title: %s' % title
+    log('title: %s' % title)
     category = get_meta_data(CATEGORY_REGEX, r.content)
     print 'category: %s' % category
     subcategory = get_meta_data(SUBCATEGORY_REGEX, r.content)
