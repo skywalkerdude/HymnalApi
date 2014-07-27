@@ -95,6 +95,7 @@ def get_lyrics(content):
 
 @app.route('/hymn/<path:hymn_path>')
 def hymn_path(hymn_path):
+    log(sys.version)
     r = requests.get(URL_FORMAT % hymn_path)
     log('request sent for: %s' % hymn_path)
     title = re.compile(TITLE_REGEX).findall(r.content)[0]
