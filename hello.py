@@ -76,9 +76,9 @@ def convert_whitespaces(string):
     return string.replace('&nbsp;', ' ')
 
 def get_lyrics(content):
-    match = re.compile(EXTERNAL_LYRICS_URL_REGEX, re.DOTALL).findall(r.content)
-    log('Match: %s' % match)
-    if len(match) > 0:
+    match = re.compile(EXTERNAL_LYRICS_URL_REGEX, re.DOTALL).search(content)
+    log('Match: s' % match)
+    if match:
         return fetch_external(match.group(1))
     lyrics = get_data(LYRICS_REGEX, content)
     # there were no lyrics, so lets try to find lyrics without a stanza number
@@ -125,11 +125,13 @@ def hymn_path(hymn_path):
     mp3_url = get_data(MP3_REGEX, r.content)
     log('mp3_url: %s' % mp3_url)
     data = {'title': title, 'category': category, 'subcategory': subcategory, 'key': key, 'time': time, 'meter': meter, 'hymn_code': hymn_code, 'scriptures': scriptures, 'lyrics': lyrics, 'chorus': chorus, 'piano_sheet_url': piano_sheet_url, 'guitar_sheet_url': guitar_sheet_url, 'mp3_url': mp3_url}
-    log('data: %s' % data)
     return json.dumps(data, sort_keys=True, indent=2)
 
 @app.route('/esther_sucks')
 def esther_sucks():
     return 'Wow, very good Joseph, Esther does suck!'
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 #test songs: 1151, ns/157, h/1197, h/17
