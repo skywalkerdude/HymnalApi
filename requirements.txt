@@ -1,12 +1,7 @@
 Flask==0.9
 Jinja2==2.6
-MarkupSafe==0.23
 Werkzeug==0.8.3
-beautifulsoup4==4.3.2
 gunicorn==0.17.2
-itsdangerous==0.24
-pycrypto==2.6.1
 requests==2.2.1
 simplejson==3.6.0
-virtualenv==1.11.6
-wsgiref==0.1.2
+beautifulsoup4==4.3.2

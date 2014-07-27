@@ -93,7 +93,7 @@ def hymn_path(hymn_path):
     
     # create BeautifulSoup object out of html content
     soup = BeautifulSoup(r.content)
-    log(soup.prettify())
+    log('soup created!')
     
     # fill in title
     data[soup.title.name] = soup.title.string
