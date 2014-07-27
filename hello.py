@@ -77,7 +77,7 @@ def convert_whitespaces(string):
 
 def get_lyrics(content):
     match = re.compile(EXTERNAL_LYRICS_URL_REGEX, re.DOTALL).search(content)
-    log('Match: s' % match)
+    log('Match: %s' % match)
     if match:
         return fetch_external(match.group(1))
     lyrics = get_data(LYRICS_REGEX, content)
