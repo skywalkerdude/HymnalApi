@@ -128,7 +128,7 @@ def hymn_path(hymn_path):
     log('mp3_url: %s' % mp3_url)
     data = {'title': title, 'category': category, 'subcategory': subcategory, 'key': key, 'time': time, 'meter': meter, 'hymn_code': hymn_code, 'scriptures': scriptures, 'lyrics': lyrics, 'chorus': chorus, 'piano_sheet_url': piano_sheet_url, 'guitar_sheet_url': guitar_sheet_url, 'mp3_url': mp3_url}
     log('data: %s' % data)
-    return title
+    return json.dumps(data, sort_keys=True, indent=2)
 
 @app.route('/esther_sucks')
 def esther_sucks():
