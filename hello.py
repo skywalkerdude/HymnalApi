@@ -114,10 +114,10 @@ def hymn_path(hymn_path):
     print 'hymn_code: %s' % hymn_code
     scriptures = get_meta_data(SCRIPTURES_REGEX, r.content, True)
     print 'scriptures: %s' % scriptures
-    lyrics = get_lyrics(r.content)
-    print 'lyrics: %s' % lyrics
-    chorus = get_data(CHORUS_REGEX, r.content)
-    print 'chorus: %s' % chorus
+    #lyrics = get_lyrics(r.content)
+    #print 'lyrics: %s' % lyrics
+    #chorus = get_data(CHORUS_REGEX, r.content)
+    #print 'chorus: %s' % chorus
     piano_sheet_url = get_data(SHEET_MUSIC_REGEX % 'piano', r.content)
     print 'piano_sheet_url: %s' % piano_sheet_url
     guitar_sheet_url = get_data(SHEET_MUSIC_REGEX % 'guitar', r.content)
