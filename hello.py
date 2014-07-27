@@ -90,7 +90,9 @@ def get_lyrics(content):
 @app.route('/<path:hymn_path>')
 def hymn_path(hymn_path):
     r = requests.get(URL_FORMAT % hymn_path)
+    puts "request sent for: %s" % (URL_FORMAT % hymn_path)
     title = re.compile(TITLE_REGEX).findall(r.content)[0]
+    puts "title: %s" % title
     category = get_meta_data(CATEGORY_REGEX, r.content)
     subcategory = get_meta_data(SUBCATEGORY_REGEX, r.content)
     key = get_meta_data(KEY_REGEX, r.content)
@@ -105,9 +107,5 @@ def hymn_path(hymn_path):
     mp3_url = get_data(MP3_REGEX, r.content)
     data = {'title': title, 'category': category, 'subcategory': subcategory, 'key': key, 'time': time, 'meter': meter, 'hymn_code': hymn_code, 'scriptures': scriptures, 'lyrics': lyrics, 'chorus': chorus, 'piano_sheet_url': piano_sheet_url, 'guitar_sheet_url': guitar_sheet_url, 'mp3_url': mp3_url}
     return json.dumps(data, sort_keys=True, indent=2)
-
-@app.route('/esther_sucks')
-def goodbye():
-    return "Esther Sucks"
 
 #test songs: 1151, ns/157, h/1197, h/17
