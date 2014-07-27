@@ -94,17 +94,29 @@ def hymn_path(hymn_path):
     title = re.compile(TITLE_REGEX).findall(r.content)[0]
     print 'title: %s' % title
     category = get_meta_data(CATEGORY_REGEX, r.content)
+    print 'category: %s' % category
     subcategory = get_meta_data(SUBCATEGORY_REGEX, r.content)
+    print 'subcategory: %s' % subcategory
     key = get_meta_data(KEY_REGEX, r.content)
+    print 'key: %s' % key
     time = get_meta_data(TIME_REGEX, r.content)
+    print 'time: %s' % time
     meter = get_meta_data(METER_REGEX, r.content)
+    print 'meter: %s' % meter
     hymn_code = get_meta_data(HYMN_CODE_REGEX, r.content)
+    print 'hymn_code: %s' % hymn_code
     scriptures = get_meta_data(SCRIPTURES_REGEX, r.content, True)
+    print 'scriptures: %s' % scriptures
     lyrics = get_lyrics(r.content)
+    print 'lyrics: %s' % lyrics
     chorus = get_data(CHORUS_REGEX, r.content)
+    print 'chorus: %s' % chorus
     piano_sheet_url = get_data(SHEET_MUSIC_REGEX % 'piano', r.content)
+    print 'piano_sheet_url: %s' % piano_sheet_url
     guitar_sheet_url = get_data(SHEET_MUSIC_REGEX % 'guitar', r.content)
+    print 'guitar_sheet_url: %s' % guitar_sheet_url
     mp3_url = get_data(MP3_REGEX, r.content)
+    print 'mp3_url: %s' % mp3_url
     data = {'title': title, 'category': category, 'subcategory': subcategory, 'key': key, 'time': time, 'meter': meter, 'hymn_code': hymn_code, 'scriptures': scriptures, 'lyrics': lyrics, 'chorus': chorus, 'piano_sheet_url': piano_sheet_url, 'guitar_sheet_url': guitar_sheet_url, 'mp3_url': mp3_url}
     return json.dumps(data, sort_keys=True, indent=2)
 
