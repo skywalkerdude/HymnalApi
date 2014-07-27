@@ -90,9 +90,9 @@ def get_lyrics(content):
 @app.route('/<path:hymn_path>')
 def hymn_path(hymn_path):
     r = requests.get(URL_FORMAT % hymn_path)
-    puts "request sent for: %s" % (URL_FORMAT % hymn_path)
+    puts 'request sent for: %s' % hymn_path
     title = re.compile(TITLE_REGEX).findall(r.content)[0]
-    puts "title: %s" % title
+    puts 'title: %s' % title
     category = get_meta_data(CATEGORY_REGEX, r.content)
     subcategory = get_meta_data(SUBCATEGORY_REGEX, r.content)
     key = get_meta_data(KEY_REGEX, r.content)
