@@ -1,5 +1,6 @@
-import os, requests, re, json, sys
+import os, requests, re, sys
 import pdb
+import simplejson as json
 from flask import Flask
 
 app = Flask(__name__)
