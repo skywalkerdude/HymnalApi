@@ -106,7 +106,4 @@ def hymn_path(hymn_path):
     data = {'title': title, 'category': category, 'subcategory': subcategory, 'key': key, 'time': time, 'meter': meter, 'hymn_code': hymn_code, 'scriptures': scriptures, 'lyrics': lyrics, 'chorus': chorus, 'piano_sheet_url': piano_sheet_url, 'guitar_sheet_url': guitar_sheet_url, 'mp3_url': mp3_url}
     return json.dumps(data, sort_keys=True, indent=2)
 
-if __name__ == '__main__':
-    app.run(debug=True)
-
 #test songs: 1151, ns/157, h/1197, h/17
