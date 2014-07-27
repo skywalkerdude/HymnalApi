@@ -22,7 +22,7 @@ MP3_REGEX = '<source src="(.*?)" type="audio/mpeg"/>'
 TAG_REGEX = r'<%(TAG)s\b[^>]*>(.*?)</%(TAG)s>'
 EXTERNAL_LYRICS_URL_REGEX = '<div class="col-xs-12 lyrics">.*?<a href="(.*?)".*?>.*View Lyrics (external site)</a>'
 EXTERNAL_LYRICS_TABLE_REGEX = '<table width=500>(.*?)</table>'
-debug = False
+debug = True
 
 def log(msg):
     if (debug):
@@ -38,7 +38,6 @@ def get_data(regex, string):
 def get_meta_data(regex, string, multiple_result = False):
     # get data according to regex
     result = get_data(regex, string)
-    print 'get_meta_data result: %s' % result
     # if result has nothing, then return empty string
     if len(result) < 1:
         rtn = ""
@@ -68,7 +67,7 @@ def get_meta_data(regex, string, multiple_result = False):
 
 def fetch_external(url):
     r = requests.get(url)
-    print re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(r.content)
+    log(re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(r.content))
     return url
 
 # takes all instances of &nbsp; and replaces it with a space, which is what it represents
@@ -101,29 +100,29 @@ def hymn_path(hymn_path):
     title = re.compile(TITLE_REGEX).findall(r.content)[0]
     log('title: %s' % title)
     category = get_meta_data(CATEGORY_REGEX, r.content)
-    print 'category: %s' % category
+    log('category: %s' % category)
     subcategory = get_meta_data(SUBCATEGORY_REGEX, r.content)
-    print 'subcategory: %s' % subcategory
+    log('subcategory: %s' % subcategory)
     key = get_meta_data(KEY_REGEX, r.content)
-    print 'key: %s' % key
+    log('key: %s' % key)
     time = get_meta_data(TIME_REGEX, r.content)
-    print 'time: %s' % time
+    log('time: %s' % time)
     meter = get_meta_data(METER_REGEX, r.content)
-    print 'meter: %s' % meter
+    log('meter: %s' % meter)
     hymn_code = get_meta_data(HYMN_CODE_REGEX, r.content)
-    print 'hymn_code: %s' % hymn_code
+    log('hymn_code: %s' % hymn_code)
     scriptures = get_meta_data(SCRIPTURES_REGEX, r.content, True)
-    print 'scriptures: %s' % scriptures
+    log('scriptures: %s' % scriptures)
     #lyrics = get_lyrics(r.content)
-    #print 'lyrics: %s' % lyrics
+    #log('lyrics: %s' % lyrics)
     #chorus = get_data(CHORUS_REGEX, r.content)
-    #print 'chorus: %s' % chorus
+    #log('chorus: %s' % chorus)
     piano_sheet_url = get_data(SHEET_MUSIC_REGEX % 'piano', r.content)
-    print 'piano_sheet_url: %s' % piano_sheet_url
+    log('piano_sheet_url: %s' % piano_sheet_url)
     guitar_sheet_url = get_data(SHEET_MUSIC_REGEX % 'guitar', r.content)
-    print 'guitar_sheet_url: %s' % guitar_sheet_url
+    log('guitar_sheet_url: %s' % guitar_sheet_url)
     mp3_url = get_data(MP3_REGEX, r.content)
-    print 'mp3_url: %s' % mp3_url
+    log('mp3_url: %s' % mp3_url)
     data = {'title': title, 'category': category, 'subcategory': subcategory, 'key': key, 'time': time, 'meter': meter, 'hymn_code': hymn_code, 'scriptures': scriptures, 'lyrics': lyrics, 'chorus': chorus, 'piano_sheet_url': piano_sheet_url, 'guitar_sheet_url': guitar_sheet_url, 'mp3_url': mp3_url}
     return json.dumps(data, sort_keys=True, indent=2)
 
