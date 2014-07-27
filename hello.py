@@ -33,6 +33,7 @@ def get_data(regex, string):
 def get_meta_data(regex, string, multiple_result = False):
     # get data according to regex
     result = get_data(regex, string)
+    print 'get_meta_data result: %s' % result
     # if result has nothing, then return empty string
     if len(result) < 1:
         rtn = ""
@@ -87,7 +88,7 @@ def get_lyrics(content):
         lyrics = [ item for item in tagless_lyrics if convert_whitespaces(item).strip() != '']
     return lyrics
 
-@app.route('/<path:hymn_path>')
+@app.route('/hymn/<path:hymn_path>')
 def hymn_path(hymn_path):
     r = requests.get(URL_FORMAT % hymn_path)
     print 'request sent for: %s' % hymn_path
@@ -119,5 +120,9 @@ def hymn_path(hymn_path):
     print 'mp3_url: %s' % mp3_url
     data = {'title': title, 'category': category, 'subcategory': subcategory, 'key': key, 'time': time, 'meter': meter, 'hymn_code': hymn_code, 'scriptures': scriptures, 'lyrics': lyrics, 'chorus': chorus, 'piano_sheet_url': piano_sheet_url, 'guitar_sheet_url': guitar_sheet_url, 'mp3_url': mp3_url}
     return json.dumps(data, sort_keys=True, indent=2)
+
+@app.route('/esther_sucks')
+def esther_sucks():
+    return 'Wow, very good Joseph, Esther does suck!'
 
 #test songs: 1151, ns/157, h/1197, h/17
