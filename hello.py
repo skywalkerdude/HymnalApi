@@ -76,9 +76,9 @@ def convert_whitespaces(string):
     return string.replace('&nbsp;', ' ')
 
 def get_lyrics(content):
-    match = re.search(EXTERNAL_LYRICS_URL_REGEX, content, re.DOTALL)
-    log('match = %s' % match)
-    if match:
+    match = re.compile(EXTERNAL_LYRICS_URL_REGEX, re.DOTALL).findall(r.content)
+    log('Match: %s' % match)
+    if len(match) > 0:
         return fetch_external(match.group(1))
     lyrics = get_data(LYRICS_REGEX, content)
     # there were no lyrics, so lets try to find lyrics without a stanza number
