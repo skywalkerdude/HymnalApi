@@ -1,24 +1,12 @@
-import os, requests, re, sys
-import pdb
-import simplejson as json
+import os, requests, re, simplejson as json
+from bs4 import BeautifulSoup
 from flask import Flask
 
 app = Flask(__name__)
 
-URL_FORMAT = "http://www.hymnal.net/en/hymn/%s"
-TITLE_REGEX = '<title>(.*)</title>'
-META_INFO_REGEX = '%s:.*?<div class="col-xs-7 col-sm-8 no-padding">(.*?)<\/div>'
-CATEGORY_REGEX = META_INFO_REGEX % 'Category'
-SUBCATEGORY_REGEX = META_INFO_REGEX % 'Subcategory'
-KEY_REGEX = META_INFO_REGEX % 'Key'
-TIME_REGEX = META_INFO_REGEX % 'Time'
-METER_REGEX = META_INFO_REGEX % 'Meter'
-HYMN_CODE_REGEX = META_INFO_REGEX % 'Hymn Code'
-SCRIPTURES_REGEX = META_INFO_REGEX % 'Scriptures'
+URL_FORMAT = 'http://www.hymnal.net/en/hymn/%s'
 LYRICS_REGEX = '<div class="stanza-num">\d+</div>.*?<td>(.*?)</td>'
 CHORUS_REGEX = '<td class="chorus">(.*?)</td>'
-SHEET_MUSIC_REGEX = '%s hidden">.*?<span class="svg">(.*?)</span>'
-MP3_REGEX = '<source src="(.*?)" type="audio/mpeg"/>'
 # http://www.regular-expressions.info/examples.html
 TAG_REGEX = r'<%(TAG)s\b[^>]*>(.*?)</%(TAG)s>'
 EXTERNAL_LYRICS_URL_REGEX = r'<a href="(.*?)".*View Lyrics \(external site\)'
@@ -76,11 +64,11 @@ def convert_whitespaces(string):
     return string.replace('&nbsp;', ' ')
 
 def get_lyrics(content):
-    match = re.compile(EXTERNAL_LYRICS_URL_REGEX, re.DOTALL).search(content)
-    log('Match: %s' % match)
+    match = re.compile(EXTERNAL_LYRICS_URL_REGEX).search(content)
     if match:
         return fetch_external(match.group(1))
     lyrics = get_data(LYRICS_REGEX, content)
+
     # there were no lyrics, so lets try to find lyrics without a stanza number
     if len(lyrics) == 0:
         # find everything in the lyrics table
@@ -96,35 +84,43 @@ def get_lyrics(content):
 
 @app.route('/hymn/<path:hymn_path>')
 def hymn_path(hymn_path):
+    # data to be returned as json
+    data = {}
+    
+    # make http GET request to song path
     r = requests.get(URL_FORMAT % hymn_path)
     log('request sent for: %s' % hymn_path)
-    title = re.compile(TITLE_REGEX).findall(r.content)[0]
-    log('title: %s' % title)
-    category = get_meta_data(CATEGORY_REGEX, r.content)
-    log('category: %s' % category)
-    subcategory = get_meta_data(SUBCATEGORY_REGEX, r.content)
-    log('subcategory: %s' % subcategory)
-    key = get_meta_data(KEY_REGEX, r.content)
-    log('key: %s' % key)
-    time = get_meta_data(TIME_REGEX, r.content)
-    log('time: %s' % time)
-    meter = get_meta_data(METER_REGEX, r.content)
-    log('meter: %s' % meter)
-    hymn_code = get_meta_data(HYMN_CODE_REGEX, r.content)
-    log('hymn_code: %s' % hymn_code)
-    scriptures = get_meta_data(SCRIPTURES_REGEX, r.content, True)
-    log('scriptures: %s' % scriptures)
+    
+    # create BeautifulSoup object out of html content
+    soup = BeautifulSoup(r.content)
+    log(soup.prettify())
+    
+    # fill in title
+    data[soup.title.name] = soup.title.string
+    
+    # extract meta data (Category, Subcategory, etc)
+    meta_data = {}
+    meta_data_divs = soup.findAll('div',{'class':'row'})
+    for div in meta_data_divs:
+        labels = div.find_all("label", {"class":"col-xs-5 col-sm-4 text-right"})
+        if len(labels) == 0:
+            continue
+        for label in labels:
+            title = label.text.replace(':','')
+            values = []
+            children = label.findNextSibling().findChildren()
+            for child in children:
+                value = child.text
+                link = child.get('href')
+                values.append({'value' : value, 'link' : link})
+            meta_data[title] = values
+    data['meta_data'] = meta_data
+
     lyrics = get_lyrics(r.content)
     log('lyrics: %s' % lyrics)
     chorus = get_data(CHORUS_REGEX, r.content)
     log('chorus: %s' % chorus)
-    piano_sheet_url = get_data(SHEET_MUSIC_REGEX % 'piano', r.content)
-    log('piano_sheet_url: %s' % piano_sheet_url)
-    guitar_sheet_url = get_data(SHEET_MUSIC_REGEX % 'guitar', r.content)
-    log('guitar_sheet_url: %s' % guitar_sheet_url)
-    mp3_url = get_data(MP3_REGEX, r.content)
-    log('mp3_url: %s' % mp3_url)
-    data = {'title': title, 'category': category, 'subcategory': subcategory, 'key': key, 'time': time, 'meter': meter, 'hymn_code': hymn_code, 'scriptures': scriptures, 'lyrics': lyrics, 'chorus': chorus, 'piano_sheet_url': piano_sheet_url, 'guitar_sheet_url': guitar_sheet_url, 'mp3_url': mp3_url}
+    #data = {'title': title, 'category': category, 'subcategory': subcategory, 'key': key, 'time': time, 'meter': meter, 'hymn_code': hymn_code, 'scriptures': scriptures, 'lyrics': lyrics, 'chorus': chorus, 'piano_sheet_url': piano_sheet_url, 'guitar_sheet_url': guitar_sheet_url, 'mp3_url': mp3_url}
     return json.dumps(data, sort_keys=True, indent=2)
 
 @app.route('/esther_sucks')
