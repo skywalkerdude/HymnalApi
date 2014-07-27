@@ -21,7 +21,7 @@ SHEET_MUSIC_REGEX = '%s hidden">.*?<span class="svg">(.*?)</span>'
 MP3_REGEX = '<source src="(.*?)" type="audio/mpeg"/>'
 # http://www.regular-expressions.info/examples.html
 TAG_REGEX = r'<%(TAG)s\b[^>]*>(.*?)</%(TAG)s>'
-EXTERNAL_LYRICS_URL_REGEX = '<div class="col-xs-12 lyrics">.*?<a href="(.*?)".*?>.*View Lyrics (external site)</a>'
+EXTERNAL_LYRICS_URL_REGEX = r'<a href=\"(.*?)\".*?>.*View Lyrics \(external site\)'
 EXTERNAL_LYRICS_TABLE_REGEX = '<table width=500>(.*?)</table>'
 debug = True
 
