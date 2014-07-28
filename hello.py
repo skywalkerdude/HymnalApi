@@ -5,13 +5,11 @@ from flask import Flask
 app = Flask(__name__)
 
 URL_FORMAT = 'http://www.hymnal.net/en/hymn/%s'
-LYRICS_REGEX = '<div class="stanza-num">\d+</div>.*?<td>(.*?)</td>'
-CHORUS_REGEX = '<td class="chorus">(.*?)</td>'
-# http://www.regular-expressions.info/examples.html
-TAG_REGEX = r'<%(TAG)s\b[^>]*>(.*?)</%(TAG)s>'
-EXTERNAL_LYRICS_URL_REGEX = r'<a href="(.*?)".*View Lyrics \(external site\)'
 EXTERNAL_LYRICS_TABLE_REGEX = '<table width=500>(.*?)</table>'
-debug = True
+CHORUS = 'chorus'
+STANZA = 'stanza'
+
+debug = False
 
 def log(msg):
     if (debug):
@@ -20,67 +18,6 @@ def log(msg):
 @app.route('/')
 def intro():
     return 'Welcome to my API'
-
-def get_data(regex, string):
-    return re.compile(regex, re.DOTALL).findall(string)
-
-def get_meta_data(regex, string, multiple_result = False):
-    # get data according to regex
-    result = get_data(regex, string)
-    # if result has nothing, then return empty string
-    if len(result) < 1:
-        rtn = ""
-    else:
-        # find all of the hyperlink data, which contains the actual text of the tag.
-        # eg: <a href="http://online.recoveryversion.org/BibleChapters.asp?fcid=239021&lcid=239021" target="_blank">Revelation 22</a>
-        result = re.compile(TAG_REGEX % {'TAG': "a"}, re.DOTALL).findall(result[0])
-        
-        if len(result) == 0:
-            # length is 0, that means there were no hyperlinks, so set rtn to empty string
-            rtn = ""
-        elif len(result) == 1:
-            # there was exactly 1 hyperlink, set rtn to first entry
-            rtn = result[0]
-        else:
-            # otherwise return rtn as is
-            rtn = result
-
-    # if the caller is expecting a list, then convert rtn into a list if it isn't already. Otherwise, just return rtn as is
-    if multiple_result:
-        if type(rtn) == list:
-            return rtn
-        else:
-            return [rtn]
-    else:
-        return rtn
-
-def fetch_external(url):
-    r = requests.get(url)
-    log(re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(r.content))
-    return url
-
-# takes all instances of &nbsp; and replaces it with a space, which is what it represents
-def convert_whitespaces(string):
-    return string.replace('&nbsp;', ' ')
-
-def get_lyrics(content):
-    match = re.compile(EXTERNAL_LYRICS_URL_REGEX).search(content)
-    if match:
-        return fetch_external(match.group(1))
-    lyrics = get_data(LYRICS_REGEX, content)
-
-    # there were no lyrics, so lets try to find lyrics without a stanza number
-    if len(lyrics) == 0:
-        # find everything in the lyrics table
-        raw_lyrics = re.compile('<div class="col-xs-12 lyrics">.*?<table>(.*?)</table>', re.DOTALL).findall(content)
-        # if this is still empty, then there really aren't any lyrics :(
-        if len(raw_lyrics) == 0:
-            return ""
-        # filter out the cells with no class or id
-        tagless_lyrics =re.compile('<td>(.*?)</td>',re.DOTALL).findall(raw_lyrics[0])
-        # only consider itm if content is not whitespace
-        lyrics = [ item for item in tagless_lyrics if convert_whitespaces(item).strip() != '']
-    return lyrics
 
 @app.route('/hymn/<path:hymn_path>')
 def hymn_path(hymn_path):
@@ -93,7 +30,6 @@ def hymn_path(hymn_path):
     
     # create BeautifulSoup object out of html content
     soup = BeautifulSoup(r.content)
-    log('soup created!')
     
     # fill in title
     data[soup.title.name] = soup.title.string
@@ -117,21 +53,58 @@ def hymn_path(hymn_path):
     data['meta_data'] = meta_data
 
     lyrics = []
-    raw_lyrics = soup.findAll('div',{'class':'lyrics'})[0]
-    for td in raw_lyrics.findAll('td'):
-        stanza = []
-        
-        # skip td if it is empty or is just a number
-        if len(td.text.strip()) == 0 or td.text.strip().isdigit():
-            continue
-        for line in td.stripped_strings:
-            stanza.append(line)
+    raw_lyrics = soup.find('div',{'class':'lyrics'})
 
-        if td.get('class') and 'chorus' in td.get('class'):
-            lyrics.append({'chorus' : stanza})
-        else:
-            lyrics.append({'stanza' : stanza})
+    if raw_lyrics.find('div',{'class':'alert'}):
+        # parse out url from raw_lyrics
+        url = raw_lyrics.find('div',{'class':'alert'}).findChild().get('href').strip()
+        
+        # make http GET request to song path
+        external_response = requests.get(url)
+        log('request sent for: %s' % url)
+        
+        # BeautifulSoup randomly adds a </table> tag, so we need to use regex to find the table with the lyrics
+        content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_response.content)[0]
+        
+        # create BeautifulSoup object out of html content
+        external_soup = BeautifulSoup(content)
+        
+        stanza = []
+        # indicates which stanza we are currently parsing
+        stanza_num = 0
+        
+        for line in external_soup.stripped_strings:
+            # if line is a number or 'Chorus', it indicates that the previous stanza was finished
+            if line.isdigit() or line == 'Chorus':
+                # append finished stanza to lyrics hash with appropriate key
+                if stanza_num != 0:
+                    if stanza_num == 'Chorus': lyrics.append({CHORUS : stanza})
+                    else : lyrics.append({STANZA : stanza})
+                    # reset stanza list
+                    stanza = []
+                # new stanza number
+                stanza_num = line
+            else:
+                stanza.append(line)
+    else:
+        for td in raw_lyrics.findAll('td'):
+            stanza = []
+        
+            # skip td if it is empty or is just a number
+            if len(td.text.strip()) == 0 or td.text.strip().isdigit():
+                continue
+ 
+            # for each line in the stanza, append to stanza list
+            for line in td.stripped_strings:
+                stanza.append(line)
+            # append finish stanza to lyrics has with appropriate key
+            if td.get('class') and 'chorus' in td.get('class'):
+                lyrics.append({CHORUS : stanza})
+            else:
+                lyrics.append({STANZA : stanza})
+
     data['lyrics'] = lyrics
+
     return json.dumps(data, sort_keys=True, indent=2)
 
 @app.route('/esther_sucks')
