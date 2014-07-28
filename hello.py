@@ -116,11 +116,22 @@ def hymn_path(hymn_path):
             meta_data[title] = values
     data['meta_data'] = meta_data
 
-    lyrics = get_lyrics(r.content)
-    log('lyrics: %s' % lyrics)
-    chorus = get_data(CHORUS_REGEX, r.content)
-    log('chorus: %s' % chorus)
-    #data = {'title': title, 'category': category, 'subcategory': subcategory, 'key': key, 'time': time, 'meter': meter, 'hymn_code': hymn_code, 'scriptures': scriptures, 'lyrics': lyrics, 'chorus': chorus, 'piano_sheet_url': piano_sheet_url, 'guitar_sheet_url': guitar_sheet_url, 'mp3_url': mp3_url}
+    lyrics = []
+    raw_lyrics = soup.findAll('div',{'class':'lyrics'})[0]
+    for td in raw_lyrics.findAll('td'):
+        stanza = []
+        
+        # skip td if it is empty or is just a number
+        if len(td.text.strip()) == 0 or td.text.strip().isdigit():
+            continue
+        for line in td.stripped_strings:
+            stanza.append(line)
+
+        if td.get('class') and 'chorus' in td.get('class'):
+            lyrics.append({'chorus' : stanza})
+        else:
+            lyrics.append({'stanza' : stanza})
+    data['lyrics'] = lyrics
     return json.dumps(data, sort_keys=True, indent=2)
 
 @app.route('/esther_sucks')
