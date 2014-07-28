@@ -107,10 +107,6 @@ def hymn_path(hymn_path):
 
     return json.dumps(data, sort_keys=True, indent=2)
 
-@app.route('/esther_sucks')
-def esther_sucks():
-    return 'Wow, very good Joseph, Esther does suck!'
-
 if __name__ == '__main__':
     app.run(debug=True)
 
