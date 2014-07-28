@@ -44,7 +44,7 @@ def hymn_path(hymn_path):
         for label in labels:
             title = label.text.replace(':','')
             values = []
-            children = label.findNextSibling().findChildren()
+            children = label.findNextSibling().findAll('a')
             for child in children:
                 value = child.text
                 link = child.get('href')
