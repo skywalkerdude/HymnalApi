@@ -55,6 +55,7 @@ def hymn_path(hymn_path):
     lyrics = []
     raw_lyrics = soup.find('div',{'class':'lyrics'})
 
+    # for the songs with "View Lyrics (external site)"
     if raw_lyrics.find('div',{'class':'alert'}):
         # parse out url from raw_lyrics
         url = raw_lyrics.find('div',{'class':'alert'}).findChild().get('href').strip()
