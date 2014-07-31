@@ -106,7 +106,7 @@ def hymn_path(hymn_path):
 
     data['lyrics'] = lyrics
 
-    return json.dumps(data, sort_keys=True, indent=2)
+    return json.dumps(data, sort_keys=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
