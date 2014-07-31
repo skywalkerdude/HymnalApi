@@ -6,14 +6,25 @@ app = Flask(__name__)
 
 URL_FORMAT = 'http://www.hymnal.net/en/hymn/%s'
 EXTERNAL_LYRICS_TABLE_REGEX = '<table width=500>(.*?)</table>'
+VERSE_TYPE = 'verse_type'
+VERSE_CONTENT = 'verse_content'
 CHORUS = 'chorus'
-STANZA = 'stanza'
+VERSE = 'verse'
+NAME = 'name'
+DATA = 'data'
 
 debug = False
 
 def log(msg):
     if (debug):
         print msg
+
+# returns a meta data object from it's name and data
+def get_meta_data_object(name, data):
+    meta_data_object = {}
+    meta_data_object[NAME] = name
+    meta_data_object[DATA] = data
+    return meta_data_object
 
 @app.route('/')
 def intro():
@@ -22,7 +33,7 @@ def intro():
 @app.route('/hymn/<path:hymn_path>')
 def hymn_path(hymn_path):
     # data to be returned as json
-    data = {}
+    json_data = {}
     
     # make http GET request to song path
     r = requests.get(URL_FORMAT % hymn_path)
@@ -32,25 +43,26 @@ def hymn_path(hymn_path):
     soup = BeautifulSoup(r.content)
     
     # fill in title
-    data[soup.title.name] = soup.title.string
+    json_data[soup.title.name] = soup.title.string
     
     # extract meta data (Category, Subcategory, etc)
-    meta_data = {}
+    meta_data = []
     meta_data_divs = soup.findAll('div',{'class':'row'})
     for div in meta_data_divs:
         labels = div.find_all("label", {"class":"col-xs-5 col-sm-4 text-right"})
         if len(labels) == 0:
             continue
         for label in labels:
-            title = label.text.replace(':','')
-            values = []
+            name = label.text.replace(':','')
+            data = []
             children = label.findNextSibling().findAll('a')
             for child in children:
                 value = child.text
                 link = child.get('href')
-                values.append({'value' : value, 'link' : link})
-            meta_data[title] = values
-    data['meta_data'] = meta_data
+                data.append({'value' : value, 'link' : link})
+            # append meta data to meta_data list
+            meta_data.append(get_meta_data_object(name, data))
+    json_data['meta_data'] = meta_data
 
     lyrics = []
     raw_lyrics = soup.find('div',{'class':'lyrics'})
@@ -70,26 +82,36 @@ def hymn_path(hymn_path):
         # create BeautifulSoup object out of html content
         external_soup = BeautifulSoup(content)
         
-        stanza = []
+        stanza_content = []
         # indicates which stanza we are currently parsing
         stanza_num = 0
         
         for line in external_soup.stripped_strings:
             # if line is a number or 'Chorus', it indicates that the previous stanza was finished
             if line.isdigit() or line == 'Chorus':
-                # append finished stanza to lyrics hash with appropriate key
+                # stanza is finished, so append stanza to lyrics hash
                 if stanza_num != 0:
-                    if stanza_num == 'Chorus': lyrics.append({CHORUS : stanza})
-                    else : lyrics.append({STANZA : stanza})
-                    # reset stanza list
-                    stanza = []
+
+                    # create and populate verse object with verse_type and verse_content
+                    verse = {}
+                    if stanza_num == 'Chorus':
+                        verse[VERSE_TYPE] = CHORUS
+                    else :
+                        verse[VERSE_TYPE] = VERSE
+                    verse[VERSE_CONTENT] = stanza_content
+                    
+                    # append finished stanza to lyrics hash
+                    lyrics.append(verse)
+
+                    # reset stanza content
+                    stanza_content = []
                 # new stanza number
                 stanza_num = line
             else:
-                stanza.append(line)
+                stanza_content.append(line)
     else:
         for td in raw_lyrics.findAll('td'):
-            stanza = []
+            stanza_content = []
         
             # skip td if it is empty or is just a number
             if len(td.text.strip()) == 0 or td.text.strip().isdigit():
@@ -97,16 +119,22 @@ def hymn_path(hymn_path):
  
             # for each line in the stanza, append to stanza list
             for line in td.stripped_strings:
-                stanza.append(line)
-            # append finish stanza to lyrics has with appropriate key
+                stanza_content.append(line)
+            
+            # create and populate verse object with verse_type and verse_content
+            verse = {}
             if td.get('class') and 'chorus' in td.get('class'):
-                lyrics.append({CHORUS : stanza})
+                verse[VERSE_TYPE] = CHORUS
             else:
-                lyrics.append({STANZA : stanza})
+                verse[VERSE_TYPE] = VERSE
+            verse[VERSE_CONTENT] = stanza_content
 
-    data['lyrics'] = lyrics
+            # append finished stanza to lyrics hash
+            lyrics.append(verse)
 
-    return json.dumps(data, sort_keys=True)
+    json_data['lyrics'] = lyrics
+
+    return json.dumps(json_data, sort_keys=False)
 
 if __name__ == '__main__':
     app.run(debug=True)
