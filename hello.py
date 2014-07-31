@@ -60,8 +60,10 @@ def hymn_path(hymn_path):
                 value = child.text
                 link = child.get('href')
                 data.append({'value' : value, 'link' : link})
-            # append meta data to meta_data list
-            meta_data.append(get_meta_data_object(name, data))
+            # append meta data to meta_data list if it doesn't exist already
+            meta_data_object = get_meta_data_object(name, data)
+            if meta_data_object not in meta_data:
+                meta_data.append(meta_data_object)
     json_data['meta_data'] = meta_data
 
     lyrics = []
