@@ -88,9 +88,13 @@ def hymn_path(hymn_path):
         # indicates which stanza we are currently parsing
         stanza_num = 0
         
-        for line in external_soup.stripped_strings:
+        for line in external_soup.strings:
+            # if line is empty, then skip it
+            if len(line.strip()) == 0:
+                continue
+            
             # if line is a number or 'Chorus', it indicates that the previous stanza was finished
-            if line.isdigit() or line == 'Chorus':
+            if line.strip().isdigit() or line.strip() == 'Chorus':
                 # stanza is finished, so append stanza to lyrics hash
                 if stanza_num != 0:
 
@@ -120,7 +124,7 @@ def hymn_path(hymn_path):
                 continue
  
             # for each line in the stanza, append to stanza list
-            for line in td.stripped_strings:
+            for line in td.strings:
                 stanza_content.append(line)
             
             # create and populate verse object with verse_type and verse_content
