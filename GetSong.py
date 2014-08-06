@@ -1,8 +1,8 @@
 import os, requests, re, simplejson as json
 from bs4 import BeautifulSoup
-from flask import Flask
+from flask import Blueprint
 
-app = Flask(__name__)
+get_song = Blueprint('get_song', __name__)
 
 URL_FORMAT = 'http://www.hymnal.net/en/hymn/%s'
 EXTERNAL_LYRICS_TABLE_REGEX = '<table width=500>(.*?)</table>'
@@ -26,11 +26,7 @@ def get_meta_data_object(name, data):
     meta_data_object[DATA] = data
     return meta_data_object
 
-@app.route('/')
-def intro():
-    return 'Welcome to my API'
-
-@app.route('/hymn/<path:hymn_path>')
+@get_song.route('/hymn/<path:hymn_path>')
 def hymn_path(hymn_path):
     # data to be returned as json
     json_data = {}
@@ -141,8 +137,5 @@ def hymn_path(hymn_path):
     json_data['lyrics'] = lyrics
 
     return json.dumps(json_data, sort_keys=False)
-
-if __name__ == '__main__':
-    app.run(debug=True)
 
 #test songs: 1151, ns/157, h/1197, h/17
