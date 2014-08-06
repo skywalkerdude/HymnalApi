@@ -27,7 +27,7 @@ def get_meta_data_object(name, data):
     return meta_data_object
 
 @get_song.route('/hymn/<path:hymn_path>')
-def hymn_path(hymn_path):
+def get_hymn(hymn_path):
     # data to be returned as json
     json_data = {}
     
