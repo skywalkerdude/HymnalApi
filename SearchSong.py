@@ -1,15 +1,17 @@
-import os, requests, re, simplejson as json
+import os, requests, re, simplejson as json, pdb
 from bs4 import BeautifulSoup
 from flask import Blueprint
 
 search_song = Blueprint('search_song', __name__)
 
 URL_FORMAT = 'http://www.hymnal.net/en/search/all/all/%s/%d'
+PUBLIC = 'public'
+EMPTY_RESULT_ERROR_MESSAGE = 'Did not find any songs matching: %s. Please try a different request'
 
 # maximum number of times we can loop, to avoid infinite loops
 MAX_LOOP_COUNT = 100
 
-debug = False
+debug = True
 
 def log(msg):
     if (debug):
@@ -20,6 +22,23 @@ def clear_children(element):
     children = element.findChildren()
     for child in children:
         child.clear()
+
+def is_last_page(soup, current_page):
+    
+    pages = soup.find('ul', {'class':'pagination'})
+    
+    # if pages is None, return True
+    if not pages:
+        return True
+    
+    for string in pages.stripped_strings:
+        try:
+            num = int(string)
+            if num > current_page:
+                return False
+        except ValueError:
+            continue
+    return True
 
 # extracts search results from a single soup page
 def extract_results_single_page(soup):
@@ -50,6 +69,18 @@ def extract_results_single_page(soup):
         search_results.append(search_result)
     return search_results
 
+# fetches the results from a single results page
+def fetch_single_results_page(search_parameter, page_num):
+    # make http GET request to search page
+    r = requests.get(URL_FORMAT % (search_parameter, page_num))
+    log('request sent for: %s, Page %d' % (search_parameter, page_num))
+
+    # create BeautifulSoup object out of html content
+    soup = BeautifulSoup(r.content)
+
+    # extract results from the single page along with whether page_num is the last page
+    return (extract_results_single_page(soup), is_last_page(soup, page_num))
+
 @search_song.route('/search/<search_parameter>')
 def search_hymn_all(search_parameter):
     # data to be returned as json
@@ -65,28 +96,54 @@ def search_hymn_all(search_parameter):
     
     search_results = []
     
-    # keep looping until we find a page with 0 results
-    # or if we reach MAX_LOOP_COUNT
-    for loop in range(MAX_LOOP_COUNT):
-    
-        # make http GET request to search page
-        r = requests.get(URL_FORMAT % (search_parameter, page_num))
-        log('request sent for: %s, Page %d' % (search_parameter, page_num))
-    
-        # create BeautifulSoup object out of html content
-        soup = BeautifulSoup(r.content)
+    # whether or not we are at the end of the results list
+    end_of_results = False
         
-        # extract results from the single page
-        page_results = extract_results_single_page(soup)
+    while not end_of_results:
+        # extract results from the single page and whether or not we're on the last page
+        page_results, is_last_page = fetch_single_results_page(search_parameter, page_num)
 
-        if len(page_results) == 0:
-            # end of results, so break out of loop
-            break
+        if is_last_page or is_last_page is None:
+            # end of results, so set to True
+            end_of_results = True
         else:
-            # otherwise append results to search_results list and increment page_num
-            search_results.extend(page_results)
+            # otherwise  increment page_num
             page_num += 1
 
-    json_data['search_results'] = search_results
+        # append results to search_results list
+        search_results.extend(page_results)
 
+    json_data['search_results'] = search_results
+    
+    # search results is empty, bad search paramter
+    if len(search_results) == 0:
+        message = {PUBLIC:EMPTY_RESULT_ERROR_MESSAGE % search_parameter}
+        message['status_code'] = 400
+        return (json.dumps(message), 400)
+
+    return json.dumps(json_data, sort_keys=False)
+
+@search_song.route('/search/<search_parameter>/<int:page_num>')
+def search_hymn_page(search_parameter, page_num):
+    # data to be returned as json
+    json_data = {}
+    
+    # fill in search parameter
+    json_data['search_parameter'] = search_parameter
+    
+    # fill in page number parameter
+    json_data['page_num'] = page_num
+    
+    # extract results from the single page and whether or not it's the last page
+    search_results, is_last_page = fetch_single_results_page(search_parameter, page_num)
+    
+    json_data['search_results'] = search_results
+    json_data['is_last_page'] = is_last_page
+    
+    # search results is empty, bad search paramter
+    if len(search_results) == 0:
+        message = {PUBLIC:EMPTY_RESULT_ERROR_MESSAGE % search_parameter}
+        message['status_code'] = 400
+        return (json.dumps(message), 400)
+    
     return json.dumps(json_data, sort_keys=False)
