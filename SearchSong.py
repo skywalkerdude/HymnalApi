@@ -6,6 +6,8 @@ search_song = Blueprint('search_song', __name__)
 
 URL_FORMAT = 'http://www.hymnal.net/en/search/all/all/%s/%d'
 PUBLIC = 'public'
+TITLE = 'title'
+PATH = 'path'
 EMPTY_RESULT_ERROR_MESSAGE = 'Did not find any songs matching: %s. Please try a different request'
 
 # maximum number of times we can loop, to avoid infinite loops
@@ -62,8 +64,8 @@ def extract_results_single_page(soup):
         
         # create search_result dictionary
         search_result = {}
-        search_result['title'] = element.getText().strip()
-        search_result['link'] = element.get('href')
+        search_result[TITLE] = element.getText().strip()
+        search_result[PATH] = re.sub('/en/hymn/', '', element.get('href'))
         
         # append to results
         search_results.append(search_result)
