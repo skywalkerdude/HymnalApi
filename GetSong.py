@@ -26,6 +26,18 @@ def get_meta_data_object(name, data):
     meta_data_object[DATA] = data
     return meta_data_object
 
+# creates a verse object with the stanza num and content
+def create_verse(stanza_num, stanza_content):
+    # create and populate verse object with verse_type and verse_content
+    verse = {}
+    if stanza_num == 'Chorus':
+        verse[VERSE_TYPE] = CHORUS
+    else :
+        verse[VERSE_TYPE] = VERSE
+    verse[VERSE_CONTENT] = stanza_content
+    return verse
+
+
 @get_song.route('/hymn/<path:hymn_path>')
 def get_hymn(hymn_path):
     # data to be returned as json
@@ -85,6 +97,7 @@ def get_hymn(hymn_path):
         stanza_num = 0
         
         for line in external_soup.strings:
+            
             # if line is empty, then skip it
             if len(line.strip()) == 0:
                 continue
@@ -93,14 +106,9 @@ def get_hymn(hymn_path):
             if line.strip().isdigit() or line.strip() == 'Chorus':
                 # stanza is finished, so append stanza to lyrics hash
                 if stanza_num != 0:
-
-                    # create and populate verse object with verse_type and verse_content
-                    verse = {}
-                    if stanza_num == 'Chorus':
-                        verse[VERSE_TYPE] = CHORUS
-                    else :
-                        verse[VERSE_TYPE] = VERSE
-                    verse[VERSE_CONTENT] = stanza_content
+                    
+                    ## creates a verse object with the stanza num and content
+                    verse = create_verse(stanza_num, stanza_content)
                     
                     # append finished stanza to lyrics hash
                     lyrics.append(verse)
@@ -108,9 +116,16 @@ def get_hymn(hymn_path):
                     # reset stanza content
                     stanza_content = []
                 # new stanza number
-                stanza_num = line
+                stanza_num = line.strip()
             else:
                 stanza_content.append(line)
+
+        # after loop is over, create verse object and append to lyrics hash
+        verse = create_verse(stanza_num, stanza_content)
+        lyrics.append(verse)
+            
+        # reset stanza_content for good measure
+        stanza_content = []
     else:
         for td in raw_lyrics.findAll('td'):
             stanza_content = []
