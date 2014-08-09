@@ -12,7 +12,7 @@ PAGE_NUM = 'page_num'
 SEARCH_RESULTS = 'search_results'
 IS_LAST_PAGE = 'is_last_page'
 EMPTY_LIST_MESSAGE = 'empty_list_message'
-EMPTY_RESULT_ERROR_MESSAGE = 'Did not find any songs matching: %s. Please try a different request'
+EMPTY_RESULT_ERROR_MESSAGE = 'Did not find any songs matching:\n\"%s\"\nPlease try a different request'
 
 # maximum number of times we can loop, to avoid infinite loops
 MAX_LOOP_COUNT = 100
