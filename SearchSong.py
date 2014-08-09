@@ -5,9 +5,13 @@ from flask import Blueprint
 search_song = Blueprint('search_song', __name__)
 
 URL_FORMAT = 'http://www.hymnal.net/en/search/all/all/%s/%d'
-PUBLIC = 'public'
 TITLE = 'title'
 PATH = 'path'
+SEARCH_PARAMETER = 'search_parameter'
+PAGE_NUM = 'page_num'
+SEARCH_RESULTS = 'search_results'
+IS_LAST_PAGE = 'is_last_page'
+EMPTY_LIST_MESSAGE = 'empty_list_message'
 EMPTY_RESULT_ERROR_MESSAGE = 'Did not find any songs matching: %s. Please try a different request'
 
 # maximum number of times we can loop, to avoid infinite loops
@@ -89,7 +93,7 @@ def search_hymn_all(search_parameter):
     json_data = {}
     
     # fill in search parameter
-    json_data['search_parameter'] = search_parameter
+    json_data[SEARCH_PARAMETER] = search_parameter
     
     # start at page 1.
     # This is here because Hymnal.net returns the results in pages, so to find all
@@ -115,13 +119,11 @@ def search_hymn_all(search_parameter):
         # append results to search_results list
         search_results.extend(page_results)
 
-    json_data['search_results'] = search_results
+    json_data[SEARCH_RESULTS] = search_results
     
-    # search results is empty, bad search paramter
+    # search results is empty return bad search parameter message
     if len(search_results) == 0:
-        message = {PUBLIC:EMPTY_RESULT_ERROR_MESSAGE % search_parameter}
-        message['status_code'] = 400
-        return (json.dumps(message), 400)
+        json_data[EMPTY_LIST_MESSAGE] = EMPTY_RESULT_ERROR_MESSAGE % search_parameter
 
     return json.dumps(json_data, sort_keys=False)
 
@@ -131,21 +133,19 @@ def search_hymn_page(search_parameter, page_num):
     json_data = {}
     
     # fill in search parameter
-    json_data['search_parameter'] = search_parameter
+    json_data[SEARCH_PARAMETER] = search_parameter
     
     # fill in page number parameter
-    json_data['page_num'] = page_num
+    json_data[PAGE_NUM] = page_num
     
     # extract results from the single page and whether or not it's the last page
     search_results, is_last_page = fetch_single_results_page(search_parameter, page_num)
     
-    json_data['search_results'] = search_results
-    json_data['is_last_page'] = is_last_page
+    json_data[SEARCH_RESULTS] = search_results
+    json_data[IS_LAST_PAGE] = is_last_page
     
-    # search results is empty, bad search paramter
+    # search results is empty return bad search parameter message
     if len(search_results) == 0:
-        message = {PUBLIC:EMPTY_RESULT_ERROR_MESSAGE % search_parameter}
-        message['status_code'] = 400
-        return (json.dumps(message), 400)
+        json_data[EMPTY_LIST_MESSAGE] = EMPTY_RESULT_ERROR_MESSAGE % search_parameter
     
     return json.dumps(json_data, sort_keys=False)
