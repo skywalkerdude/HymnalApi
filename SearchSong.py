@@ -69,7 +69,7 @@ def extract_results_single_page(soup):
         # create search_result dictionary
         search_result = {}
         search_result[TITLE] = element.getText().strip()
-        search_result[PATH] = re.sub('/en/hymn/', '', element.get('href'))
+        search_result[PATH] = element.get('href')
         
         # append to results
         search_results.append(search_result)
