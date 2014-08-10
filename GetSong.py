@@ -1,4 +1,4 @@
-import os, requests, re, simplejson as json
+import os, requests, re, simplejson as json, Utils
 from bs4 import BeautifulSoup
 from flask import Blueprint, redirect, url_for
 
@@ -11,6 +11,7 @@ VERSE_CONTENT = 'verse_content'
 CHORUS = 'chorus'
 VERSE = 'verse'
 NAME = 'name'
+VALUE= 'value'
 DATA = 'data'
 
 debug = False
@@ -65,12 +66,8 @@ def get_hymn(hymn_path):
             continue
         for label in labels:
             name = label.text.replace(':','')
-            data = []
-            children = label.findNextSibling().findAll('a')
-            for child in children:
-                value = child.text
-                link = child.get('href')
-                data.append({'value' : value, 'link' : link})
+            data = Utils.extract_links(label.findNextSibling(), VALUE)
+            
             # append meta data to meta_data list if it doesn't exist already
             meta_data_object = get_meta_data_object(name, data)
             if meta_data_object not in meta_data:

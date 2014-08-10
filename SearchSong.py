@@ -1,12 +1,10 @@
-import os, requests, re, simplejson as json, pdb
+import os, requests, re, simplejson as json, Utils
 from bs4 import BeautifulSoup
 from flask import Blueprint
 
 search_song = Blueprint('search_song', __name__)
 
 URL_FORMAT = 'http://www.hymnal.net/en/search/all/all/%s/%d'
-TITLE = 'title'
-PATH = 'path'
 SEARCH_PARAMETER = 'search_parameter'
 PAGE_NUM = 'page_num'
 SEARCH_RESULTS = 'search_results'
@@ -17,17 +15,11 @@ EMPTY_RESULT_ERROR_MESSAGE = 'Did not find any songs matching:\n\"%s\"\nPlease t
 # maximum number of times we can loop, to avoid infinite loops
 MAX_LOOP_COUNT = 100
 
-debug = True
+debug = False
 
 def log(msg):
     if (debug):
         print msg
-
-# clears all children of a particular soup element
-def clear_children(element):
-    children = element.findChildren()
-    for child in children:
-        child.clear()
 
 def is_last_page(soup, current_page):
     
@@ -48,8 +40,6 @@ def is_last_page(soup, current_page):
 
 # extracts search results from a single soup page
 def extract_results_single_page(soup):
-    # list of results to return
-    search_results = []
     
     # finds div element with class as 'list-group'
     list_group = soup.find('div',{'class':'list-group'})
@@ -58,22 +48,8 @@ def extract_results_single_page(soup):
     if list_group is None:
         return []
     
-    # find all link elements of the div
-    search_result_elements = list_group.findAll('a')
-
-    for element in search_result_elements:
-        # clear children to get rid of the annoying
-        # <span class="label label-default">New Tunes</span> elements
-        clear_children(element)
-        
-        # create search_result dictionary
-        search_result = {}
-        search_result[TITLE] = element.getText().strip()
-        search_result[PATH] = element.get('href')
-        
-        # append to results
-        search_results.append(search_result)
-    return search_results
+    # extract all links from the div
+    return Utils.extract_links(list_group)
 
 # fetches the results from a single results page
 def fetch_single_results_page(search_parameter, page_num):
