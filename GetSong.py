@@ -1,6 +1,6 @@
 import os, requests, re, simplejson as json, Utils
 from bs4 import BeautifulSoup
-from flask import Blueprint, redirect, url_for
+from flask import Blueprint
 
 get_song = Blueprint('get_song', __name__)
 
@@ -40,7 +40,7 @@ def create_verse(stanza_num, stanza_content):
 
 @get_song.route('/en/hymn/<path:hymn_path>')
 def get_hymn_full_path(hymn_path):
-    return redirect(url_for('get_song.get_hymn', hymn_path = hymn_path))
+    return get_hymn(hymn_path)
 
 @get_song.route('/hymn/<path:hymn_path>')
 def get_hymn(hymn_path):
