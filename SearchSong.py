@@ -1,4 +1,4 @@
-import os, requests, re, simplejson as json, Utils
+import os, requests, simplejson as json, Utils
 from bs4 import BeautifulSoup
 from flask import Blueprint
 
@@ -72,8 +72,7 @@ def search_hymn_all(search_parameter):
     json_data[SEARCH_PARAMETER] = search_parameter
     
     # start at page 1.
-    # This is here because Hymnal.net returns the results in pages, so to find all
-    # search results, we need to keep track and go through every page
+    # This is here because Hymnal.net returns the results in pages, so to find all search results, we need to keep track and go through every page
     page_num = 1
     
     search_results = []
