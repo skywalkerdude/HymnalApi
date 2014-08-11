@@ -124,3 +124,5 @@ def search_hymn_page(search_parameter, page_num):
         json_data[EMPTY_LIST_MESSAGE] = EMPTY_RESULT_ERROR_MESSAGE % search_parameter
     
     return json.dumps(json_data, sort_keys=False)
+
+#test paths: search/Drink, search/Drink/3, search/Drink/6, search/Christ
