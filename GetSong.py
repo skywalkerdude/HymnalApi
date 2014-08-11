@@ -66,7 +66,7 @@ def get_hymn(hymn_path):
             continue
         for label in labels:
             name = label.text.replace(':','')
-            data = Utils.extract_links(label.findNextSibling(), VALUE)
+            data = Utils.extract_links(label.findNextSibling(), name_key=VALUE)
             
             # append meta data to meta_data list if it doesn't exist already
             meta_data_object = get_meta_data_object(name, data)
@@ -86,7 +86,7 @@ def get_hymn(hymn_path):
         external_response = requests.get(url)
         log('request sent for: %s' % url)
         
-        # BeautifulSoup randomly adds a </table> tag, so we need to use regex to find the table with the lyrics
+        # BeautifulSoup randomly adds a </table> tag in the middle which screws up the scraping, so we need to use regex to find the table with the lyrics
         content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_response.content)[0]
         
         # create BeautifulSoup object out of html content
@@ -107,7 +107,7 @@ def get_hymn(hymn_path):
                 # stanza is finished, so append stanza to lyrics hash
                 if stanza_num != 0:
                     
-                    ## creates a verse object with the stanza num and content
+                    # creates a verse object with the stanza num and content
                     verse = create_verse(stanza_num, stanza_content)
                     
                     # append finished stanza to lyrics hash
