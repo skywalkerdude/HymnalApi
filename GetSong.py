@@ -1,10 +1,12 @@
-import os, requests, re, simplejson as json, Utils
+import os, requests, re, simplejson as json, Utils, Constants
 from bs4 import BeautifulSoup
-from flask import Blueprint
+from flask import Blueprint, request
 
 get_song = Blueprint('get_song', __name__)
 
-URL_FORMAT = 'http://www.hymnal.net/en/hymn/%s'
+GET_SONG_URL_FORMAT = 'http://www.hymnal.net/en/hymn/%s'
+# to create a path like h/1151 or ns/134
+HYMN_PATH_FORMAT = '%s/%d'
 EXTERNAL_LYRICS_TABLE_REGEX = '<table width=500>(.*?)</table>'
 VERSE_TYPE = 'verse_type'
 VERSE_CONTENT = 'verse_content'
@@ -13,6 +15,10 @@ VERSE = 'verse'
 NAME = 'name'
 VALUE= 'value'
 DATA = 'data'
+HYMN_TYPE = 'hymn_type'
+HYMN_NUMBER = 'hymn_number'
+META_DATA = 'meta_data'
+LYRICS = 'lyrics'
 
 debug = False
 
@@ -42,14 +48,34 @@ def create_verse(stanza_num, stanza_content):
 def get_hymn_full_path(hymn_path):
     return get_hymn(hymn_path)
 
-@get_song.route('/hymn/<path:hymn_path>')
-def get_hymn(hymn_path):
+@get_song.route('/hymn')
+def get_hymn():
+    
+    # initialize arguments
+    hymn_type = request.args.get('hymn_type', type=str)
+    hymn_number = request.args.get('hymn_number', type=int)
+    
+    # error checking
+    message = None
+    if hymn_type is None:
+        message = {Constants.PUBLIC : Constants.ERROR_MESSAGE % HYMN_TYPE}
+    elif hymn_number is None:
+        message = {Constants.PUBLIC : Constants.ERROR_MESSAGE % HYMN_NUMBER}
+    
+    # if message is not None, then return 400 with the message
+    if message is not None:
+        message['status_code'] = 400
+        return (json.dumps(message), 400)
+
     # data to be returned as json
     json_data = {}
+
+    # create path
+    path = HYMN_PATH_FORMAT % (hymn_type, hymn_number)
     
     # make http GET request to song path
-    r = requests.get(URL_FORMAT % hymn_path)
-    log('request sent for: %s' % hymn_path)
+    r = requests.get(GET_SONG_URL_FORMAT % path)
+    log('request sent for: %s' % path)
     
     # create BeautifulSoup object out of html content
     soup = BeautifulSoup(r.content)
@@ -61,7 +87,7 @@ def get_hymn(hymn_path):
     meta_data = []
     meta_data_divs = soup.findAll('div',{'class':'row'})
     for div in meta_data_divs:
-        labels = div.find_all("label", {"class":"col-xs-5 col-sm-4 text-right"})
+        labels = div.find_all('label', {'class':'col-xs-5 col-sm-4 text-right'})
         if len(labels) == 0:
             continue
         for label in labels:
@@ -72,7 +98,7 @@ def get_hymn(hymn_path):
             meta_data_object = get_meta_data_object(name, data)
             if meta_data_object not in meta_data:
                 meta_data.append(meta_data_object)
-    json_data['meta_data'] = meta_data
+    json_data[META_DATA] = meta_data
 
     lyrics = []
     raw_lyrics = soup.find('div',{'class':'lyrics'})
@@ -149,7 +175,7 @@ def get_hymn(hymn_path):
             # append finished stanza to lyrics hash
             lyrics.append(verse)
 
-    json_data['lyrics'] = lyrics
+    json_data[LYRICS] = lyrics
 
     return json.dumps(json_data, sort_keys=False)
 

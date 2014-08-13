@@ -1,14 +1,15 @@
-import os, requests, simplejson as json, Utils
+import os, requests, simplejson as json, Utils, Constants
 from bs4 import BeautifulSoup
-from flask import Blueprint
+from flask import Blueprint, request
 
 search_song = Blueprint('search_song', __name__)
 
 URL_FORMAT = 'http://www.hymnal.net/en/search/all/all/%s/%d'
-SEARCH_PARAMETER = 'search_parameter'
-PAGE_NUM = 'page_num'
 SEARCH_RESULTS = 'search_results'
 IS_LAST_PAGE = 'is_last_page'
+
+# for error messages
+SEARCH_PARAMETER = 'search_parameter'
 EMPTY_LIST_MESSAGE = 'empty_list_message'
 EMPTY_RESULT_ERROR_MESSAGE = 'Did not find any songs matching:\n\"%s\"\nPlease try a different request'
 
@@ -63,13 +64,27 @@ def fetch_single_results_page(search_parameter, page_num):
     # extract results from the single page along with whether page_num is the last page
     return (extract_results_single_page(soup), is_last_page(soup, page_num))
 
-@search_song.route('/search/<search_parameter>')
+@search_song.route('/search')
+def search_hymn():
+    
+    # initialize arguments
+    search_parameter = request.args.get('search_parameter', type=str)
+    page_num = request.args.get('page_num', type=int)
+    
+    # error checking
+    if search_parameter is None:
+        message = {Constants.PUBLIC : Constants.ERROR_MESSAGE % SEARCH_PARAMETER}
+        message['status_code'] = 400
+        return (json.dumps(message), 400)
+
+    if page_num is None:
+        return search_hymn_all(search_parameter)
+    else:
+        return search_hymn_page(search_parameter, page_num)
+
 def search_hymn_all(search_parameter):
     # data to be returned as json
     json_data = {}
-    
-    # fill in search parameter
-    json_data[SEARCH_PARAMETER] = search_parameter
     
     # start at page 1.
     # This is here because Hymnal.net returns the results in pages, so to find all search results, we need to keep track and go through every page
@@ -102,16 +117,9 @@ def search_hymn_all(search_parameter):
 
     return json.dumps(json_data, sort_keys=False)
 
-@search_song.route('/search/<search_parameter>/<int:page_num>')
 def search_hymn_page(search_parameter, page_num):
     # data to be returned as json
     json_data = {}
-    
-    # fill in search parameter
-    json_data[SEARCH_PARAMETER] = search_parameter
-    
-    # fill in page number parameter
-    json_data[PAGE_NUM] = page_num
     
     # extract results from the single page and whether or not it's the last page
     search_results, is_last_page = fetch_single_results_page(search_parameter, page_num)

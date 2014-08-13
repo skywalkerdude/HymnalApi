@@ -1,4 +1,4 @@
-import os, requests, simplejson as json, Utils, SearchSong
+import os, requests, simplejson as json, Utils, SearchSong, Constants
 from bs4 import BeautifulSoup
 from flask import Blueprint, request
 
@@ -9,14 +9,15 @@ SONG_INDEX_PATH_FORMAT = 'en/song-index/%s/%d'
 SONG_INDEX_LETTER_PATH_FORMAT = 'en/song-index/%s/%s/%d'
 SCRIPTURE_PATH_FORMAT = 'en/scripture-songs/%s'
 SONG_CATEGORIES_PATH_FORMAT = 'en/song-categories/%s'
-SONG_TYPE = 'song_type'
 
-# constants for get_list
+# error message constants
+SONG_TYPE = 'song_type'
 SEARCH_LETTER = 'letter'
-LETTERS = 'letters'
 PAGE_NUM = 'page_num'
 RESULTS = 'results'
-IS_LAST_PAGE = 'is_last_page'
+
+# constants for get_list
+LETTERS = 'letters'
 
 # constants for get_list_scripture
 TESTAMENT = 'testament'
@@ -25,14 +26,10 @@ LINK = 'link'
 VERSE_REF = 'verse_ref'
 SONGS = 'songs'
 BOOK_CONTENT = 'book_content'
-BOOK = 'book'
+BOOK = 'books'
 
 # Constants for get_index_buttons
 BUTTONS = 'buttons'
-
-# Error Messages
-PUBLIC = 'public'
-ERROR_MESSAGE = 'Request is missing argument: %s'
 
 debug = False
 
@@ -53,6 +50,7 @@ def extract_letters_list(soup):
 # args: song_type, letter, page_num, testament
 def get_list():
     
+    # initialize arguments
     song_type = request.args.get('song_type', type=str)
     letter = request.args.get('letter', type=str)
     page_num = request.args.get('page_num', type=int)
@@ -61,13 +59,13 @@ def get_list():
     # error checking
     message = None
     if song_type is None:
-        message = {PUBLIC : ERROR_MESSAGE % SONG_TYPE}
+        message = {Constants.PUBLIC : Constants.ERROR_MESSAGE % SONG_TYPE}
     elif (song_type == 'h' or song_type =='ns') and letter is None:
-        message = {PUBLIC : ERROR_MESSAGE % SEARCH_LETTER}
+        message = {Constants.PUBLIC : Constants.ERROR_MESSAGE % SEARCH_LETTER}
     elif song_type != 'scripture' and page_num is None:
-        message = {PUBLIC : ERROR_MESSAGE % PAGE_NUM}
+        message = {Constants.PUBLIC : Constants.ERROR_MESSAGE % PAGE_NUM}
     elif song_type == 'scripture' and testament is None:
-        message = {PUBLIC: ERROR_MESSAGE % TESTAMENT}
+        message = {Constants.PUBLIC: Constants.ERROR_MESSAGE % TESTAMENT}
 
     # if message is not None, then return 400 with the message
     if message is not None:
@@ -80,11 +78,7 @@ def get_list():
     
     # data to be returned as json
     json_data = {}
-    
-    # fill in song type and page_num
-    json_data[SONG_TYPE] = song_type
-    json_data[PAGE_NUM] = page_num
-    
+
     if song_type == 'nt' or song_type == 'c':
         # New Tunes and Children's songs aren't listed by letter, so create path without the letter
         path = SONG_INDEX_PATH_FORMAT % (song_type, page_num)
@@ -94,9 +88,6 @@ def get_list():
         
         # create url
         path = SONG_INDEX_LETTER_PATH_FORMAT % (song_type, letter, page_num)
-        
-        # fill in song letter
-        json_data[SEARCH_LETTER] = letter
 
 
     # make http GET request
@@ -111,7 +102,7 @@ def get_list():
     is_last_page = SearchSong.is_last_page(soup, page_num)
 
     json_data[RESULTS] = results
-    json_data[IS_LAST_PAGE] = is_last_page
+    json_data[SearchSong.IS_LAST_PAGE] = is_last_page
 
     if letter is not None:
         json_data[LETTERS] = extract_letters_list(soup)
@@ -200,9 +191,6 @@ def get_list_scripture(testament):
 def get_index_buttons(song_type):
     # data to be returned as json
     json_data = {}
-    
-    # fill in song type
-    json_data[SONG_TYPE] = song_type
     
     # create path
     path = SONG_CATEGORIES_PATH_FORMAT % song_type
