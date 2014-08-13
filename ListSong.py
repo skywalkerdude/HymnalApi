@@ -1,6 +1,6 @@
 import os, requests, simplejson as json, Utils, SearchSong
 from bs4 import BeautifulSoup
-from flask import Blueprint
+from flask import Blueprint, request
 
 list_song = Blueprint('list_song', __name__)
 
@@ -14,6 +14,7 @@ SONG_TYPE = 'song_type'
 # constants for get_list
 SEARCH_LETTER = 'letter'
 LETTERS = 'letters'
+PAGE_NUM = 'page_num'
 RESULTS = 'results'
 IS_LAST_PAGE = 'is_last_page'
 
@@ -28,6 +29,10 @@ BOOK = 'book'
 
 # Constants for get_index_buttons
 BUTTONS = 'buttons'
+
+# Error Messages
+PUBLIC = 'public'
+ERROR_MESSAGE = 'Request is missing argument: %s'
 
 debug = False
 
@@ -44,21 +49,44 @@ def extract_letters_list(soup):
     else:
         return Utils.extract_links(letters_div)
 
-@list_song.route('/list/<song_type>/<int:page_num>')
-def get_list_no_letter(song_type, page_num):
-    return get_list(song_type, None, page_num)
+@list_song.route('/list')
+# args: song_type, letter, page_num, testament
+def get_list():
+    
+    song_type = request.args.get('song_type', type=str)
+    letter = request.args.get('letter', type=str)
+    page_num = request.args.get('page_num', type=int)
+    testament = request.args.get('testament', type=str)
+    
+    # error checking
+    message = None
+    if song_type is None:
+        message = {PUBLIC : ERROR_MESSAGE % SONG_TYPE}
+    elif (song_type == 'h' or song_type =='ns') and letter is None:
+        message = {PUBLIC : ERROR_MESSAGE % SEARCH_LETTER}
+    elif song_type != 'scripture' and page_num is None:
+        message = {PUBLIC : ERROR_MESSAGE % PAGE_NUM}
+    elif song_type == 'scripture' and testament is None:
+        message = {PUBLIC: ERROR_MESSAGE % TESTAMENT}
 
-@list_song.route('/list/<song_type>/<letter>/<int:page_num>')
-def get_list(song_type, letter, page_num):
+    # if message is not None, then return 400 with the message
+    if message is not None:
+        message['status_code'] = 400
+        return (json.dumps(message), 400)
+    
+    # if song_type is scripture, we have to handle it a little bit differently
+    if (song_type == 'scripture'):
+        return get_list_scripture(testament)
     
     # data to be returned as json
     json_data = {}
     
-    # fill in song type
+    # fill in song type and page_num
     json_data[SONG_TYPE] = song_type
+    json_data[PAGE_NUM] = page_num
     
-    if letter is None:
-        # create path
+    if song_type == 'nt' or song_type == 'c':
+        # New Tunes and Children's songs aren't listed by letter, so create path without the letter
         path = SONG_INDEX_PATH_FORMAT % (song_type, page_num)
     else:
         # make letter uppercase if it isn't already
@@ -90,7 +118,6 @@ def get_list(song_type, letter, page_num):
 
     return json.dumps(json_data, sort_keys=False)
 
-@list_song.route('/list/scripture/<testament>')
 def get_list_scripture(testament):
     # data to be returned as json
     json_data = {}
