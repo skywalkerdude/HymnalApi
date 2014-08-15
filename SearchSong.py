@@ -5,8 +5,6 @@ from flask import Blueprint, request
 search_song = Blueprint('search_song', __name__)
 
 URL_FORMAT = 'http://www.hymnal.net/en/search/all/all/%s/%d'
-SEARCH_RESULTS = 'search_results'
-IS_LAST_PAGE = 'is_last_page'
 
 # for error messages
 SEARCH_PARAMETER = 'search_parameter'
@@ -22,36 +20,6 @@ def log(msg):
     if (debug):
         print msg
 
-def is_last_page(soup, current_page):
-    
-    pages = soup.find('ul', {'class':'pagination'})
-    
-    # if pages is None, return True
-    if not pages:
-        return True
-    
-    for string in pages.stripped_strings:
-        try:
-            num = int(string)
-            if num > current_page:
-                return False
-        except ValueError:
-            continue
-    return True
-
-# extracts search results from a single soup page
-def extract_results_single_page(soup):
-    
-    # finds div element with class as 'list-group'
-    list_group = soup.find('div',{'class':'list-group'})
-    
-    # if there is no 'list-group' class, then return empty list
-    if list_group is None:
-        return []
-    
-    # extract all links from the div
-    return Utils.extract_links(list_group)
-
 # fetches the results from a single results page
 def fetch_single_results_page(search_parameter, page_num):
     # make http GET request to search page
@@ -62,7 +30,7 @@ def fetch_single_results_page(search_parameter, page_num):
     soup = BeautifulSoup(r.content)
 
     # extract results from the single page along with whether page_num is the last page
-    return (extract_results_single_page(soup), is_last_page(soup, page_num))
+    return (Utils.extract_results_single_page(soup), Utils.is_last_page(soup, page_num))
 
 @search_song.route('/search')
 def search_hymn():
@@ -109,7 +77,7 @@ def search_hymn_all(search_parameter):
         # append results to search_results list
         search_results.extend(page_results)
 
-    json_data[SEARCH_RESULTS] = search_results
+    json_data[Constants.RESULTS] = search_results
     
     # search results is empty return bad search parameter message
     if len(search_results) == 0:
@@ -124,8 +92,8 @@ def search_hymn_page(search_parameter, page_num):
     # extract results from the single page and whether or not it's the last page
     search_results, is_last_page = fetch_single_results_page(search_parameter, page_num)
     
-    json_data[SEARCH_RESULTS] = search_results
-    json_data[IS_LAST_PAGE] = is_last_page
+    json_data[Constants.RESULTS] = search_results
+    json_data[Constants.IS_LAST_PAGE] = is_last_page
     
     # search results is empty return bad search parameter message
     if len(search_results) == 0:

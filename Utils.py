@@ -28,3 +28,33 @@ def extract_links(container, name_key = NAME, path_key=PATH, should_clear_childr
         search_results.append(search_result)
 
     return search_results
+
+def is_last_page(soup, current_page):
+    
+    pages = soup.find('ul', {'class':'pagination'})
+    
+    # if pages is None, return True
+    if not pages:
+        return True
+    
+    for string in pages.stripped_strings:
+        try:
+            num = int(string)
+            if num > current_page:
+                return False
+        except ValueError:
+            continue
+    return True
+
+# extracts search results from a single soup page
+def extract_results_single_page(soup):
+    
+    # finds div element with class as 'list-group'
+    list_group = soup.find('div',{'class':'list-group'})
+    
+    # if there is no 'list-group' class, then return empty list
+    if list_group is None:
+        return []
+    
+    # extract all links from the div
+    return extract_links(list_group)

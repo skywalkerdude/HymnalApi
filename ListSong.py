@@ -1,4 +1,4 @@
-import os, requests, simplejson as json, Utils, SearchSong, Constants
+import os, requests, simplejson as json, Utils, Constants
 from bs4 import BeautifulSoup
 from flask import Blueprint, request
 
@@ -14,7 +14,6 @@ SONG_CATEGORIES_PATH_FORMAT = 'en/song-categories/%s'
 SONG_TYPE = 'song_type'
 SEARCH_LETTER = 'letter'
 PAGE_NUM = 'page_num'
-RESULTS = 'results'
 
 # constants for get_list
 LETTERS = 'letters'
@@ -97,12 +96,12 @@ def get_list():
     # create BeautifulSoup object out of html content
     soup = BeautifulSoup(r.content)
 
-    # extract results and is_last_page using SearchSong's functions
-    results = SearchSong.extract_results_single_page(soup)
-    is_last_page = SearchSong.is_last_page(soup, page_num)
+    # extract results and is_last_page
+    results = Utils.extract_results_single_page(soup)
+    is_last_page = Utils.is_last_page(soup, page_num)
 
-    json_data[RESULTS] = results
-    json_data[SearchSong.IS_LAST_PAGE] = is_last_page
+    json_data[Constants.RESULTS] = results
+    json_data[Constants.IS_LAST_PAGE] = is_last_page
 
     if letter is not None:
         json_data[LETTERS] = extract_letters_list(soup)
