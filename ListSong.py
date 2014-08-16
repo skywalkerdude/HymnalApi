@@ -22,7 +22,7 @@ BOOK_NAME = 'book_name'
 LINK = 'link'
 VERSE_REF = 'verse_ref'
 SONGS = 'songs'
-BOOK_CONTENT = 'book_content'
+BOOK_CONTENT = 'book_contents'
 BOOKS = 'books'
 
 # Constants for get_index_buttons
