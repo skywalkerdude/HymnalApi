@@ -14,9 +14,7 @@ SONG_CATEGORIES_PATH_FORMAT = 'en/song-categories/%s'
 SONG_TYPE = 'song_type'
 SEARCH_LETTER = 'letter'
 PAGE_NUM = 'page_num'
-
-# constants for get_list
-LETTERS = 'letters'
+EMPTY_RESULT_ERROR_MESSAGE = 'Unfortunately, there are no songs in that category. Please try again'
 
 # constants for get_list_scripture
 TESTAMENT = 'testament'
@@ -35,15 +33,6 @@ debug = False
 def log(msg):
     if (debug):
         print msg
-
-# extract a list of letters that are in this soup
-def extract_letters_list(soup):
-    # finds div element with class as 'letters'
-    letters_div = soup.find('div',{'class':'letters'})
-    if letters_div is None:
-        return None
-    else:
-        return Utils.extract_links(letters_div)
 
 @list_song.route('/list')
 # args: song_type, letter, page_num, testament
@@ -100,11 +89,11 @@ def get_list():
     results = Utils.extract_results_single_page(soup)
     is_last_page = Utils.is_last_page(soup, page_num)
 
+    if len(results) == 0:
+        json_data[Constants.EMPTY_LIST_MESSAGE] = EMPTY_RESULT_ERROR_MESSAGE
+
     json_data[Constants.RESULTS] = results
     json_data[Constants.IS_LAST_PAGE] = is_last_page
-
-    if letter is not None:
-        json_data[LETTERS] = extract_letters_list(soup)
 
     return json.dumps(json_data, sort_keys=False)
 
