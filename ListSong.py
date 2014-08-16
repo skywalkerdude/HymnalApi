@@ -14,7 +14,7 @@ SONG_CATEGORIES_PATH_FORMAT = 'en/song-categories/%s'
 SONG_TYPE = 'song_type'
 SEARCH_LETTER = 'letter'
 PAGE_NUM = 'page_num'
-EMPTY_RESULT_ERROR_MESSAGE = 'Unfortunately, there are no songs in that category. Please try again'
+EMPTY_RESULT_ERROR_MESSAGE = 'Unfortunately, there are no songs in this category. Please try again'
 
 # constants for get_list_scripture
 TESTAMENT = 'testament'
