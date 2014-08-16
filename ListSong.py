@@ -44,6 +44,10 @@ def get_list():
     page_num = request.args.get('page_num', type=int)
     testament = request.args.get('testament', type=str)
     
+    # make song_type lower case if it isn't None
+    if song_type is not None:
+        song_type = song_type.lower()
+    
     # error checking
     message = None
     if song_type is None:
@@ -59,9 +63,6 @@ def get_list():
     if message is not None:
         message['status_code'] = 400
         return (json.dumps(message), 400)
-
-    # make song_type lower case if it isn't already
-    song_type = song_type.lower()
     
     # if song_type is scripture, we have to handle it a little bit differently
     if (song_type == 'scripture'):
