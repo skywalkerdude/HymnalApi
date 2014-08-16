@@ -59,6 +59,9 @@ def get_list():
     if message is not None:
         message['status_code'] = 400
         return (json.dumps(message), 400)
+
+    # make song_type lower case if it isn't already
+    song_type = song_type.lower()
     
     # if song_type is scripture, we have to handle it a little bit differently
     if (song_type == 'scripture'):
@@ -98,6 +101,9 @@ def get_list():
     return json.dumps(json_data, sort_keys=False)
 
 def get_list_scripture(testament):
+    # make testament lower case if it isn't already
+    testament = testament.lower()
+    
     # data to be returned as json
     json_data = {}
     
