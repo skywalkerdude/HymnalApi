@@ -23,7 +23,7 @@ LINK = 'link'
 VERSE_REF = 'verse_ref'
 SONGS = 'songs'
 BOOK_CONTENT = 'book_content'
-BOOK = 'books'
+BOOKS = 'books'
 
 # Constants for get_index_buttons
 BUTTONS = 'buttons'
@@ -107,9 +107,6 @@ def get_list_scripture(testament):
     # data to be returned as json
     json_data = {}
     
-    # fill in testament
-    json_data[TESTAMENT] = testament
-    
     # hymnal.net path to list of scripture songs
     path = SCRIPTURE_PATH_FORMAT % testament
 
@@ -177,7 +174,7 @@ def get_list_scripture(testament):
         book[BOOK_CONTENT] = book_content
         books.append(book)
     
-    json_data[BOOK] = books
+    json_data[BOOKS] = books
     
     return json.dumps(json_data, sort_keys=False)
 
