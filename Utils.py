@@ -9,7 +9,7 @@ def clear_children(element):
 
 # extracts all links out of a container into a dictionary
 def extract_links(container, name_key = NAME, path_key=PATH, should_clear_children=True):
-     # find all link elements of the div
+    # find all link elements of the div
     elements = container.findAll('a')
     
     # list of results to return
