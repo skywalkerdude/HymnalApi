@@ -80,7 +80,7 @@ class FlaskrTestCase(unittest.TestCase):
         rv = self.app.get('hymn?hymn_type={}&hymn_number={}'.format(hymn_type, hymn_number))
         actual_result = json.loads(rv.data)
         # open saved test data
-        expected_result = json.loads(open('test_data/{}_{}.txt'.format(hymn_type, hymn_number), 'r').read())
+        expected_result = json.loads(open('test_data/get_song_{}_{}.txt'.format(hymn_type, hymn_number), 'r').read())
         # assert that components are equal
         assert_equal(expected_result['title'], actual_result['title'])
         check_meta_data(expected_result['meta_data'], actual_result['meta_data'])
