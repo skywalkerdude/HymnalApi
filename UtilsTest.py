@@ -1,6 +1,6 @@
-import unittest, pdb, Utils
+import unittest, Utils
 from bs4 import BeautifulSoup, element
-from mock import PropertyMock, patch, create_autospec, call
+from mock import create_autospec, call
 
 import os, requests, re, simplejson as json
 
