@@ -1,3 +1,7 @@
+import sys
+# append src to path so it can find the source code
+sys.path.append('..')
+
 import glob
 import unittest
 

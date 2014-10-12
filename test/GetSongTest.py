@@ -1,4 +1,4 @@
-import hymnalnetapi, unittest, GetSong, flask, json, pdb
+import hymnalnetapi, unittest, GetSong, flask, json
 from mock import create_autospec
 from nose.tools import assert_equal
 
