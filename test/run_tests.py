@@ -1,5 +1,6 @@
 import sys
 # append src to path so it can find the source code
+# http://stackoverflow.com/questions/4383571/importing-files-from-different-folder-in-python
 sys.path.append('..')
 
 import glob
