@@ -44,10 +44,6 @@ def create_verse(stanza_num, stanza_content):
     verse[VERSE_CONTENT] = stanza_content
     return verse
 
-@get_song.route('/en/hymn/<path:hymn_path>')
-def get_hymn_full_path(hymn_path):
-    return get_hymn(hymn_path)
-
 @get_song.route('/hymn')
 def get_hymn():
     
@@ -85,9 +81,14 @@ def get_hymn():
     
     # extract meta data (Category, Subcategory, etc)
     meta_data = []
-    meta_data_divs = soup.findAll('div',{'class':'row'})
+    # meta data contained in side bar
+    sidebar = soup.find('div',{'class':'sidebar'})
+    # info is in divs with common-panel
+    meta_data_divs = sidebar.findChildren('div',{'class':'common-panel'})
     for div in meta_data_divs:
-        labels = div.find_all('label', {'class':'col-xs-5 col-sm-4 text-right'})
+        # search by CSS class
+        # http://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
+        labels = div.find_all('label', class_= 'col-xs-5')
         if len(labels) == 0:
             continue
         for label in labels:
@@ -178,5 +179,3 @@ def get_hymn():
     json_data[LYRICS] = lyrics
 
     return json.dumps(json_data, sort_keys=False)
-
-#test paths: hymn/h/1151, hymn/ns/157, hymn/h/1197, hymn/h/17
