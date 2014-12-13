@@ -15,7 +15,6 @@ class FlaskrTestCase(unittest.TestCase):
 
     def test_blank_call(self):
         # https://blog.safaribooksonline.com/2013/12/05/flask-with-mock-and-nose/
-        
         rv = self.app.get('/')
         assert_equal(rv.status_code, 200)
         assert 'Welcome to my API' in rv.data
