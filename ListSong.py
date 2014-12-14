@@ -5,15 +5,14 @@ from flask import Blueprint, request
 list_song = Blueprint('list_song', __name__)
 
 URL_FORMAT = 'http://www.hymnal.net/%s'
-SONG_INDEX_PATH_FORMAT = 'en/song-index/%s/%d'
-SONG_INDEX_LETTER_PATH_FORMAT = 'en/song-index/%s/%s/%d'
+SONG_INDEX_PATH_FORMAT = 'en/song-index/%s'
+SONG_INDEX_LETTER_PATH_FORMAT = 'en/song-index/%s/%s'
 SCRIPTURE_PATH_FORMAT = 'en/scripture-songs/%s'
 SONG_CATEGORIES_PATH_FORMAT = 'en/song-categories/%s'
 
 # error message constants
 SONG_TYPE = 'song_type'
 SEARCH_LETTER = 'letter'
-PAGE_NUM = 'page_num'
 EMPTY_RESULT_ERROR_MESSAGE = 'Unfortunately, there are no songs in this category. Please try again.'
 
 # constants for get_list_scripture
@@ -35,13 +34,12 @@ def log(msg):
         print msg
 
 @list_song.route('/list')
-# args: song_type, letter, page_num, testament
+# args: song_type, letter, testament
 def get_list():
     
     # initialize arguments
     song_type = request.args.get('song_type', type=str)
     letter = request.args.get('letter', type=str)
-    page_num = request.args.get('page_num', type=int)
     testament = request.args.get('testament', type=str)
     
     # make song_type lower case if it isn't None
@@ -54,8 +52,6 @@ def get_list():
         message = {Constants.PUBLIC : Constants.ERROR_MESSAGE % SONG_TYPE}
     elif (song_type == 'h' or song_type =='ns') and letter is None:
         message = {Constants.PUBLIC : Constants.ERROR_MESSAGE % SEARCH_LETTER}
-    elif song_type != 'scripture' and page_num is None:
-        message = {Constants.PUBLIC : Constants.ERROR_MESSAGE % PAGE_NUM}
     elif song_type == 'scripture' and testament is None:
         message = {Constants.PUBLIC: Constants.ERROR_MESSAGE % TESTAMENT}
 
@@ -73,13 +69,13 @@ def get_list():
 
     if song_type == 'nt' or song_type == 'c':
         # New Tunes and Children's songs aren't listed by letter, so create path without the letter
-        path = SONG_INDEX_PATH_FORMAT % (song_type, page_num)
+        path = SONG_INDEX_PATH_FORMAT % song_type
     else:
         # make letter uppercase if it isn't already
         letter = letter.upper()
         
         # create url
-        path = SONG_INDEX_LETTER_PATH_FORMAT % (song_type, letter, page_num)
+        path = SONG_INDEX_LETTER_PATH_FORMAT % (song_type, letter)
 
 
     # make http GET request
@@ -89,15 +85,12 @@ def get_list():
     # create BeautifulSoup object out of html content
     soup = BeautifulSoup(r.content)
 
-    # extract results and is_last_page
+    # extract results
     results = Utils.extract_results_single_page(soup)
-    is_last_page = Utils.is_last_page(soup, page_num)
 
     if len(results) == 0:
         json_data[Constants.EMPTY_LIST_MESSAGE] = EMPTY_RESULT_ERROR_MESSAGE
-
     json_data[Constants.RESULTS] = results
-    json_data[Constants.IS_LAST_PAGE] = is_last_page
 
     return json.dumps(json_data, sort_keys=False)
 
