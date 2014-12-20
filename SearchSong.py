@@ -92,7 +92,7 @@ def search_hymn_page(search_parameter, page_num):
     search_results, is_last_page = fetch_single_results_page(search_parameter, page_num)
     
     json_data[Constants.RESULTS] = search_results
-    json_data[Constants.IS_LAST_PAGE] = is_last_page
+    json_data[Constants.HAS_MORE_PAGES] = not is_last_page
     
     # search results is empty return bad search parameter message
     if len(search_results) == 0:

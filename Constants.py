@@ -3,7 +3,7 @@ PUBLIC = 'public'
 ERROR_MESSAGE = 'Request is missing argument: %s'
 
 # for SearchSong
-IS_LAST_PAGE = 'is_last_page'
+HAS_MORE_PAGES = 'has_more_pages'
 
 # for SearchSong and ListSong
 RESULTS = 'results'
