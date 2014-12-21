@@ -77,10 +77,9 @@ def get_list():
         # create url
         path = SONG_INDEX_LETTER_PATH_FORMAT % (song_type, letter)
 
-
     # make http GET request
     r = requests.get(URL_FORMAT % path)
-    log('index buttons request sent for: %s' % path)
+    log('request made for: %s' % path)
 
     # create BeautifulSoup object out of html content
     soup = BeautifulSoup(r.content)
@@ -106,7 +105,7 @@ def get_list_scripture(testament):
 
     # make http GET request
     r = requests.get(URL_FORMAT % path)
-    log('index buttons request sent for: %s' % path)
+    log('request sent for: %s' % path)
 
     # create BeautifulSoup object out of html content
     soup = BeautifulSoup(r.content)

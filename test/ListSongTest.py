@@ -1,5 +1,5 @@
 import hymnalnetapi, unittest, ListSong, flask, json
-from mock import create_autospec
+from mock import create_autospec, patch, Mock
 from nose.tools import assert_equal
 
 class FlaskrTestCase(unittest.TestCase):
@@ -7,6 +7,8 @@ class FlaskrTestCase(unittest.TestCase):
     def setUp(self):
         hymnalnetapi.app.config['TESTING'] = True
         self.app = hymnalnetapi.app.test_client()
+        self.app.url_mapping = self.build_url_mapping()
+        self.app.html_mapping = self.build_html_mapping()
     
     def test_request_data(self):
         with hymnalnetapi.app.test_request_context('/list?song_type=lb&letter=g&testament=ot'):
@@ -37,7 +39,7 @@ class FlaskrTestCase(unittest.TestCase):
 
     # test listing new tunes
     def test_list_nt(self):
-        self.assert_new_tune
+        self.assert_new_tune()
     
     # test listing scripture songs
     def test_list_scripture(self):
@@ -45,16 +47,32 @@ class FlaskrTestCase(unittest.TestCase):
         self.assert_scripture_song('nt')
 
     def assert_classical_hymn(self, letter):
-        self.assert_list_results(song_type='h', letter=letter)
+        song_type = 'h'
+        self.assert_mock_list_results(self.app.url_mapping[(song_type, letter)], song_type=song_type, letter=letter)
+        self.assert_list_results(song_type=song_type, letter=letter)
     
     def assert_new_song(self, letter):
-        self.assert_list_results(song_type='ns', letter=letter)
+        song_type='ns'
+        self.assert_mock_list_results(self.app.url_mapping[(song_type, letter)], song_type=song_type, letter=letter)
+        self.assert_list_results(song_type=song_type, letter=letter)
 
     def assert_new_tune(self):
-        self.assert_list_results(song_type='nt')
+        song_type='nt'
+        self.assert_mock_list_results(self.app.url_mapping[song_type], song_type=song_type)
+        self.assert_list_results(song_type=song_type)
     
     def assert_scripture_song(self, testament):
-        self.assert_list_results(song_type='scripture', testament=testament)
+        song_type='scripture'
+        self.assert_mock_list_results(self.app.url_mapping[(song_type, testament)], song_type=song_type, testament=testament)
+        self.assert_list_results(song_type=song_type, testament=testament)
+    
+    def assert_mock_list_results(self, url, song_type, letter = None, testament = None):
+        mock_response = Mock()
+        mock_response.content = open(self.app.html_mapping[url], 'r').read()
+        patcher = patch('requests.get', Mock(side_effect = lambda k: {url: mock_response}.get(k, 'unhandled request %s' % k)))
+        patcher.start()
+        self.assert_list_results(song_type, letter, testament)
+        patcher.stop()
 
     def assert_list_results(self, song_type, letter = None, testament = None):
         if song_type == 'h' or song_type == 'ns':
@@ -79,6 +97,24 @@ class FlaskrTestCase(unittest.TestCase):
             expected_result = json.loads(open('test_data/list_song_{}_{}.txt'.format(song_type, testament), 'r').read())
 
         assert_equal(actual_result, expected_result)
+
+    def build_url_mapping(self):
+        return {
+            ('h', 'g'): 'http://www.hymnal.net/en/song-index/h/G',
+            ('ns', 'g'): 'http://www.hymnal.net/en/song-index/ns/G',
+            'nt': 'http://www.hymnal.net/en/song-index/nt',
+            ('scripture', 'ot') : 'http://www.hymnal.net/en/scripture-songs/ot',
+            ('scripture', 'nt') : 'http://www.hymnal.net/en/scripture-songs/nt'
+        }
+
+    def build_html_mapping(self):
+        return {
+            'http://www.hymnal.net/en/song-index/h/G': 'test_data/list_song_html_h_g.txt',
+            'http://www.hymnal.net/en/song-index/ns/G': 'test_data/list_song_html_ns_g.txt',
+            'http://www.hymnal.net/en/song-index/nt': 'test_data/list_song_html_nt.txt',
+            'http://www.hymnal.net/en/scripture-songs/ot': 'test_data/list_song_html_scripture_ot.txt',
+            'http://www.hymnal.net/en/scripture-songs/nt': 'test_data/list_song_html_scripture_nt.txt'
+    }
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Classic Hymns</title>
+    <link rel="alternate" type="application/rss+xml" title="hymnal.net RSS Feed" href="/feed.rss"/>
+    <meta name="description"
+          content="Classic Christian hymns}"/>
+    <meta name="keywords" content="midi, mp3, hymnal, hymns, songs, Christian, music, videos, spiritual, bible, christ, jesus, god"/>
+            <link rel="canonical" href="https://www.hymnal.net/en/song-index/h/G?"/>
+        <meta property="og:url" content="https://www.hymnal.net/en/song-index/h/G?"/>
+        <meta property="og:title" content="Classic Hymns"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:description"
+          content="Classic Christian hymns"/>
+    <meta property="og:image" content="https://www.hymnal.net/images/favicon-196x196.png"/>
+    <meta property="fb:app_id" content="1450015931921030"/>
+
+    
+        
+
+    
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/custom.min.css" rel="stylesheet"/>
+
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="/images/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="/images/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#5c9afd">
+    <meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
+    
+
+    
+    
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-1151646-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+    
+    
+
+    
+    
+        <script type="text/javascript">
+            var Tynt=Tynt||[];Tynt.push('cDwqiW238r45xhacwqm_6r');
+            (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='//tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})();
+        </script>
+    
+</head>
+<body class="song-index">
+<div class="device-xs visible-xs"></div>
+<div class="device-sm visible-sm"></div>
+<div class="device-md visible-md"></div>
+<div class="device-lg visible-lg"></div>
+<div class="container">
+<div class="row header">
+    <div class="col-xs-5 col-md-6 logo">
+        <a href="/en/home">
+            <img class="img-responsive" src="/images/logo.png"
+                 alt="hymnal.net" width="138" height="40"/>
+        </a>
+    </div>
+    
+    <div class="col-xs-7 col-md-6 text-right">
+        <div class="header-content">
+                            <div class="profile-links btn-group">
+                    <button type="button" class="btn btn-default profile-button dropdown-toggle"
+                            data-toggle="dropdown">
+                        <i class="fa fa-user fa-fw"></i>
+                        <span class="hidden-xs">Login/Sign Up</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu pull-left" role="menu">
+                        <li>
+                            <a href="/en/login">Login</a>
+                        </li>
+                        <li>
+                            <a href="/en/register">Sign up</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            
+            <div class="social-links btn-group">
+                <button type="button" class="hidden-sm hidden-md hidden-lg btn btn-default dropdown-toggle"
+                        data-toggle="dropdown">
+                    <i class="fa fa-share"></i> <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu pull-left" role="menu">
+                    <li class="hidden-xs follow-us">
+                        Follow us:
+                    </li>
+                    <li>
+                        <a href="http://facebook.com/www.hymnal.net" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                  <i class="fa fa-circle color-white fa-stack-2x fa-stack-2-1x"></i>
+                                  <i class="fa fa-circle fa-facebook-color fa-stack-2x stacked-line-height"></i>
+                                  <i class="fa fa-facebook fa-stack-1x fa-inverse stacked-line-height-2"></i>
+                                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://twitter.com/hymnalnet" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                  <i class="fa fa-circle color-white fa-stack-2x fa-stack-2-1x"></i>
+                                  <i class="fa fa-circle fa-twitter-color fa-stack-2x stacked-line-height"></i>
+                                  <i class="fa fa-twitter fa-stack-1x fa-inverse stacked-line-height-2"></i>
+                                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/feed.rss" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                  <i class="fa fa-circle color-white fa-stack-2x fa-stack-2-1x"></i>
+                                  <i class="fa fa-circle fa-rss-color fa-stack-2x stacked-line-height"></i>
+                                  <i class="fa fa-rss fa-stack-1x fa-inverse stacked-line-height-2"></i>
+                                </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+
+<div class="row menu">
+    <div class="col-xs-12">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="visible-xs col-xs-9">
+                        <form class="search-form" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" maxlength="80"
+                                       placeholder="Search" name="s"/>
+
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+                
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="/en/home"><span class="glyphicon glyphicon-home"></span></a>
+                        </li>
+                        <li class="active">
+                            <a href="/en/song-categories/h">Classic</a>
+                        </li>
+                        <li>
+                            <a href="/en/song-categories/nt">New Tunes</a>
+                        </li>
+                        <li>
+                            <a href="/en/song-categories/ns">New Songs</a>
+                        </li>
+                        <li>
+                            <a href="/en/song-categories/c">Children</a>
+                        </li>
+                        <li>
+                            <a href="/en/scripture-songs/nt">Scripture</a>
+                        </li>
+                        <li class="js-more-dropdown dropdown">
+                            <a href="#" class="dropdown-toggle"
+                               data-toggle="dropdown">More
+                                <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="visible-sm col-sm-12 more-search">
+                                    <form class="search-form" role="search">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" maxlength="80"
+                                                   placeholder="Search" name="s"/>
+
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-default" type="submit">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </li>
+                                <li>
+                                    <a href="/en/recently-commented-songs">Recently Commented Songs</a>
+                                </li>
+                                <li>
+                                    <a href="/en/faq">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="/en/links">Links</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="hidden-xs hidden-sm col-md-3 pull-right">
+                        <form class="search-form" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" maxlength="80"
+                                       placeholder="Search" name="s"/>
+
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </nav>
+    </div>
+    
+    <!--[if lt IE 9]>
+    <div class="col-xs-12">
+        <div class="alert alert-warning">
+            You are using an older, unsupported browser. Please upgrade to the latest version of <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://www.apple.com/safari/" target="_blank">Safari</a>, <a href="http://www.mozilla.com/firefox/" target="_blank">Firefox</a>, or <a href="http://www.microsoft.com/windows/products/winfamily/ie/default.mspx" target="_blank">Internet Explorer</a> to access this site.
+        </div>
+    </div>
+    
+    <![endif]-->
+</div>
+
+
+
+<div class="row row-lg-height main-content">
+    <div class="col-md-8 col-lg-height common-panel">
+        <h1>Classic Hymns</h1>
+
+                    <div class="index-buttons">
+                <div class="btn-group">
+                                            <a class="btn btn-default"
+                           href="/en/song-categories/h">
+                            Categories
+                        </a>
+                                            <a class="btn btn-default active"
+                           href="/en/song-index/h">
+                            First Lines
+                        </a>
+                                            <a class="btn btn-default"
+                           href="/en/song-meters/h">
+                            Meters
+                        </a>
+                                            <a class="btn btn-default"
+                           href="/en/song-keys/h">
+                            Key
+                        </a>
+                                            <a class="btn btn-default"
+                           href="/en/song-times/h">
+                            Time
+                        </a>
+                                    </div>
+            </div>
+            <div class="results">
+                    <div class="index-letters btn-group btn-group-sm">
+        <div class="letters">
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/A">A</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/B">B</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/C">C</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/D">D</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/E">E</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/F">F</a>
+                            <a class="btn btn-default active"
+                   href="/en/song-index/h/G">G</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/H">H</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/I">I</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/J">J</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/K">K</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/L">L</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/M">M</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/N">N</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/O">O</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/P">P</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/R">R</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/S">S</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/T">T</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/U">U</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/V">V</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/W">W</a>
+                            <a class="btn btn-default"
+                   href="/en/song-index/h/Y">Y</a>
+                    </div>
+    </div>
+    <div class="row no-paging"></div>
+
+<div class="list-group">
+            <a class="list-group-item"
+           href="/en/hymn/h/1221">GLORIOUS CHURCH LIFE <span
+                    class="label label-default">The Church</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/310">GLORIOUS FREEDOM, WONDERFUL FREEDOM <span
+                    class="label label-default">Assurance and Joy of Salvation</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/966">GLORIOUS HOPE! CHRIST WILL RETURN <span
+                    class="label label-default">Hope of Glory</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1149">GLORY TO GOD! WE'RE AT THE FOUNTAIN DRINKING <span
+                    class="label label-default">Experience of Christ</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1066">GLORY TO HIS NAME <span
+                    class="label label-default">Gospel</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/336">GLORY TO JESUS, WONDERFUL SAVIOR <span
+                    class="label label-default">Assurance and Joy of Salvation</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/956">GLORY! GLORY! CHRIST WILL COME AGAIN <span
+                    class="label label-default">Hope of Glory</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1017">GLORY! GLORY! HALLELUJAH <span
+                    class="label label-default">Gospel</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/948">GLORY, GLORY, CHRIST IS LIFE IN ME <span
+                    class="label label-default">Hope of Glory</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/318">GLORY, GLORY, HALLELUJAH <span
+                    class="label label-default">Assurance and Joy of Salvation</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/509">GOD IS IN CHRIST TO BE MY SUPPLY <span
+                    class="label label-default">Experience of Christ</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/730">GOD IS MY HOPE AND GOD IS MY JOY <span
+                    class="label label-default">Comfort in Trials</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/694">GOD WILL TAKE CARE OF YOU <span
+                    class="label label-default">Comfort in Trials</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/925">GRANT US, LORD, THE LIVING OUTFLOW <span
+                    class="label label-default">Preaching of the Gospel</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1111">Gathered at Thy table, Lord <span
+                    class="label label-default">Praise of the Lord</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/204">Gathered in Thy name, Lord Jesus <span
+                    class="label label-default">Praise of the Lord</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/229">Gathered round Thyself, Lord Jesus <span
+                    class="label label-default">Praise of the Lord</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/136">Gazing on the Lord in glory <span
+                    class="label label-default">Praise of the Lord</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/159">Give me a sight, O Savior <span
+                    class="label label-default">Praise of the Lord</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1025">Give up the world, Christ to obtain <span
+                    class="label label-default">Gospel</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1211">Given us, given us, God has given us <span
+                    class="label label-default">Various Aspects of the Inner Life</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/977">Glorious things of thee are spoken <span
+                    class="label label-default">Ultimate Manifestation</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1275">Glorious things to thee are spoken <span
+                    class="label label-default">The Church</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/73">Glorious, mighty Name of Jesus <span
+                    class="label label-default">Praise of the Lord</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/9">Glory be to God <span
+                    class="label label-default">Blessing of the Trinity</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1">Glory be to God the Father <span
+                    class="label label-default">Blessing of the Trinity</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/186">Glory be to Him who loved us <span
+                    class="label label-default">Praise of the Lord</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/115">Glory be to Jesus <span
+                    class="label label-default">Praise of the Lord</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/179">Glory to Christ on high <span
+                    class="label label-default">Praise of the Lord</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1356">Glory! Glory! Christ is life indeed! <span
+                    class="label label-default">Experience of Christ</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/134">Glory, everlasting glory <span
+                    class="label label-default">Praise of the Lord</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/7">Glory, glory to the Father <span
+                    class="label label-default">Blessing of the Trinity</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/2">Glory, glory, glory, praise and adoration <span
+                    class="label label-default">Blessing of the Trinity</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/240">Glory, honor, praise and power <span
+                    class="label label-default">Praise of the Lord</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/583">Go to Him without the camp <span
+                    class="label label-default">Experience of Christ</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/583b">Go to Him without the camp (Alternate Tune) <span
+                    class="label label-default">Experience of Christ</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/923">Go to collect materials for the House <span
+                    class="label label-default">Preaching of the Gospel</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/896">Go, labor on; spend, and be spent <span
+                    class="label label-default">Service</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/861">God be with you till we meet again <span
+                    class="label label-default">The Church</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/823">God before the world's foundation <span
+                    class="label label-default">The Church</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/743">God created us His vessels <span
+                    class="label label-default">Various Aspects of the Inner Life</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1325">God eternal has a purpose <span
+                    class="label label-default">Ultimate Manifestation</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1145">God gave His Son to man to be <span
+                    class="label label-default">Experience of Christ</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1355">God has forgiven all my sins <span
+                    class="label label-default">Assurance and Joy of Salvation</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1215">God has not giv'n us a spirit of fear <span
+                    class="label label-default">Various Aspects of the Inner Life</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1127">God has saved me from the world <span
+                    class="label label-default">Assurance and Joy of Salvation</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1166">God has set the land before us <span
+                    class="label label-default">Experience of Christ</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/720">God hath not promised skies always blue <span
+                    class="label label-default">Comfort in Trials</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/8526">God hath not promised skies always blue (Alternate Tune) <span
+                    class="label label-default">Comfort in Trials</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/683">God holds the key of all unknown <span
+                    class="label label-default">Comfort in Trials</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1202">God in His justifying has a plan <span
+                    class="label label-default">Experience of God</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/589">God in heaven hath a treasure <span
+                    class="label label-default">Experience of Christ</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/612">God intends that all His being <span
+                    class="label label-default">Experience of God</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1197">God is light, and in Him there is no darkness at all <span
+                    class="label label-default">Experience of God</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1203">God is righteous in His doings <span
+                    class="label label-default">Experience of God</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/8239">God laid my sins on Jesus <span
+                    class="label label-default">Assurance and Joy of Salvation</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1404">God made man a vessel he <span
+                    class="label label-default">Gospel</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/675">God moves in a mysterious way <span
+                    class="label label-default">Comfort in Trials</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/741">God ordained us unto sonship <span
+                    class="label label-default">Various Aspects of the Inner Life</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/20">God our Father, we adore Thee <span
+                    class="label label-default">Worship of the Father</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/263">God sent His mighty pow'r <span
+                    class="label label-default">Fulness of the Spirit</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1100">God shall rise, His foes be scattered <span
+                    class="label label-default">Praise of the Lord</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/351">God the Almighty, Uncreated Life <span
+                    class="label label-default">Longings</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/800">God the Lord has spoken, God has been unveiled <span
+                    class="label label-default">Study of the Word</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1088">God was born a human being <span
+                    class="label label-default">Praise of the Lord</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/295">God's Christ, who is my righteousness <span
+                    class="label label-default">Assurance and Joy of Salvation</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/942">God's Kingdom on the earth is now <span
+                    class="label label-default">The Kingdom</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/947">God's Kingdom today is a real exercise <span
+                    class="label label-default">The Kingdom</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/610">God's Spirit His transmission is <span
+                    class="label label-default">Experience of God</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/243">God's Spirit is of Christ today <span
+                    class="label label-default">Fulness of the Spirit</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/971">God's eternal purpose <span
+                    class="label label-default">Ultimate Manifestation</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/611">God's glorious substance Spirit is <span
+                    class="label label-default">Experience of God</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1199">God's intention in this universe is with humanity <span
+                    class="label label-default">Experience of God</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/750">God's intention is to have us <span
+                    class="label label-default">Various Aspects of the Inner Life</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/941">God's kingdom is God's reigning <span
+                    class="label label-default">The Kingdom</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1241">God's life and building can be seen <span
+                    class="label label-default">The Church</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/816">God's own Word must not be taken <span
+                    class="label label-default">Study of the Word</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/8273">God, You are now rearranging my way <span
+                    class="label label-default">Longings</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/5">God, our Father, we adore Thee <span
+                    class="label label-default">Blessing of the Trinity</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/26">God, we praise Thee for Thy mercy <span
+                    class="label label-default">Worship of the Father</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/294">Gone from my heart the world and all its charms <span
+                    class="label label-default">Assurance and Joy of Salvation</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/497">Grace in its highest definition is <span
+                    class="label label-default">Experience of Christ</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/344">Grace there is my every debt to pay <span
+                    class="label label-default">Assurance and Joy of Salvation</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/312">Grace! 'tis a charming sound <span
+                    class="label label-default">Assurance and Joy of Salvation</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/49">Gracious God, we worship Thee <span
+                    class="label label-default">Worship of the Father</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/78">Gracious Lord, Thy name I AM is <span
+                    class="label label-default">Praise of the Lord</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1173">Grant us the vision clear to see <span
+                    class="label label-default">Experience of Christ</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/19">Great is Thy faithfulness <span
+                    class="label label-default">Worship of the Father</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/1335">Great is the Lord, and greatly to be praised <span
+                    class="label label-default">Scriptures for Singing</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/391">Guide me, O Thou gracious Savior <span
+                    class="label label-default">Longings</span></a>
+            <a class="list-group-item"
+           href="/en/hymn/h/391b">Guide me, O Thou gracious Savior (Alternate Tune) <span
+                    class="label label-default">Longings</span></a>
+    </div>
+    <div class="row no-paging"></div>
+
+
+            </div>
+            </div>
+    <div class="col-md-4 col-lg-height col-top sidebar">
+                    <div class="row sidebar-title">
+    <h4>James 5:13</h4>
+</div>
+<div class="row common-panel">
+    <div class="col-xs-12">
+        <p class="text-justify">Does anyone among you suffer evil? Let him pray. Is anyone cheerful? Let him sing praise. (<a href="http://online.recoveryversion.org" target="_blank">RcV</a>)</p>
+    </div>
+</div>
+
+                        <div class="row sidebar-title">
+        <h4>
+            Jukebox
+                    </h4>
+    </div>
+    <div class="row common-panel">
+        <div class="col-xs-12 jukebox">
+                            <form id="jukeboxForm" role="form">
+                    <div class="form-group">
+                        <select name="type" class="form-control">
+                            <option value="a" selected>All Songs</option>
+                            <option value="h">Classic</option>
+                            <option value="nt">New Tunes</option>
+                            <option value="ns">New Songs</option>
+                            <option value="c">Children</option>
+                            <option value="f">Songs with Comments</option>
+                                                    </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="loop" class="form-control">
+                            <option value="1" selected>Loop once</option>
+                            <option value="2">Loop twice</option>
+                            <option value="3">Loop 3 times</option>
+                            <option value="4">Loop 4 times</option>
+                            <option value="5">Loop 5 times</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jukebox-delay">Delay between songs:</label>
+                        <select name="delay" class="form-control">
+                            <option value="0">No delay</option>
+                            <option value="5" selected>5 seconds</option>
+                            <option value="10">10 seconds</option>
+                            <option value="20">20 seconds</option>
+                            <option value="30">30 seconds</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button name="submit" type="submit" class="btn btn-primary">
+                                                            Start Playing
+
+                                                    </button>
+                    </div>
+                </form>
+                    </div>
+    </div>
+
+            </div>
+</div>
+
+<div class="row footer">
+    <div class="col-sm-6 col-sm-push-6 text-right">
+        <a href="/en/contactus">Contact Us</a>
+        <span class="separator fa fa-ellipsis-v"></span>
+                    English
+                <span class="separator fa fa-ellipsis-v"></span>
+                            <a href="/cn/song-index/h/G?">简体</a>
+                <span class="separator fa fa-ellipsis-v"></span>
+                    <a href="/zh/song-index/h/G?">繁體</a>
+            </div>
+    <div class="col-sm-6 col-sm-pull-6 text-left">
+        &copy; 2014 <a href="/en/aboutus">hymnal.net</a>
+    </div>
+</div>
+
+
+</div>
+
+
+<span id="root" class="hidden">https://www.hymnal.net</span>
+<span id="phproot" class="hidden">/en</span>
+<span id="language" class="hidden">en</span>
+
+<script src="/js/jquery-2.1.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/bootstrapValidator.min.js"></script>
+<script src="/includes/mediaelementplayer/mediaelement-and-player.min.js"></script>
+<script src="/en/js_i18n" type="text/javascript"></script>
+
+
+
+    <script type="text/javascript">
+        !function(a,b){if(void 0===b[a]){b["_"+a]={},b[a]=function(c){b["_"+a].clients=b["_"+a].clients||{},b["_"+a].clients[c.projectId]=this,this._config=c},b[a].ready=function(c){b["_"+a].ready=b["_"+a].ready||[],b["_"+a].ready.push(c)};for(var c=["addEvent","setGlobalProperties","trackExternalLink","on"],d=0;d<c.length;d++){var e=c[d],f=function(a){return function(){return this["_"+a]=this["_"+a]||[],this["_"+a].push(arguments),this}};b[a].prototype[e]=f(e)}var g=document.createElement("script");g.type="text/javascript",g.async=!0,g.src="https://d26b395fwzu5fz.cloudfront.net/3.0.0/keen.min.js";var h=document.getElementsByTagName("script")[0];h.parentNode.insertBefore(g,h)}}("Keen",this);
+
+        var keenClient = new Keen({
+            projectId: "539f670800111c037e000009",
+            writeKey: "2241dca018e7a889723067f3833d71a1df17b25ca3ebfff6f48a6a6c1819dfafb5c70fca7997fe732d9274ab7ca27f95fb32478b0744549dfe3917b0570abb4da244d9a184e5bb0ed55db4a3c8dccb50efb8fcdecbd6a99b675a9c86adcaf70ad1d1612cd2a5acfc9a56e0fbe1332f7d", // required for sending events
+            readKey: "8f9b58010a6c49f5cf398e97d546c72c8a792bc231d3e4e422176d70839a12b4a9821c1a12181f34b441be21ce78254117635dadd30f1906881b5880aecc19b22e6b5ac6c0179dcedaf7f98689054c2905a79afe17aad2a14186e987ccc6cd0255589ccb23371f8511572e4966aac903"    // required for doing analysis
+        });
+    </script>
+
+
+
+
+
+<script src="/js/main.min.js" type="text/javascript"></script>
+
+</body>
+</html>
+
