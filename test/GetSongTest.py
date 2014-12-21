@@ -42,36 +42,51 @@ class FlaskrTestCase(unittest.TestCase):
         assert rv.status_code == 400
         assert 'Request is missing argument: hymn_number' in rv.data
 
-    # test songs by making request to hymnal.net
-    def test_songs_integration(self):
-        # test classical hymn 1131
-        self.assert_get_hymn('h', '1331', mock = False)
-        
-        # test new song 157 (multiple scripture links)
-        self.assert_get_hymn('ns', '157', mock = False)
-        
-        # test classical hymn 17 (goes to external website)
-        self.assert_get_hymn('h', '17', mock = False)
+    # test classical hymn 1131
+    def test_h_1131(self):
+        self.assert_mock_get_hymn('h', '1331')
+        self.assert_get_hymn('h', '1331')
     
-        # test classical hymn 1197 (multiple choruses)
-        self.assert_get_hymn('h', '1197', mock = False)
-    
-    # test songs with requests to hymnal.net mocked out
-    def test_songs_mock(self):
-        # test classical hymn 1131
-        self.assert_get_hymn('h', '1331', mock = True)
-    
-        # test new song 157 (multiple scripture links)
-        self.assert_get_hymn('ns', '157', mock = True)
-    
-        # test classical hymn 17 (goes to external website)
-        # need to hard code url to external site
-        self.assert_get_hymn('h', '17', mock = True, external_url = 'http://www.witness-lee-hymns.org/hymns/H0017.html', external_data = 'test_data/get_song_html_h_17_external.txt')
-    
-        # test classical hymn 1197 (multiple choruses)
-        self.assert_get_hymn('h', '1197', mock = True)
+    # test new song 157 (multiple scripture links)
+    def test_ns_157(self):
+        self.assert_mock_get_hymn('ns', '157')
+        self.assert_get_hymn('ns', '157')
 
-    def assert_get_hymn(self, hymn_type, hymn_number, mock = False, external_url = None, external_data = None):
+    # test classical hymn 17 (goes to external website)
+    def test_h_17(self):
+        # need to hard code url to external site
+        self.assert_mock_get_hymn('h', '17', external_url = 'http://www.witness-lee-hymns.org/hymns/H0017.html', external_data = 'test_data/get_song_html_h_17_external.txt')
+        self.assert_get_hymn('h', '17')
+
+    # test classical hymn 1197 (multiple choruses)
+    def test_h_1197(self):
+        self.assert_mock_get_hymn('h', '1197')
+        self.assert_get_hymn('h', '1197')
+    
+    def assert_mock_get_hymn(self, hymn_type, hymn_number, external_url = None, external_data = None):
+        # url to stub out
+        path = GetSong.HYMN_PATH_FORMAT % (hymn_type, int(hymn_number))
+        url = GetSong.GET_SONG_URL_FORMAT % path
+        # mock out hymnal.net response
+        # https://docs.python.org/3/library/unittest.mock.html
+        mock_response = Mock()
+        mock_response.content = open('test_data/get_song_html_{}_{}.txt'.format(hymn_type, hymn_number), 'r').read()
+        
+        # http://stackoverflow.com/questions/15753390/python-mock-requests-and-the-response
+        # http://mock.readthedocs.org/en/latest/patch.html
+        if (external_url):
+            external_mock = Mock()
+            external_mock.content = open(external_data.format(hymn_type, hymn_number), 'r').read()
+            patcher = patch('requests.get', Mock(side_effect = lambda k:{url: mock_response, external_url: external_mock}.get(k, 'unhandled request %s' % k)))
+        else :
+            patcher = patch('requests.get', Mock(side_effect = lambda k:{url: mock_response}.get(k, 'unhandled request %s' % k)))
+        
+        # start patcher, do assertions, then stop patcher
+        patcher.start()
+        self.assert_get_hymn(hymn_type, hymn_number)
+        patcher.stop()
+
+    def assert_get_hymn(self, hymn_type, hymn_number):
         # checks that two meta data objects are equal
         def check_meta_data(expected, actual):
             assert_equal(len(expected), len(actual))
@@ -88,33 +103,9 @@ class FlaskrTestCase(unittest.TestCase):
             for i in range(len(expected)):
                 assert_equal(expected[i]['verse_type'], actual[i]['verse_type'])
                 assert_equal(expected[i]['verse_content'], actual[i]['verse_content'])
-    
-        if (mock):
-            # url to stub out
-            path = GetSong.HYMN_PATH_FORMAT % (hymn_type, int(hymn_number))
-            url = GetSong.GET_SONG_URL_FORMAT % path
-            # mock out hymnal.net response
-            # https://docs.python.org/3/library/unittest.mock.html
-            mock_response = Mock()
-            mock_response.content = open('test_data/get_song_html_{}_{}.txt'.format(hymn_type, hymn_number), 'r').read()
-            
-            # http://stackoverflow.com/questions/15753390/python-mock-requests-and-the-response
-            # http://mock.readthedocs.org/en/latest/patch.html
-            if (external_url):
-                external_mock = Mock()
-                external_mock.content = open(external_data.format(hymn_type, hymn_number), 'r').read()
-                patcher = patch('requests.get', Mock(side_effect = lambda k:{url: mock_response, external_url: external_mock}.get(k, 'unhandled request %s' % k)))
-            else :
-                patcher = patch('requests.get', Mock(side_effect = lambda k:{url: mock_response}.get(k, 'unhandled request %s' % k)))
-            
-            # start patcher, make request to get hymn, then stop patcher
-            patcher.start()
-            rv = self.app.get('hymn?hymn_type={}&hymn_number={}'.format(hymn_type, hymn_number))
-            patcher.stop()
-        else :
-            # make request to get hymn from hymnal.net
-            rv = self.app.get('hymn?hymn_type={}&hymn_number={}'.format(hymn_type, hymn_number))
-        
+
+        # make request to get hymn
+        rv = self.app.get('hymn?hymn_type={}&hymn_number={}'.format(hymn_type, hymn_number))
         actual_result = json.loads(rv.data)
         # open saved test data
         expected_result = json.loads(open('test_data/get_song_{}_{}.txt'.format(hymn_type, hymn_number), 'r').read())
