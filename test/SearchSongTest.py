@@ -1,5 +1,5 @@
-import hymnalnetapi, unittest, ListSong, flask, json
-from mock import create_autospec
+import hymnalnetapi, unittest, SearchSong, flask, json
+from mock import create_autospec, patch, Mock
 from nose.tools import assert_equal
 
 class FlaskrTestCase(unittest.TestCase):
@@ -22,13 +22,28 @@ class FlaskrTestCase(unittest.TestCase):
 
     # test searching for all the songs matching a particular search parameter
     def test_search_all(self):
-        self.assert_list_results(search_parameter='drink')
+        self.assert_search_results(search_parameter='drink')
     
     # test searching for a specific page of songs matching a particular search parameter
     def test_search_all(self):
-        self.assert_list_results(search_parameter='drink', page_num=3)
+        self.assert_mock_search_results(search_parameter='drink', page_num=3)
+        self.assert_search_results(search_parameter='drink', page_num=3)
+        self.assert_mock_search_results(search_parameter='God', page_num=52)
+        self.assert_search_results(search_parameter='God', page_num=52)
+    
+    def assert_mock_search_results(self, search_parameter, page_num):
+        # url to stub out
+        url = SearchSong.URL_FORMAT % (search_parameter, page_num)
+        # mock out hymnal.net response
+        mock_response = Mock()
+        mock_response.content = open('test_data/search_song_html_{}_{}.txt'.format(search_parameter, page_num), 'r').read()
+        
+        patcher = patch('requests.get', Mock(side_effect = lambda k: {url: mock_response}.get(k, 'unhandled request %s' % k)))
+        patcher.start()
+        self.assert_search_results(search_parameter, page_num)
+        patcher.stop()
 
-    def assert_list_results(self, search_parameter, page_num = None):
+    def assert_search_results(self, search_parameter, page_num = None):
         if page_num is None:
             rv = self.app.get('search?search_parameter={}'.format(search_parameter))
             expected_result = json.loads(open('test_data/search_song_{}.txt'.format(search_parameter)).read())

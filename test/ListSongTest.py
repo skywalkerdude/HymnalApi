@@ -67,8 +67,10 @@ class FlaskrTestCase(unittest.TestCase):
         self.assert_list_results(song_type=song_type, testament=testament)
     
     def assert_mock_list_results(self, url, song_type, letter = None, testament = None):
+        # mock out hymnal.net response
         mock_response = Mock()
         mock_response.content = open(self.app.html_mapping[url], 'r').read()
+        
         patcher = patch('requests.get', Mock(side_effect = lambda k: {url: mock_response}.get(k, 'unhandled request %s' % k)))
         patcher.start()
         self.assert_list_results(song_type, letter, testament)
