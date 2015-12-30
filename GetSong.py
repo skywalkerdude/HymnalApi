@@ -178,4 +178,4 @@ def get_hymn():
 
     json_data[LYRICS] = lyrics
 
-    return json.dumps(json_data, sort_keys=False)
+    return json.dumps(json_data, sort_keys=True)
