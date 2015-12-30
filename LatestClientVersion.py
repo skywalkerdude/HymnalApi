@@ -11,4 +11,4 @@ def get_latest_android_version_number():
 
 @latest_client_version.route('/latestVersionAndroid')
 def get_hymn():
-    return redirect("https://www.dropbox.com/s/9h8ddib6bcyfq3p/HymnalDroid-beta-v2.apk?dl=0", code=302)
+    return redirect("https://drive.google.com/uc?export=download&id=0B3XbhMal4IMvWE9lOVdEazNkTVE", code=302)
