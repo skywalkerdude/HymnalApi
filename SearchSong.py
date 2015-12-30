@@ -35,7 +35,7 @@ def fetch_single_results_page(search_parameter, page_num):
 def search_hymn():
     
     # initialize arguments
-    search_parameter = request.args.get('search_parameter', type=str)
+    search_parameter = request.args.get('search_parameter')
     page_num = request.args.get('page_num', type=int)
     
     # error checking
