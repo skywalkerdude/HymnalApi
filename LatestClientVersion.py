@@ -11,4 +11,4 @@ def get_latest_android_version_number():
 
 @latest_client_version.route('/latestVersionAndroid')
 def get_hymn():
-    return redirect("https://drive.google.com/open?id=0B3XbhMal4IMvWE9lOVdEazNkTVE", code=302)
+    return redirect("https://drive.google.com/file/d/0B3XbhMal4IMvWE9lOVdEazNkTVE/view?usp=sharing", code=302)
