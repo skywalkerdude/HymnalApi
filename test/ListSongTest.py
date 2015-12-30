@@ -1,4 +1,4 @@
-import hymnalnetapi, unittest, ListSong, flask, json
+import hymnalnetapi, unittest, ListSong, flask, json, pdb
 from mock import create_autospec, patch, Mock
 from nose.tools import assert_equal
 
@@ -49,22 +49,18 @@ class FlaskrTestCase(unittest.TestCase):
     def assert_classical_hymn(self, letter):
         song_type = 'h'
         self.assert_mock_list_results(self.app.url_mapping[(song_type, letter)], song_type=song_type, letter=letter)
-        self.assert_list_results(song_type=song_type, letter=letter)
     
     def assert_new_song(self, letter):
         song_type='ns'
         self.assert_mock_list_results(self.app.url_mapping[(song_type, letter)], song_type=song_type, letter=letter)
-        self.assert_list_results(song_type=song_type, letter=letter)
 
     def assert_new_tune(self):
         song_type='nt'
         self.assert_mock_list_results(self.app.url_mapping[song_type], song_type=song_type)
-        self.assert_list_results(song_type=song_type)
     
     def assert_scripture_song(self, testament):
         song_type='scripture'
         self.assert_mock_list_results(self.app.url_mapping[(song_type, testament)], song_type=song_type, testament=testament)
-        self.assert_list_results(song_type=song_type, testament=testament)
     
     def assert_mock_list_results(self, url, song_type, letter = None, testament = None):
         # mock out hymnal.net response
