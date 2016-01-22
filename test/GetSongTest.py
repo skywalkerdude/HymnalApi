@@ -46,7 +46,12 @@ class FlaskrTestCase(unittest.TestCase):
     def test_h_1131(self):
         self.assert_mock_get_hymn('h', '1331')
         self.assert_get_hymn('h', '1331')
-    
+
+    # test classical hymn 19 -- contains copyright
+    def test_h_19(self):
+        self.assert_mock_get_hymn('h', '19')
+        self.assert_get_hymn('h', '19')
+
     # test new song 157 (multiple scripture links)
     def test_ns_157(self):
         self.assert_mock_get_hymn('ns', '157')

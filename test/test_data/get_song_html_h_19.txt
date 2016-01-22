@@ -1,0 +1,1315 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Hymn: Great is Thy faithfulness</title>
+    <link rel="alternate" type="application/rss+xml" title="hymnal.net RSS Feed" href="/feed.rss"/>
+    <meta name="description"
+          content="Christian hymns and spiritual songs with wonderful truths and music.}"/>
+    <meta name="keywords" content="midi, mp3, hymnal, hymns, songs, Christian, music, videos, spiritual, bible, christ, jesus, god"/>
+            <link rel="canonical" href="https://www.hymnal.net/en/hymn/h/19"/>
+        <meta property="og:url" content="https://www.hymnal.net/en/hymn/h/19"/>
+        <meta property="og:title" content="Hymn: Great is Thy faithfulness"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:description"
+          content="Christian hymns and spiritual songs with wonderful truths and music."/>
+    <meta property="og:image" content="https://www.hymnal.net/images/favicon-196x196.png"/>
+    <meta property="fb:app_id" content="1450015931921030"/>
+
+    
+        <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@hymnalnet">
+    <meta name="twitter:title" content="Great is Thy faithfulness">
+    <meta name="twitter:description" content="&#8220;Great is Thy faithfulness,&#8221; O God my Father, There is no shadow of turning with Thee; Thou changest not, Thy compassions, they …">
+    <meta name="twitter:creator" content="@hymnalnet">
+    <meta name="twitter:image:src" content="https://www.hymnal.net/images/favicon-196x196.png">
+    <meta name="twitter:domain" content="hymnal.net">
+        
+
+    
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/custom.min.css" rel="stylesheet"/>
+
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="/images/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="/images/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#5c9afd">
+    <meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
+    
+
+    
+    
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-1151646-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+    
+    
+</head>
+<body class="hymn">
+
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1450015931921030&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+
+<div class="device-xs visible-xs"></div>
+<div class="device-sm visible-sm"></div>
+<div class="device-md visible-md"></div>
+<div class="device-lg visible-lg"></div>
+<div class="container">
+<div class="row header">
+    <div class="col-xs-5 col-md-6 logo">
+        <a href="/en/home">
+            <img class="img-responsive" src="/images/logo.png"
+                 alt="hymnal.net" width="138" height="40"/>
+        </a>
+    </div>
+    
+    <div class="col-xs-7 col-md-6 text-right">
+        <div class="header-content">
+                            <div class="profile-links btn-group">
+                    <button type="button" class="btn btn-default profile-button dropdown-toggle"
+                            data-toggle="dropdown">
+                        <i class="fa fa-user fa-fw"></i>
+                        <span class="hidden-xs">Login/Sign Up</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu pull-left" role="menu">
+                        <li>
+                            <a href="/en/login">Login</a>
+                        </li>
+                        <li>
+                            <a href="/en/register">Sign up</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            
+            <div class="social-links btn-group">
+                <button type="button" class="hidden-sm hidden-md hidden-lg btn btn-default dropdown-toggle"
+                        data-toggle="dropdown">
+                    <i class="fa fa-share"></i> <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu pull-left" role="menu">
+                    <li class="hidden-xs follow-us">
+                        Follow us:
+                    </li>
+                    <li>
+                        <a href="http://facebook.com/www.hymnal.net" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                  <i class="fa fa-circle color-white fa-stack-2x fa-stack-2-1x"></i>
+                                  <i class="fa fa-circle fa-facebook-color fa-stack-2x stacked-line-height"></i>
+                                  <i class="fa fa-facebook fa-stack-1x fa-inverse stacked-line-height-2"></i>
+                                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://twitter.com/hymnalnet" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                  <i class="fa fa-circle color-white fa-stack-2x fa-stack-2-1x"></i>
+                                  <i class="fa fa-circle fa-twitter-color fa-stack-2x stacked-line-height"></i>
+                                  <i class="fa fa-twitter fa-stack-1x fa-inverse stacked-line-height-2"></i>
+                                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/feed.rss" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                  <i class="fa fa-circle color-white fa-stack-2x fa-stack-2-1x"></i>
+                                  <i class="fa fa-circle fa-rss-color fa-stack-2x stacked-line-height"></i>
+                                  <i class="fa fa-rss fa-stack-1x fa-inverse stacked-line-height-2"></i>
+                                </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+
+<div class="row menu">
+    <div class="col-xs-12">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="visible-xs col-xs-9">
+                        <form class="search-form" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" maxlength="80"
+                                       placeholder="Search" name="s"/>
+
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+                
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="/en/home"><span class="glyphicon glyphicon-home"></span></a>
+                        </li>
+                        <li class="active">
+                            <a href="/en/song-categories/h">Classic</a>
+                        </li>
+                        <li>
+                            <a href="/en/song-categories/nt">New Tunes</a>
+                        </li>
+                        <li>
+                            <a href="/en/song-categories/ns">New Songs</a>
+                        </li>
+                        <li>
+                            <a href="/en/song-categories/c">Children</a>
+                        </li>
+                        <li>
+                            <a href="/en/scripture-songs/nt">Scripture</a>
+                        </li>
+                        <li class="js-more-dropdown dropdown">
+                            <a href="#" class="dropdown-toggle"
+                               data-toggle="dropdown">More
+                                <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="visible-sm col-sm-12 more-search">
+                                    <form class="search-form" role="search">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" maxlength="80"
+                                                   placeholder="Search" name="s"/>
+
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-default" type="submit">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </li>
+                                <li>
+                                    <a href="/en/recently-commented-songs">Recently Commented Songs</a>
+                                </li>
+                                <li>
+                                    <a href="/en/faq">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="/en/links">Links</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="hidden-xs hidden-sm col-md-3 pull-right">
+                        <form class="search-form" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" maxlength="80"
+                                       placeholder="Search" name="s"/>
+
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </nav>
+    </div>
+    
+    <!--[if lt IE 9]>
+    <div class="col-xs-12">
+        <div class="alert alert-warning">
+            You are using an older, unsupported browser. Please upgrade to the latest version of <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://www.apple.com/safari/" target="_blank">Safari</a>, <a href="http://www.mozilla.com/firefox/" target="_blank">Firefox</a>, or <a href="http://www.microsoft.com/windows/products/winfamily/ie/default.mspx" target="_blank">Internet Explorer</a> to access this site.
+        </div>
+    </div>
+    
+    <![endif]-->
+</div>
+
+
+
+<div id="fb-root"></div>
+<div class="row main-content">
+    <div class="col-md-8 common-panel">
+        <h1 class="text-center">
+                        Great is Thy faithfulness
+        </h1>
+
+        
+        
+        <div class="row text-center audio-player">
+                            <audio id="main-audio" controls="controls" airplay="allow" class="main-audio" loop="loop" preload="auto">
+                    <source src="https://www.hymnal.net/Hymns/Hymnal/ogg/e0019_i.ogg" type="audio/mpeg"/>
+                    <source src="https://www.hymnal.net/Hymns/Hymnal/ogg/e0019_i.ogg" type="audio/ogg"/>
+                    The music cannot be played on your browser.
+                </audio>
+                    </div>
+                    <div class="row text-center">
+                <div class="btn-group lyrics-format">
+                    <button type="button"
+                            class="btn btn-default text">Text</button>
+                    <button type="button" class="btn btn-default piano">Piano</button>
+                    <button type="button" class="btn btn-default guitar">Guitar</button>
+                </div>
+            </div>
+        
+        <div class="row hymn-content">
+            <div class="col-xs-12 lyrics">
+                                    <table>
+                                                    <tr>
+                                                                                                            <td>
+                                            <div class="stanza-num">1</div>
+                                        </td>
+                                        <td>&#8220;Great is Thy faithfulness,&#8221; O God my Father,<br/>There is no shadow of turning with Thee;<br/>Thou changest not, Thy compassions, they fail not<br/>As Thou hast been Thou forever wilt be.</td>
+                                                                                                </tr>
+                                                    <tr>
+                                                                    <td>&nbsp;</td>
+                                    <td class="chorus">&#8220;Great is Thy faithfulness!&#8221; &#8220;Great is Thy faithfulness!&#8221;<br/>&nbsp;&nbsp;Morning by morning new mercies I see;<br/>All I have needed Thy hand hath provided&mdash;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&#8220;Great is Thy faithfulness,&#8221; Lord, unto me!</td>
+                                                            </tr>
+                                                    <tr>
+                                                                                                            <td>
+                                            <div class="stanza-num">2</div>
+                                        </td>
+                                        <td>Summer and winter, and springtime and harvest,<br/>Sun, moon and stars in their courses above,<br/>Join with all nature in manifold witness<br/>To Thy great faithfulness, mercy and love.</td>
+                                                                                                </tr>
+                                                    <tr>
+                                                                                                            <td>
+                                            <div class="stanza-num">3</div>
+                                        </td>
+                                        <td>Pardon for sin and a peace that endureth,<br/>Thine own dear presence to cheer and to guide;<br/>Strength for today and bright hope for tomorrow,<br/>Blessings all mine, with ten thousand beside!</td>
+                                                                                                </tr>
+                                                    <tr>
+                                                                    <td colspan="2" class="copyright">
+                                        <small>&copy; 1923. Ren. 1951 Hope Publishing Co., Carol Stream, IL 60188<br/>www.hopepublishing.com<br/>All rights reserved.&nbsp;&nbsp;Used by permission.</small>
+                                    </td>
+                                                            </tr>
+                                            </table>
+                                            </div>
+                            <div class="text-center leadsheet piano hidden">
+                    <span class="svg">https://www.hymnal.net/Hymns/Hymnal/svg/e0019_p.svg</span></div>
+                                        <div class="text-center leadsheet guitar hidden">
+                    <span class="svg">https://www.hymnal.net/Hymns/Hymnal/svg/e0019_g.svg</span></div>
+                    </div>
+
+        
+        <div id="tabs" class="row tabs">
+            <div class="col-xs-12 tabs-content">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#comments" data-toggle="tab"><i class="fa fa-comment"></i></a></li>
+                                            <li><a href="#excerpts" data-toggle="tab"><i class="fa fa-quote-right"></i></a></li>
+                                                                                <li class="pull-right">
+                        <a href="#" class="toggle-tabs"><i class="fa fa-chevron-circle-down fa-lg"></i></a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="comments">
+                        <div class="add-comment-section">
+                            <button type="button" class="btn btn-primary"
+                                    name="addcomment">Comment</button>
+                                                            <span class="badge pull-right">665</span>
+                                                        <div class="response">
+                            </div>
+                        </div>
+                        <form id="commentForm" class="form-horizontal hidden" role="form"
+      data-bv-message="This value is not valid."
+      data-bv-feedbackicons-valid="fa fa-check"
+      data-bv-feedbackicons-invalid="fa fa-times"
+      data-bv-feedbackicons-validating="fa fa-refresh"
+      data-bv-submitbuttons='button[type="submit"]'
+      data-bv-live="submitted">
+    <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">Your Name</label>
+
+        <div class="col-sm-10">
+            <input name="name" type="text" class="form-control"
+                   maxlength="80"
+                   value=""/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="col-sm-2 control-label">Email</label>
+
+        <div class="col-sm-10">
+            <input name="email" type="email" class="form-control"
+                   data-bv-emailaddress="true"
+                   data-bv-emailaddress-message="Invalid email address."
+                   maxlength="256"
+                   value=""/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="city" class="col-sm-2 control-label">City</label>
+
+        <div class="col-sm-10">
+            <input name="city" type="text" class="form-control" maxlength="256"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="stateprov"
+               class="col-sm-2 control-label">State/Province</label>
+
+        <div class="col-sm-10">
+            <input name="stateprov" type="text" class="form-control" maxlength="256"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="country" class="col-sm-2 control-label">Country</label>
+
+        <div class="col-sm-10">
+            <select name="country" class="combobox form-control">
+                <option value="" selected="selected"></option>
+<option value="af">Afghanistan</option>
+<option value="ax">Aland Islands</option>
+<option value="al">Albania</option>
+<option value="dz">Algeria</option>
+<option value="as">American Samoa</option>
+<option value="ad">Andorra</option>
+<option value="ao">Angola</option>
+<option value="ai">Anguilla</option>
+<option value="aq">Antarctica</option>
+<option value="ag">Antigua and Barbuda</option>
+<option value="ar">Argentina</option>
+<option value="am">Armenia</option>
+<option value="aw">Aruba</option>
+<option value="au">Australia</option>
+<option value="at">Austria</option>
+<option value="az">Azerbaijan</option>
+<option value="bs">Bahamas</option>
+<option value="bh">Bahrain</option>
+<option value="bd">Bangladesh</option>
+<option value="bb">Barbados</option>
+<option value="by">Belarus</option>
+<option value="be">Belgium</option>
+<option value="bz">Belize</option>
+<option value="bj">Benin</option>
+<option value="bm">Bermuda</option>
+<option value="bt">Bhutan</option>
+<option value="bo">Bolivia</option>
+<option value="ba">Bosnia and Herzegovina</option>
+<option value="bw">Botswana</option>
+<option value="bv">Bouvet Island</option>
+<option value="br">Brazil</option>
+<option value="io">British Indian Ocean Territory</option>
+<option value="vg">British Virgin Islands</option>
+<option value="bn">Brunei</option>
+<option value="bg">Bulgaria</option>
+<option value="bf">Burkina Faso</option>
+<option value="bi">Burundi</option>
+<option value="kh">Cambodia</option>
+<option value="cm">Cameroon</option>
+<option value="ca">Canada</option>
+<option value="cv">Cape Verde</option>
+<option value="ky">Cayman Islands</option>
+<option value="cf">Central African Republic</option>
+<option value="td">Chad</option>
+<option value="cl">Chile</option>
+<option value="cn">China</option>
+<option value="cx">Christmas Island</option>
+<option value="cc">Cocos (Keeling) Islands</option>
+<option value="co">Colombia</option>
+<option value="km">Comoros</option>
+<option value="cg">Congo</option>
+<option value="ck">Cook Islands</option>
+<option value="cr">Costa Rica</option>
+<option value="hr">Croatia</option>
+<option value="cy">Cyprus</option>
+<option value="cz">Czech Republic</option>
+<option value="cd">Democratic Republic of Congo</option>
+<option value="dk">Denmark</option>
+<option value="xx">Disputed Territory</option>
+<option value="dj">Djibouti</option>
+<option value="dm">Dominica</option>
+<option value="do">Dominican Republic</option>
+<option value="tl">East Timor</option>
+<option value="ec">Ecuador</option>
+<option value="eg">Egypt</option>
+<option value="sv">El Salvador</option>
+<option value="gq">Equatorial Guinea</option>
+<option value="er">Eritrea</option>
+<option value="ee">Estonia</option>
+<option value="et">Ethiopia</option>
+<option value="fk">Falkland Islands</option>
+<option value="fo">Faroe Islands</option>
+<option value="fm">Federated States of Micronesia</option>
+<option value="fj">Fiji</option>
+<option value="fi">Finland</option>
+<option value="fr">France</option>
+<option value="gf">French Guyana</option>
+<option value="pf">French Polynesia</option>
+<option value="tf">French Southern Territories</option>
+<option value="ga">Gabon</option>
+<option value="gm">Gambia</option>
+<option value="ge">Georgia</option>
+<option value="de">Germany</option>
+<option value="gh">Ghana</option>
+<option value="gi">Gibraltar</option>
+<option value="gr">Greece</option>
+<option value="gl">Greenland</option>
+<option value="gd">Grenada</option>
+<option value="gp">Guadeloupe</option>
+<option value="gu">Guam</option>
+<option value="gt">Guatemala</option>
+<option value="gn">Guinea</option>
+<option value="gw">Guinea-Bissau</option>
+<option value="gy">Guyana</option>
+<option value="ht">Haiti</option>
+<option value="hm">Heard Island and Mcdonald Islands</option>
+<option value="hn">Honduras</option>
+<option value="hk">Hong Kong</option>
+<option value="hu">Hungary</option>
+<option value="is">Iceland</option>
+<option value="in">India</option>
+<option value="id">Indonesia</option>
+<option value="iq">Iraq</option>
+<option value="xe">Iraq-Saudi Arabia Neutral Zone</option>
+<option value="ie">Ireland</option>
+<option value="il">Israel</option>
+<option value="it">Italy</option>
+<option value="ci">Ivory Coast</option>
+<option value="jm">Jamaica</option>
+<option value="jp">Japan</option>
+<option value="jo">Jordan</option>
+<option value="kz">Kazakhstan</option>
+<option value="ke">Kenya</option>
+<option value="ki">Kiribati</option>
+<option value="kw">Kuwait</option>
+<option value="kg">Kyrgyzstan</option>
+<option value="la">Laos</option>
+<option value="lv">Latvia</option>
+<option value="lb">Lebanon</option>
+<option value="ls">Lesotho</option>
+<option value="lr">Liberia</option>
+<option value="ly">Libya</option>
+<option value="li">Liechtenstein</option>
+<option value="lt">Lithuania</option>
+<option value="lu">Luxembourg</option>
+<option value="mo">Macau</option>
+<option value="mk">Macedonia</option>
+<option value="mg">Madagascar</option>
+<option value="mw">Malawi</option>
+<option value="my">Malaysia</option>
+<option value="mv">Maldives</option>
+<option value="ml">Mali</option>
+<option value="mt">Malta</option>
+<option value="mh">Marshall Islands</option>
+<option value="mq">Martinique</option>
+<option value="mr">Mauritania</option>
+<option value="mu">Mauritius</option>
+<option value="yt">Mayotte</option>
+<option value="mx">Mexico</option>
+<option value="md">Moldova</option>
+<option value="mc">Monaco</option>
+<option value="mn">Mongolia</option>
+<option value="ms">Montserrat</option>
+<option value="ma">Morocco</option>
+<option value="mz">Mozambique</option>
+<option value="mm">Myanmar</option>
+<option value="na">Namibia</option>
+<option value="nr">Nauru</option>
+<option value="np">Nepal</option>
+<option value="nl">Netherlands</option>
+<option value="an">Netherlands Antilles</option>
+<option value="nc">New Caledonia</option>
+<option value="nz">New Zealand</option>
+<option value="ni">Nicaragua</option>
+<option value="ne">Niger</option>
+<option value="ng">Nigeria</option>
+<option value="nu">Niue</option>
+<option value="nf">Norfolk Island</option>
+<option value="kp">North Korea</option>
+<option value="mp">Northern Mariana Islands</option>
+<option value="no">Norway</option>
+<option value="om">Oman</option>
+<option value="pk">Pakistan</option>
+<option value="pw">Palau</option>
+<option value="ps">Palestinian Occupied Territories</option>
+<option value="pa">Panama</option>
+<option value="pg">Papua New Guinea</option>
+<option value="py">Paraguay</option>
+<option value="pe">Peru</option>
+<option value="ph">Philippines</option>
+<option value="pn">Pitcairn Islands</option>
+<option value="pl">Poland</option>
+<option value="pt">Portugal</option>
+<option value="pr">Puerto Rico</option>
+<option value="qa">Qatar</option>
+<option value="re">Reunion</option>
+<option value="ro">Romania</option>
+<option value="ru">Russia</option>
+<option value="rw">Rwanda</option>
+<option value="sh">Saint Helena and Dependencies</option>
+<option value="kn">Saint Kitts and Nevis</option>
+<option value="lc">Saint Lucia</option>
+<option value="pm">Saint Pierre and Miquelon</option>
+<option value="vc">Saint Vincent and the Grenadines</option>
+<option value="ws">Samoa</option>
+<option value="sm">San Marino</option>
+<option value="st">Sao Tome and Principe</option>
+<option value="sa">Saudi Arabia</option>
+<option value="sn">Senegal</option>
+<option value="cs">Serbia and Montenegro</option>
+<option value="sc">Seychelles</option>
+<option value="sl">Sierra Leone</option>
+<option value="sg">Singapore</option>
+<option value="sk">Slovakia</option>
+<option value="si">Slovenia</option>
+<option value="sb">Solomon Islands</option>
+<option value="so">Somalia</option>
+<option value="za">South Africa</option>
+<option value="gs">South Georgia and South Sandwich Islands</option>
+<option value="kr">South Korea</option>
+<option value="es">Spain</option>
+<option value="pi">Spratly Islands</option>
+<option value="lk">Sri Lanka</option>
+<option value="sr">Suriname</option>
+<option value="sj">Svalbard and Jan Mayen</option>
+<option value="sz">Swaziland</option>
+<option value="se">Sweden</option>
+<option value="ch">Switzerland</option>
+<option value="sy">Syria</option>
+<option value="tw">Taiwan</option>
+<option value="tj">Tajikistan</option>
+<option value="tz">Tanzania</option>
+<option value="th">Thailand</option>
+<option value="tg">Togo</option>
+<option value="tk">Tokelau</option>
+<option value="to">Tonga</option>
+<option value="tt">Trinidad and Tobago</option>
+<option value="tn">Tunisia</option>
+<option value="tr">Turkey</option>
+<option value="tm">Turkmenistan</option>
+<option value="tc">Turks And Caicos Islands</option>
+<option value="tv">Tuvalu</option>
+<option value="ug">Uganda</option>
+<option value="ua">Ukraine</option>
+<option value="ae">United Arab Emirates</option>
+<option value="uk">United Kingdom</option>
+<option value="xd">United Nations Neutral Zone</option>
+<option value="us">United States</option>
+<option value="um">United States Minor Outlying Islands</option>
+<option value="uy">Uruguay</option>
+<option value="vi">US Virgin Islands</option>
+<option value="uz">Uzbekistan</option>
+<option value="vu">Vanuatu</option>
+<option value="va">Vatican City</option>
+<option value="ve">Venezuela</option>
+<option value="vn">Vietnam</option>
+<option value="wf">Wallis and Futuna</option>
+<option value="eh">Western Sahara</option>
+<option value="ye">Yemen</option>
+<option value="zm">Zambia</option>
+<option value="zw">Zimbabwe</option>
+
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="message" class="col-sm-2 control-label">Your Comment</label>
+
+        <div class="col-sm-10">
+            <textarea name="comment" class="form-control"
+                      data-bv-notempty="true"
+                      data-bv-notempty-message="Please enter your comment."
+                      maxlength="8192" rows="8"></textarea>
+        </div>
+    </div>
+    <div class="form-group hnp">
+        <label for="hnp" class="col-sm-2 control-label">Terms</label>
+
+        <div class="col-sm-10">
+            <input name="hnp" type="text" class="form-control"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-10 col-sm-offset-2 response">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-10 col-sm-offset-2">
+            <button type="button" name="cancel-comment"
+                    class="btn btn-default">Cancel</button>
+            <button type="submit"
+                    class="btn btn-primary">Comment</button>
+        </div>
+    </div>
+    <input type="hidden" name="type" value="add-comment"/>
+    <input type="hidden" name="host-ip" value="73.241.161.65"/>
+    <input type="hidden" name="t" value="h"/>
+    <input type="hidden" name="n" value="19"/>
+</form>
+
+
+                        
+                        <div class="comments-or-excerpts comments">
+                                <div class="text-center">
+        <ul class="pagination">
+                            <li class="disabled"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                                            <li class="active"><a href="#">1</a></li>
+                                                                <li><a href="/en/hymn/h/19/2">2</a></li>
+                                                                <li><a href="/en/hymn/h/19/3">3</a></li>
+                                                                <li><a href="/en/hymn/h/19/4">4</a></li>
+                                                                <li><a href="/en/hymn/h/19/5">5</a></li>
+                                                                        <li><a href="/en/hymn/h/19/2" alt="2"><i class="fa fa-angle-right"></i></a>
+                </li>
+                    </ul>
+    </div>
+
+        <div class="existing-comment">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 text-center">
+            <div class="post-date">
+                <span class="month">Jan</span>
+                <span class="day">18</span>
+                <span class="year">2016</span>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+                        <cite>Judy</cite><br/>
+            <p class="location">Nairobi, Kenya</p>
+        </div>
+    </div>
+    <div class="row comment">
+        <div class="col-xs-12">
+                            <p>When I watch our fallen solders, this is the only consolation I have... indeed great is Thy faithfullness O Lord.</p>
+                    </div>
+    </div>
+            <hr/>
+    </div>
+
+        <div class="existing-comment">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 text-center">
+            <div class="post-date">
+                <span class="month">Jan</span>
+                <span class="day">17</span>
+                <span class="year">2016</span>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+                        <cite>Kay</cite><br/>
+            <p class="location">Evesham, Worcestershire, United Kingdom</p>
+        </div>
+    </div>
+    <div class="row comment">
+        <div class="col-xs-12">
+                            <p>Thank you so much. "Great is they Faithfulness", is just one of my many favourite Hymns! But will be amongst those Hymns that I choose for the time when God calls me back home! God Bless you for helping me to achieve that.</p>
+                    </div>
+    </div>
+            <hr/>
+    </div>
+
+        <div class="existing-comment">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 text-center">
+            <div class="post-date">
+                <span class="month">Jan</span>
+                <span class="day">17</span>
+                <span class="year">2016</span>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+                        <cite>Regina</cite><br/>
+            <p class="location">Al, United States</p>
+        </div>
+    </div>
+    <div class="row comment">
+        <div class="col-xs-12">
+                            <p>When I lost my son and the pastor asked what do you need. I told him I needed a word. He quoted Romans 8:38-39 nothing in all creation can separate us from the love of God that is in Christ Jesus. I couldn't believe it, there was no condemnation. Morning by morning new mercies I see. My son even had a tattoo. Psalm 23:4 yea though I walk through the valley of the shadow of death I will fear no evil for God is with me. Our family and many friends went and got the tattoo. God knew summer, winter, springtime and harvest we would need a constant reminder of his presence to cheer and guide us. Great is Thy faithfulness Lord unto me!</p>
+                    </div>
+    </div>
+            <hr/>
+    </div>
+
+        <div class="existing-comment">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 text-center">
+            <div class="post-date">
+                <span class="month">Jan</span>
+                <span class="day">17</span>
+                <span class="year">2016</span>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+                        <cite>Carol</cite><br/>
+            <p class="location">Madison, Tennessee, United States</p>
+        </div>
+    </div>
+    <div class="row comment">
+        <div class="col-xs-12">
+                            <p>I was given some tragic news from my brother 5:30PM last night.</p>
+                            <p>It's truly made me see even more that God's faithfulness is still here and present with us. He never changes, He's our strength, hope, and guide. He wants to cheer and give us blessings. Truly His love is beyond comprehension, unconditional, and eternal. Praise God!</p>
+                    </div>
+    </div>
+            <hr/>
+    </div>
+
+        <div class="existing-comment">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 text-center">
+            <div class="post-date">
+                <span class="month">Jan</span>
+                <span class="day">16</span>
+                <span class="year">2016</span>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+                        <cite>Renon</cite><br/>
+            <p class="location">Hyderabad, Telangana, India</p>
+        </div>
+    </div>
+    <div class="row comment">
+        <div class="col-xs-12">
+                            <p>Great is His faithfulness...</p>
+                            <p>Truly, it goes beyond us, beyond our sin and neglect, beyond anything we do or don't do.</p>
+                            <p>He is ever faithful.</p>
+                    </div>
+    </div>
+            <hr/>
+    </div>
+
+        <div class="existing-comment">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 text-center">
+            <div class="post-date">
+                <span class="month">Jan</span>
+                <span class="day">15</span>
+                <span class="year">2016</span>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+                        <cite>Ricky</cite><br/>
+            <p class="location">Cape Coast, Central, Ghana</p>
+        </div>
+    </div>
+    <div class="row comment">
+        <div class="col-xs-12">
+                            <p>God was Faithful, is Faithful, and will FOREVER BE FAITHFUL. He changest not, His WORDS are TRUE AND AMEN. Whatever He has said about Me shall SURELY come to Pass. Just Trusting and Obeying HIM. THANK YOU JESUS.</p>
+                    </div>
+    </div>
+            <hr/>
+    </div>
+
+        <div class="existing-comment">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 text-center">
+            <div class="post-date">
+                <span class="month">Jan</span>
+                <span class="day">14</span>
+                <span class="year">2016</span>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+                        <cite>Robert</cite><br/>
+            <p class="location">Toronto, Ontario, Canada</p>
+        </div>
+    </div>
+    <div class="row comment">
+        <div class="col-xs-12">
+                            <p>Truly a very faithful God. He's big enough to full the entire universe and galaxies with Him presence yet small enough to meet the most intricate needs of each and every individual.</p>
+                            <p>He is really faithful.</p>
+                    </div>
+    </div>
+            <hr/>
+    </div>
+
+        <div class="existing-comment">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 text-center">
+            <div class="post-date">
+                <span class="month">Jan</span>
+                <span class="day">14</span>
+                <span class="year">2016</span>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+                        <cite>Joyce</cite><br/>
+            <p class="location">Accra, Ghana</p>
+        </div>
+    </div>
+    <div class="row comment">
+        <div class="col-xs-12">
+                            <p>Indeed great is His faithfulness. All that I ever needed God had made provision.</p>
+                    </div>
+    </div>
+            <hr/>
+    </div>
+
+        <div class="existing-comment">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 text-center">
+            <div class="post-date">
+                <span class="month">Jan</span>
+                <span class="day">11</span>
+                <span class="year">2016</span>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+                        <cite>Penny</cite><br/>
+            <p class="location">Colorado Springs, CO, United States</p>
+        </div>
+    </div>
+    <div class="row comment">
+        <div class="col-xs-12">
+                            <p>"Strength for today and bright hope for tomorrow." Yes, thank You Lord for the unwavering hope You provide.</p>
+                    </div>
+    </div>
+            <hr/>
+    </div>
+
+        <div class="existing-comment">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 text-center">
+            <div class="post-date">
+                <span class="month">Jan</span>
+                <span class="day">10</span>
+                <span class="year">2016</span>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+                        <cite>Ernest Geraldo</cite><br/>
+            <p class="location">Madina Accra, Accra, Ghana</p>
+        </div>
+    </div>
+    <div class="row comment">
+        <div class="col-xs-12">
+                            <p>Indeed morning by morning new mercies I see...every single day You shower me and my family with great and wonderful things..Thank You Lord.</p>
+                    </div>
+    </div>
+    </div>
+
+    <div class="text-center">
+        <ul class="pagination">
+                            <li class="disabled"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                                            <li class="active"><a href="#">1</a></li>
+                                                                <li><a href="/en/hymn/h/19/2">2</a></li>
+                                                                <li><a href="/en/hymn/h/19/3">3</a></li>
+                                                                <li><a href="/en/hymn/h/19/4">4</a></li>
+                                                                <li><a href="/en/hymn/h/19/5">5</a></li>
+                                                                        <li><a href="/en/hymn/h/19/2" alt="2"><i class="fa fa-angle-right"></i></a>
+                </li>
+                    </ul>
+    </div>
+
+
+                        </div>
+                    </div>
+                                            <div class="tab-pane fade" id="excerpts">
+                            <div class="comments-or-excerpts excerpts">
+                                    <div class="row excerpt">
+        <div class="col-xs-12">
+            <blockquote>
+                                    <p>Although we are unfaithful, God is faithful. Lamentations 3:23b says, "Great is Your faithfulness." The chorus of a well-known hymn on God's faithfulness (Hymns, #19) says, "'Great is Thy faithfulness!' 'Great is Thy faithfulness!' / Morning by morning new mercies I see; / All I have needed Thy hand has provided—/ 'Great is Thy faithfulness,' Lord, unto me!" We may understand what the Bible says and what this hymn says about God's faithfulness either in a natural way or in a spiritual way. When you sing this hymn, how do you understand the word faithfulness? If you understand God's faithfulness in a natural way, you may think that He is faithful primarily in the matter of material provisions or physical blessings. When some say that God is faithful, they mean that He is faithful to take care of their material needs. However, in 1 Corinthians 1:9 Paul says, "God is faithful, through whom you were called into the fellowship of His Son, Jesus Christ our Lord." God is faithful in this matter, but He may not be faithful to provide you a large house or a well-paying job. I would not deny the fact that God is faithful in caring for our welfare. My point is that God's faithfulness is not according to our natural understanding.</p>
+                                    <p>Consider the sufferings of the apostle Paul. He was called, commissioned, burdened, and sent by God, but wherever he went he had troubles. For example, as soon as he began to preach Christ, he began to suffer persecution. He even had to escape from Damascus by being lowered down the wall in a basket. Does this mean that God was not faithful to Paul? No, it means that God's faithfulness is not according to our natural understanding.</p>
+                                    <p>When we believed in the Lord Jesus, we might have expected to have peace and blessing. But instead we might have had many troubles and might have lost our security, our health, or our possessions. When some Christians experience such things, they may question God's faithfulness and ask why He did not prevent hardships from happening to them.</p>
+                                    <p>We need to realize that in allowing us to have troubles, God is faithful in His purpose to turn us from idols and bring us back to Himself. Our peace, safety, health, and possessions may become idols to us, and God is faithful to take these things away so that we may drink of Him as the fountain of living waters. If our house or our possessions become idols to us, we drink of them and not of God. God's faithfulness is a matter of dealing with these idols and causing us to drink of Him.</p>
+                                    <p>God is faithful in leading us into His economy, and His economy is for us to drink Christ, to eat Christ, to enjoy Christ, to absorb Christ, and to assimilate Christ that God may have His increase with us to fulfill His economy. This is God's faithfulness.</p>
+                                    <p>Instead of drinking of God as the fountain of living waters, Israel drank of their idols. Therefore, God used the Babylonians to deal with these idols and also to destroy Jerusalem and even the temple, which had become an idol to them. We need to see that we are not better than Israel. Anything can become an idol to us. But God is faithful in fulfilling His economy. In His faithfulness He deals with our idols that we may drink of Him. We all need to drink of God as the fountain of living waters, receiving Christ into us and assimilating Him, so that He may increase for the fulfillment of God's economy to have His expression through His counterpart.</p>
+                                    <p>Whereas God is faithful, we are neither faithful nor chaste but go to many other husbands. After failing God, we may receive some mercy and grace and therefore repent and weep, saying, "How pitiful I am! For a long time I have not loved the Lord very much, and I have not attended the meetings." While we are repenting and weeping, God is rejoicing. However, if we repent and weep too much, even our repentance may become an idol. We may testify in a meeting, saying that we have thoroughly repented to God. But this may be a matter of self-boasting and be a self-made idol. Therefore, after repenting, we should begin to drink of the living waters, praising God, giving thanks to Him for everything, and enjoying Him. This is what God wants. God is not interested in anything other than our enjoyment of Christ.</p>
+                                <footer>
+                                            <a href="http://www.ministrybooks.org" target="_blank">Life-study of Jeremiah, chapter 4</a>
+                                                                <cite title="LSM">(<a href="http://www.livingstream.com"
+                                                          target="_new">LSM</a>)</cite>
+                                    </footer>
+            </blockquote>
+        </div>
+    </div>
+    <div class="row excerpt">
+        <div class="col-xs-12">
+            <blockquote>
+                                    <p>Jeremiah's speaking in Lamentations 3:22-26 is another pattern of prophesying: "It is of the Lord's mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness. The Lord is my portion, saith my soul; therefore will I hope in him. The Lord is good unto them that wait for him, to the soul that seeketh him. It is good that a man should both hope and quietly wait for the salvation of the Lord." Jeremiah told us that it is of the Lord's mercies that we are not consumed. This is not foretelling but blessing, well-speaking. He told us that the mercies, the compassions, of the Lord are new every morning. We need to learn to prophesy in this way. Jeremiah told the Lord, "Great is thy faithfulness." There is a well-known hymn based upon this verse (Hymns, #19). Jeremiah also said that the Lord was his portion. It is marvelous that there was a prophet in the Old Testament who knew that the Lord was his portion. When we tell others that the Lord is our portion, we are speaking the Lord to them.</p>
+                                <footer>
+                                            <a href="http://www.ministrybooks.org" target="_blank">The Present Advance of the Lord's Recovery, chapter 4</a>
+                                                                <cite title="LSM">(<a href="http://www.livingstream.com"
+                                                          target="_new">LSM</a>)</cite>
+                                    </footer>
+            </blockquote>
+        </div>
+    </div>
+
+                            </div>
+                        </div>
+                                                                            </div>
+            </div>
+        </div>
+
+        
+        <div class="top-right-button visible-xs visible-sm">
+            <a href="#" class="jump-to-details" title="Jump to Details">
+                <i class="fa fa-info-circle fa-2x"></i>
+            </a>
+        </div>
+        <div class="top-right-button hidden-xs hidden-sm">
+            <a href="#" class="layout-change expand-section" title="Expand this section">
+                <i class="fa fa-plus-circle fa-2x"></i>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4 sidebar">
+                    <div class="row sidebar-title">
+    <h4>Details</h4>
+</div>
+<div class="row common-panel">
+    <div class="col-xs-12">
+                    <div class="row">
+                <label class="col-xs-5 col-sm-4">Category:</label>
+
+                <div class="col-xs-7 col-sm-8 no-padding">
+                    <a href="/en/search/all/category/Worship+of+the+Father">Worship of the Father</a>
+                </div>
+            </div>
+                            <div class="row">
+                <label class="col-xs-5 col-sm-4">Subcategory:</label>
+
+                <div class="col-xs-7 col-sm-8 no-padding">
+                    <a href="/en/search/all/category/Worship+of+the+Father%E2%80%94His+Faithfulness">His Faithfulness</a>
+                </div>
+            </div>
+                            <div class="row">
+                <label class="col-xs-5 col-sm-4">Lyrics:</label>
+
+                <div class="col-xs-7 col-sm-8 no-padding">
+                                        <a href="/en/search/all/author/Thomas+Obediah+Chisholm?t=h&n=19">Thomas Obediah Chisholm</a>&nbsp;<wbr/>(1866-1960)
+                </div>
+            </div>
+                            <div class="row">
+                <label class="col-xs-5 col-sm-4">Music:</label>
+
+                <div class="col-xs-7 col-sm-8 no-padding">
+                                        <a href="/en/search/all/composer/William+Marion+Runyan?t=h&n=19">William Marion Runyan</a>&nbsp;<wbr/>(1870-1957)
+                </div>
+            </div>
+                            <div class="row">
+                <label class="col-xs-5 col-sm-4">Key:</label>
+
+                <div class="col-xs-7 col-sm-8 no-padding">
+                    <a href="/en/search/all/key/D+Major">D Major</a>
+                </div>
+            </div>
+                            <div class="row">
+                <label class="col-xs-5 col-sm-4">Time:</label>
+
+                <div class="col-xs-7 col-sm-8 no-padding">
+                    <a href="/en/search/all/time/3%2F4">3/4</a>
+                </div>
+            </div>
+                            <div class="row">
+                <label class="col-xs-5 col-sm-4">Meter:</label>
+
+                <div class="col-xs-7 col-sm-8 no-padding">
+                    <a href="/en/search/all/meter/11.10.11.10.+with+chorus.">11.10.11.10. with chorus.</a>
+                </div>
+            </div>
+                            <div class="row">
+                <label class="col-xs-5 col-sm-4">Hymn Code:</label>
+
+                <div class="col-xs-7 col-sm-8 no-padding">
+                    <a href="/en/search/all/hymncode/33332244443">33332244443</a>
+                </div>
+            </div>
+                            </div>
+</div>
+
+                    <div class="row sidebar-title">
+    <h4>Share</h4>
+</div>
+<div class="row common-panel hymn-share">
+    <div class="col-xs-12">
+        <div class="row external-share">
+            <div style="width: 180px;" class="fb-like" data-width="180" data-show-faces="true"
+                 data-layout="standard" data-action="like" data-share="true"
+                 data-href="https://www.hymnal.net/en/hymn/h/19"></div>
+        </div>
+        <div class="row external-share">
+            <g:plusone size="medium"
+                       data-href="https://www.hymnal.net/en/hymn/h/19"
+                       data-callback="globalConfig.googlePlusHandler"></g:plusone>
+        </div>
+        <div class="row external-share">
+            <a href="//twitter.com/share" class="twitter-share-button" data-count="horizontal"
+               data-via="hymnalnet">Tweet</a>
+        </div>
+                <div class="row">
+            <label class="col-xs-2 hn-share">
+                                    <i class="fa fa-star-o fa-lg"></i>
+                            </label>
+
+            <div class="col-xs-10 share-text">
+                                                            Added to 237 users' list
+                                                    </div>
+        </div>
+        <div class="row">
+            <label class="col-xs-2 hn-share">
+                <a class="email-song" href="mailto:?subject=Hymn: Great is Thy faithfulness&body=Link: https://www.hymnal.net/en/hymn/h/19/">
+                    <i class="fa fa-envelope-o fa-lg"></i>
+                </a>
+            </label>
+
+            <div class="col-xs-10 share-text">
+                <a class="email-song js-email-song" href="mailto:?subject=Hymn: Great is Thy faithfulness&body=Link: https://www.hymnal.net/en/hymn/h/19/">
+                    Share with a friend
+                </a>
+            </div>
+        </div>
+                    <div class="row hidden-xs">
+                <label class="col-xs-2 hn-share">
+                    <a href="/en/widget-setup/h/19" class="js-add-to-site">
+                        <i class="fa fa-globe fa-lg"></i>
+                    </a>
+                </label>
+
+                <div class="col-xs-10 share-text">
+                    <a href="/en/widget-setup/h/19" class="js-add-to-site">
+                        Add to your website
+                    </a>
+                </div>
+            </div>
+            </div>
+</div>
+
+                    <div class="row sidebar-title">
+    <h4>Related Songs</h4>
+</div>
+<div class="row common-panel hymn-related-songs">
+    <div class="col-xs-12">
+                    <div class="row">
+                <label class="col-xs-5 col-sm-4 text-right">Languages:</label>
+
+                <div class="col-xs-7 col-sm-8 no-padding">
+                    <a href="/en/hymn/cb/19">Cebuano</a>, <a href="/en/hymn/ch/13?gb=1">诗歌(简)</a>, <a href="/en/hymn/ch/13">詩歌(繁)</a>, <a href="/en/hymn/ht/19">Tagalog</a>                </div>
+            </div>
+                        
+            
+                
+                    
+
+                    
+                        
+                            
+                                
+                                    
+                                       
+                                
+                            
+                        
+                    
+                
+            
+        
+                    <div class="row">
+                <label class="col-xs-5 col-sm-4 text-right">See Also:</label>
+
+                <div class="col-xs-12">
+                    <div class="list-group text-left">
+                                                    <a class="list-group-item" href="/en/hymn/h/27">Come, let us all unite to sing</a>
+                                                    <a class="list-group-item" href="/en/hymn/h/51">Our God and Father, we respond to Thee</a>
+                                                    <a class="list-group-item" href="/en/hymn/h/45">Abba, Father! we adore Thee</a>
+                                                    <a class="list-group-item" href="/en/hymn/h/8017
+">By righteousness was I condemned</a>
+                                                    <a class="list-group-item" href="/en/hymn/h/36
+">We praise Thee, glorious Father</a>
+                                            </div>
+                </div>
+            </div>
+            </div>
+</div>
+
+                    <div class="row sidebar-title">
+    <h4>Downloads</h4>
+</div>
+<div class="row common-panel">
+    <div class="col-xs-12">
+        <div class="row">
+            <label class="col-xs-5 col-sm-4 text-right">Lead Sheet:</label>
+
+            <div class="col-xs-7 col-sm-8 no-padding">
+                <a href="/en/hymn/h/19/f=ppdf">Piano</a>,
+                <a href="/en/hymn/h/19/f=pdf">Guitar</a>,
+                <a href="/en/hymn/h/19/f=gtpdf">Text</a>            </div>
+        </div>
+
+                    <div class="row">
+                <label class="col-xs-5 col-sm-4 text-right">Music:</label>
+
+                <div class="col-xs-7 col-sm-8 no-padding">
+                    <a href="/en/hymn/h/19/f=mp3">mp3</a>, <a href="/en/hymn/h/19/f=mid">MIDI</a>, <a href="/en/hymn/h/19/f=tune">Tune (MIDI)</a>                </div>
+            </div>
+            </div>
+</div>
+
+                        <div class="row sidebar-title">
+        <h4>
+            Jukebox
+                    </h4>
+    </div>
+    <div class="row common-panel">
+        <div class="col-xs-12 jukebox">
+                            <form id="jukeboxForm" role="form">
+                    <div class="form-group">
+                        <select name="type" class="form-control">
+                            <option value="a" selected>All Songs</option>
+                            <option value="h">Classic</option>
+                            <option value="nt">New Tunes</option>
+                            <option value="ns">New Songs</option>
+                            <option value="c">Children</option>
+                            <option value="f">Songs with Comments</option>
+                                                    </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="loop" class="form-control">
+                            <option value="1" selected>Loop once</option>
+                            <option value="2">Loop twice</option>
+                            <option value="3">Loop 3 times</option>
+                            <option value="4">Loop 4 times</option>
+                            <option value="5">Loop 5 times</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jukebox-delay">Delay between songs:</label>
+                        <select name="delay" class="form-control">
+                            <option value="0">No delay</option>
+                            <option value="5" selected>5 seconds</option>
+                            <option value="10">10 seconds</option>
+                            <option value="20">20 seconds</option>
+                            <option value="30">30 seconds</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button name="submit" type="submit" class="btn btn-primary">
+                                                            Start Playing
+
+                                                    </button>
+                    </div>
+                </form>
+                    </div>
+    </div>
+
+            </div>
+</div>
+
+<span id="ht" class="hidden">h</span>
+<span id="hn" class="hidden">19</span>
+<span id="hl" class="hidden">60</span>
+
+<script type="text/javascript">
+    var mp3File = 'https://www.hymnal.net/Hymns/Hymnal/ogg/e0019_i.ogg?v=1';
+    var midiLength = 60;
+    var loopFlag = true;
+    var autoStartFlag = true;
+</script>
+
+<div class="row footer">
+    <div class="col-sm-6 col-sm-push-6 text-right">
+        <a href="/en/contactus">Contact Us</a>
+        <span class="separator fa fa-ellipsis-v"></span>
+                    English
+                <span class="separator fa fa-ellipsis-v"></span>
+                            <a href="/cn/hymn/h/19">简体</a>
+                <span class="separator fa fa-ellipsis-v"></span>
+                    <a href="/zh/hymn/h/19">繁體</a>
+            </div>
+    <div class="col-sm-6 col-sm-pull-6 text-left">
+        &copy; 2016 <a href="/en/aboutus">hymnal.net</a>
+    </div>
+</div>
+
+
+</div>
+
+
+    <span id="ssk" class="hidden">a8044a04d46a4308552264de047501c5ac62e48e</span>
+    <span id="ss" class="hidden">0aa933b60b59a00779877cbbea2c95378ea3fb35</span>
+<span id="root" class="hidden">https://www.hymnal.net</span>
+<span id="phproot" class="hidden">/en</span>
+<span id="language" class="hidden">en</span>
+
+<script src="/js/jquery-2.1.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/bootstrapValidator.min.js"></script>
+<script src="/includes/mediaelementplayer/mediaelement-and-player.min.js"></script>
+<script src="/en/js_i18n" type="text/javascript"></script>
+
+    
+        <script type="text/javascript">
+            (function () {
+                var po = document.createElement("script");
+                po.type = "text/javascript";
+                po.async = true;
+                po.src = "https://apis.google.com/js/plusone.js";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(po, s);
+            })();
+        </script>
+    
+
+    
+        <script type="text/javascript">
+            window.twttr = (function (d, s, id) {
+                var t, js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.async = true;
+                js.src = "https://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+                return window.twttr || (t = { _e: [], ready: function (f) {
+                    t._e.push(f)
+                } });
+            }(document, "script", "twitter-wjs"));
+            twttr.ready(function (twttr) {
+                twttr.events.bind('tweet', globalConfig.twitterHandler);
+            });
+        </script>
+    
+
+<script src="/js/main.min.js" type="text/javascript"></script>
+
+</body>
+</html>
+
