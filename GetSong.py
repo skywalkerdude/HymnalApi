@@ -12,6 +12,7 @@ VERSE_TYPE = 'verse_type'
 VERSE_CONTENT = 'verse_content'
 CHORUS = 'chorus'
 VERSE = 'verse'
+OTHER = 'other'
 NAME = 'name'
 VALUE= 'value'
 DATA = 'data'
@@ -169,6 +170,8 @@ def get_hymn():
             verse = {}
             if td.get('class') and 'chorus' in td.get('class'):
                 verse[VERSE_TYPE] = CHORUS
+            elif td.get('class') and 'copyright' in td.get('class'):
+                verse[VERSE_TYPE] = OTHER
             else:
                 verse[VERSE_TYPE] = VERSE
             verse[VERSE_CONTENT] = stanza_content
