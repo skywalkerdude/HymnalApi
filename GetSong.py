@@ -75,7 +75,7 @@ def get_hymn():
     log('request sent for: %s' % path)
     
     # create BeautifulSoup object out of html content
-    soup = BeautifulSoup(r.content)
+    soup = BeautifulSoup(r.content, "html.parser")
     
     # fill in title
     json_data[soup.title.name] = soup.title.string
@@ -118,7 +118,7 @@ def get_hymn():
         content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_response.content)[0]
         
         # create BeautifulSoup object out of html content
-        external_soup = BeautifulSoup(content)
+        external_soup = BeautifulSoup(content, "html.parser")
         
         stanza_content = []
         # indicates which stanza we are currently parsing

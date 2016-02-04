@@ -82,7 +82,7 @@ def get_list():
     log('request made for: %s' % path)
 
     # create BeautifulSoup object out of html content
-    soup = BeautifulSoup(r.content)
+    soup = BeautifulSoup(r.content, "html.parser")
 
     # extract results
     results = Utils.extract_results_single_page(soup)
@@ -108,7 +108,7 @@ def get_list_scripture(testament):
     log('request sent for: %s' % path)
 
     # create BeautifulSoup object out of html content
-    soup = BeautifulSoup(r.content)
+    soup = BeautifulSoup(r.content, "html.parser")
 
     # find all div's with class 'panel-default,' which is the div containing the bible book name
     book_divs = soup.findAll('div', {'class': 'panel-default'})
@@ -184,7 +184,7 @@ def get_index_buttons(song_type):
     log('index buttons request sent for: %s' % path)
         
     # create BeautifulSoup object out of html content
-    soup = BeautifulSoup(r.content)
+    soup = BeautifulSoup(r.content, "html.parser")
     
     # extract index button div
     index_buttons = soup.find('div', {'class' : 'index-buttons'})

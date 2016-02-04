@@ -26,7 +26,7 @@ def fetch_single_results_page(search_parameter, page_num):
     log('request sent for: %s, Page %d' % (search_parameter, page_num))
 
     # create BeautifulSoup object out of html content
-    soup = BeautifulSoup(r.content)
+    soup = BeautifulSoup(r.content, "html.parser")
 
     # extract results from the single page along with whether page_num is the last page
     return (Utils.extract_results_single_page(soup), Utils.is_last_page(soup, page_num))
