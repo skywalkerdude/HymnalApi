@@ -7,7 +7,7 @@ get_song = Blueprint('get_song', __name__)
 GET_SONG_URL_FORMAT = 'http://www.hymnal.net/en/hymn/%s'
 # to create a path like h/1151 or ns/134
 HYMN_PATH_FORMAT = '%s/%d'
-EXTERNAL_LYRICS_TABLE_REGEX = '<table width=500>(.*?)</table>'
+EXTERNAL_LYRICS_TABLE_REGEX = '<!-- \*+Main Body Starts\*+ -->.*<table width=\d+.*?>(.*?)</table>'
 VERSE_TYPE = 'verse_type'
 VERSE_CONTENT = 'verse_content'
 CHORUS = 'chorus'

@@ -63,6 +63,12 @@ class FlaskrTestCase(unittest.TestCase):
         self.assert_mock_get_hymn('h', '17', external_url = 'http://www.witness-lee-hymns.org/hymns/H0017.html', external_data = 'test_data/get_song_html_h_17_external.txt')
         self.assert_get_hymn('h', '17')
 
+    # test classical hymn 10 (goes to external website but starts with '<table width=400 border=0>' instead of '<table width=500>'
+    def test_h_10(self):
+        # need to hard code url to external site
+        self.assert_mock_get_hymn('h', '10', external_url = 'http://www.witness-lee-hymns.org/hymns/H0010.html', external_data = 'test_data/get_song_html_h_10_external.txt')
+        self.assert_get_hymn('h', '10')
+
     # test classical hymn 1197 (multiple choruses)
     def test_h_1197(self):
         self.assert_mock_get_hymn('h', '1197')
