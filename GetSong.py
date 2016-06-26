@@ -107,15 +107,25 @@ def get_hymn():
 
     # for the songs with "View Lyrics (external site)"
     if raw_lyrics.find('div',{'class':'alert'}):
-        # parse out url from raw_lyrics
-        url = raw_lyrics.find('div',{'class':'alert'}).findChild().get('href').strip()
         
-        # make http GET request to song path
-        external_response = requests.get(url)
-        log('request sent for: %s' % url)
+        # Certain songs are formatted weirdly on www.witness-lee-hymns.org, so we just store them
+        # as a file on the server and serve up the stored file instead.
+        if hymn_type == 'h' and hymn_number == 187:
+            external_content = open('stored/h_187_external.txt', 'r').read()
+            content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_content)[0]
+        elif hymn_type == 'h' and hymn_number == 188:
+            external_content = open('stored/h_188_external.txt', 'r').read()
+            content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_content)[0]
+        else:
+            # parse out url from raw_lyrics
+            url = raw_lyrics.find('div',{'class':'alert'}).findChild().get('href').strip()
         
-        # BeautifulSoup randomly adds a </table> tag in the middle which screws up the scraping, so we need to use regex to find the table with the lyrics
-        content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_response.content)[0]
+            # make http GET request to song path
+            external_response = requests.get(url)
+            log('request sent for: %s' % url)
+        
+            # BeautifulSoup randomly adds a </table> tag in the middle which screws up the scraping, so we need to use regex to find the table with the lyrics
+            content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_response.content)[0]
         
         # create BeautifulSoup object out of html content
         external_soup = BeautifulSoup(content, "html.parser")
