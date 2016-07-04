@@ -1,0 +1,51 @@
+<!-- ***************************Main Body Starts******************************* -->
+
+<table><tr><td><h1>Hymn 188
+</font>&nbsp;</td></tr><tr><td><font class=text2> <b> SUBJECT: </b> PRAISE OF THE-HIS ALL-INCLUSIVENESS</td></tr>
+<tr><td><font class=text2> <b> METER: </b> 8.7.8.7.(I)</td></tr>
+<tr><td><font class=text2> <b> AUTHOR: </b> Witness Lee</td></tr>
+<tr><td><font class=text2> <b> COMPOSER: </b> John B. Dykes</td></tr>
+
+</table>
+<br>
+<table width=500>
+<tr><td width=20><font class=text2> 1</td><td colspan="3"><font class=text2>O Jesus Lord, when present at Thy table,</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>And on the bread and on the wine we gaze;</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>We praise Thee, Lord that Thou as food art able</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>To be enjoyed by man in many ways.</td></tr>
+
+<tr><td><font class=text2> Chorus</td><td colspan="3"><font class=text2>So all our being sings in praise to Thee,</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>How small Thou art, how small Thou art!</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>And Thee we'll eat through all eternity;</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>How small Thou art, how small Thou art!</td></tr>
+
+<tr><td><font class=text2> 2</td><td colspan="3"><font class=text2>O what a shame — when Christ with all His riches,</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>Has come into the world, life to supply —</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>That man would live, not by Him, but by teachings,</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>So powerless these riches to apply.</td></tr>
+
+<tr><td><font class=text2> Chorus</td><td colspan="3"><font class=text2>But all we need to do is eat the Lord;</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>He's marvelous, He's wonderful!</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>And as we eat, we're inwardly restored;</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>Christ grows in us, grows to the full.</td></tr>
+
+<tr><td><font class=text2> 3</td><td colspan="3"><font class=text2>O Jesus Christ, Thou camest not to mankind</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>To be a king, to rule us outwardly.</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>But Thou hast come as food to satisfy us,</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>And by Thy life to guide us inwardly.</td></tr>
+
+<tr><td><font class=text2> Chorus</td><td colspan="3"><font class=text2>So all our being sings in praise to Thee,</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>How small Thou art, how small Thou art!</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>And Thee we'll eat through all eternity;</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>How small Thou art, how small Thou art!</td></tr>
+
+<tr><td><font class=text2> 4</td><td colspan="3"><font class=text2>We praise Thee, Lord, for all Thy glorious grandeur,</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>For all Thy strength and majesty replete;</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>And yet, O Lord, what special thanks we give Thee,</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>That all Thou art is small enough to eat.</td></tr>
+
+<tr><td><font class=text2> Chorus</td><td colspan="3"><font class=text2>So all our being sings in praise to Thee,</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>How small Thou art, how small Thou art!</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>And Thee we'll eat through all eternity;</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>How small Thou art, how small Thou art!</td></tr>
+</table>

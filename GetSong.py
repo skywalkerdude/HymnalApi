@@ -116,6 +116,12 @@ def get_hymn():
         elif hymn_type == 'h' and hymn_number == 188:
             external_content = open('stored/h_188_external.txt', 'r').read()
             content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_content)[0]
+        elif hymn_type == 'h' and hymn_number == 500:
+            external_content = open('stored/h_500_external.txt', 'r').read()
+            content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_content)[0]
+        elif hymn_type == 'h' and hymn_number == 1110:
+            external_content = open('stored/h_1110_external.txt', 'r').read()
+            content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_content)[0]
         else:
             # parse out url from raw_lyrics
             url = raw_lyrics.find('div',{'class':'alert'}).findChild().get('href').strip()
