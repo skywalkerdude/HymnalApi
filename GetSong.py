@@ -51,6 +51,8 @@ def get_hymn():
     # initialize arguments
     hymn_type = request.args.get('hymn_type', type=str)
     hymn_number = request.args.get('hymn_number', type=int)
+    # whether or not we need to check if the song exists.
+    check_exists = request.args.get('check_exists', type=bool)
     
     # error checking
     message = None
@@ -76,6 +78,16 @@ def get_hymn():
     
     # create BeautifulSoup object out of html content
     soup = BeautifulSoup(r.content, "html.parser")
+
+    # If the song doesn't exist, hymnal.net will randomly generate a song that doesn't make sense.
+    # However, it does it at run time, meaning if you request it twice, it'll have a different title.
+    if check_exists:
+        r2 = requests.get(GET_SONG_URL_FORMAT % path)
+        soup2 = BeautifulSoup(r2.content, "html.parser")
+        if soup2.title != soup.title:
+            message = {Constants.PUBLIC : Constants.NOT_REAL_SONG % (hymn_type, hymn_number)}
+            message['status_code'] = 400
+            return (json.dumps(message), 400)
     
     # fill in title
     json_data[soup.title.name] = soup.title.string

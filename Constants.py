@@ -1,6 +1,7 @@
 # Error Messages
 PUBLIC = 'public'
 ERROR_MESSAGE = 'Request is missing argument: %s'
+NOT_REAL_SONG = 'Song %s %d is not a real song'
 
 # for SearchSong
 HAS_MORE_PAGES = 'has_more_pages'
