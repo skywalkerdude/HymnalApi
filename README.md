@@ -12,6 +12,7 @@ Route:
 Parameters:
 hymn_type
 hymn_number
+check_exists (will return the hymn if it exists on hymnal.net and throw 400 if it doesn't)
 
 Route:
 /list
