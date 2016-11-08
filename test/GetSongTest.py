@@ -41,6 +41,12 @@ class FlaskrTestCase(unittest.TestCase):
         rv = self.app.get('/hymn?hymn_type=h')
         assert rv.status_code == 400
         assert 'Request is missing argument: hymn_number' in rv.data
+        rv = self.app.get('/hymn?hymn_type=h&hymn_number=2000&&check_exists=true')
+        assert rv.status_code == 400
+        assert 'Song h 2000 is not a real song' in rv.data
+        rv = self.app.get('/hymn?hymn_type=h&hymn_number=1151p&&check_exists=true')
+        assert rv.status_code == 400
+        assert 'Song h 1151p is not a real song' in rv.data
 
     # test classical hymn 1131
     def test_h_1131(self):
@@ -74,9 +80,14 @@ class FlaskrTestCase(unittest.TestCase):
         self.assert_mock_get_hymn('h', '1197')
         self.assert_get_hymn('h', '1197')
     
+    # test song that is in the form /en/hymn/ns/6i (for Indonesian)
+    def test_ns_6i(self):
+        self.assert_mock_get_hymn('ns', '6i')
+        self.assert_get_hymn('ns', '6i')
+    
     def assert_mock_get_hymn(self, hymn_type, hymn_number, external_url = None, external_data = None):
         # url to stub out
-        path = GetSong.HYMN_PATH_FORMAT % (hymn_type, int(hymn_number))
+        path = GetSong.HYMN_PATH_FORMAT % (hymn_type, hymn_number)
         url = GetSong.GET_SONG_URL_FORMAT % path
         # mock out hymnal.net response
         # https://docs.python.org/3/library/unittest.mock.html

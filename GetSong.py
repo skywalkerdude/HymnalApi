@@ -6,7 +6,7 @@ get_song = Blueprint('get_song', __name__)
 
 GET_SONG_URL_FORMAT = 'http://www.hymnal.net/en/hymn/%s'
 # to create a path like h/1151 or ns/134
-HYMN_PATH_FORMAT = '%s/%d'
+HYMN_PATH_FORMAT = '%s/%s'
 EXTERNAL_LYRICS_TABLE_REGEX = '<!-- \*+Main Body Starts\*+ -->.*<table width=\d+.*?>(.*?)</table>'
 VERSE_TYPE = 'verse_type'
 VERSE_CONTENT = 'verse_content'
@@ -50,7 +50,7 @@ def get_hymn():
     
     # initialize arguments
     hymn_type = request.args.get('hymn_type', type=str)
-    hymn_number = request.args.get('hymn_number', type=int)
+    hymn_number = request.args.get('hymn_number', type=str)
     # whether or not we need to check if the song exists.
     check_exists = request.args.get('check_exists', type=bool)
     
@@ -122,16 +122,16 @@ def get_hymn():
         
         # Certain songs are formatted weirdly on www.witness-lee-hymns.org, so we just store them
         # as a file on the server and serve up the stored file instead.
-        if hymn_type == 'h' and hymn_number == 187:
+        if hymn_type == 'h' and hymn_number == '187':
             external_content = open('stored/h_187_external.txt', 'r').read()
             content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_content)[0]
-        elif hymn_type == 'h' and hymn_number == 188:
+        elif hymn_type == 'h' and hymn_number == '188':
             external_content = open('stored/h_188_external.txt', 'r').read()
             content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_content)[0]
-        elif hymn_type == 'h' and hymn_number == 500:
+        elif hymn_type == 'h' and hymn_number == '500':
             external_content = open('stored/h_500_external.txt', 'r').read()
             content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_content)[0]
-        elif hymn_type == 'h' and hymn_number == 1110:
+        elif hymn_type == 'h' and hymn_number == '1110':
             external_content = open('stored/h_1110_external.txt', 'r').read()
             content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_content)[0]
         else:
