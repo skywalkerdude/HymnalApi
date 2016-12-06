@@ -122,7 +122,10 @@ def get_hymn():
         
         # Certain songs are formatted weirdly on www.witness-lee-hymns.org, so we just store them
         # as a file on the server and serve up the stored file instead.
-        if hymn_type == 'h' and hymn_number == '187':
+        if hymn_type == 'h' and hymn_number == '152b':
+            external_content = open('stored/h_152b_external.txt', 'r').read()
+            content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_content)[0]
+        elif hymn_type == 'h' and hymn_number == '187':
             external_content = open('stored/h_187_external.txt', 'r').read()
             content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_content)[0]
         elif hymn_type == 'h' and hymn_number == '188':

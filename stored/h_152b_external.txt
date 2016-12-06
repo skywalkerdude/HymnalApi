@@ -1,0 +1,47 @@
+<!-- ***************************Main Body Starts******************************* -->
+
+<table><tr><td><h1>Hymn 152
+</font>&nbsp;</td></tr><tr><td><font class=text2> <b> SUBJECT: </b> PRAISE OF THE LORD-HIS LOVE</td></tr>
+<tr><td><font class=text2> <b> METER: </b> 8.7.8.7.D.</td></tr>
+<tr><td><font class=text2> <b> AUTHOR: </b> Witness Lee</td></tr>
+<tr><td><font class=text2> <b> COMPOSER: </b> Thomas John Williams</td></tr>
+
+</table>
+<br>
+<table width=500><tr><td width=20><font class=text2> 1</td><td colspan="3"><font class=text2>O how deep and how far-reaching</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>Is Thy love, dear Lord, to me!</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>Far beyond my pow&#146;r to fathom,</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>Deeper than the deepest sea!</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>It has caused Thee death to suffer</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>And to me Thyself impart,</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>That in Thee I might be grafted</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>And become of Thee a part.</td></tr>
+
+<tr><td><font class=text2> 2</td><td colspan="3"><font class=text2>Who can tell of all the wonders</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>Which Thy love for me has wrought,</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>Yet the greatest of these wonders</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>Is that Thou to me art brought.</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>Oh! to me Thy love has given</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>All Thou art as my supply;</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>As true life I now may share Thee</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>And Thy riches e&#146;er enjoy.</td></tr>
+
+<tr><td><font class=text2> 3</td><td colspan="3"><font class=text2>Lord, Thy love is the expression</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>Of Thy loving self divine,</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>Making life so full of meaning,</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>Harmonized with God&#146;s design.</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>Grace of life, how all-sufficient,</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>Is my portion day by day;</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>I&#146;m the object of Thy favor</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>And Thy sweetness taste alway.</td></tr>
+
+<tr><td><font class=text2> 4</td><td colspan="3"><font class=text2>What from Thee can separate me?</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>Thou wilt love me to the end!</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>Oh! Thy love is so prevailing,</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>E&#146;en Thyself with me to blend!</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>We two one will be for ever;</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>I am Thine and Thou art mine!</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td colspan="3"><font class=text2>This will be my testimony:</td></tr>
+<tr><td><font class=text2>&nbsp;</td><td>&nbsp;</td><td colspan="2"><font class=text2>In Thy love we&#146;ll ever twine!</td></tr>
+
+</table>
