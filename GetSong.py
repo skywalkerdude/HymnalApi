@@ -20,6 +20,9 @@ HYMN_TYPE = 'hymn_type'
 HYMN_NUMBER = 'hymn_number'
 META_DATA = 'meta_data'
 LYRICS = 'lyrics'
+SVG = 'svg'
+SVG_PIANO = 'piano'
+SVG_GUITAR = 'guitar'
 
 debug = False
 
@@ -44,6 +47,30 @@ def create_verse(stanza_num, stanza_content):
         verse[VERSE_TYPE] = VERSE
     verse[VERSE_CONTENT] = stanza_content
     return verse
+
+# extract the svg from the soup object
+def extract_svg(soup):
+    svgs = []
+    piano_sheet_svg = get_svg_from_div(soup.find('div',{'class':SVG_PIANO}))
+    if piano_sheet_svg is not None:
+        svgs.append({NAME:SVG_PIANO, 'path':piano_sheet_svg})
+    guitar_sheet_svg = get_svg_from_div(soup.find('div',{'class':SVG_GUITAR}))
+    if guitar_sheet_svg is not None:
+        svgs.append({NAME:SVG_GUITAR, 'path':guitar_sheet_svg})
+
+    if len(svgs) > 0:
+        return get_meta_data_object(SVG, svgs)
+    else:
+        return None
+
+# helper function to extract the link for the svg from a particular div
+def get_svg_from_div(div):
+    if div is None:
+        return None
+    child = div.findChild('span', {'class','svg'})
+    if child is None:
+        return None
+    return child.text
 
 @get_song.route('/hymn')
 def get_hymn():
@@ -112,6 +139,11 @@ def get_hymn():
             meta_data_object = get_meta_data_object(name, data)
             if meta_data_object not in meta_data:
                 meta_data.append(meta_data_object)
+
+    svg = extract_svg(soup)
+    if svg is not None:
+        meta_data.append(svg)
+
     json_data[META_DATA] = meta_data
 
     lyrics = []
