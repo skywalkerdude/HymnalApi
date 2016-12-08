@@ -51,10 +51,10 @@ def create_verse(stanza_num, stanza_content):
 # extract the svg from the soup object
 def extract_svg(soup):
     svgs = []
-    piano_sheet_svg = get_svg_from_div(soup.find('div',{'class':SVG_PIANO}))
+    piano_sheet_svg = get_svg_from_div(soup.find('div',{'class':SVG_PIANO.lower()}))
     if piano_sheet_svg is not None:
         svgs.append({NAME:SVG_PIANO, 'path':piano_sheet_svg})
-    guitar_sheet_svg = get_svg_from_div(soup.find('div',{'class':SVG_GUITAR}))
+    guitar_sheet_svg = get_svg_from_div(soup.find('div',{'class':SVG_GUITAR.lower()}))
     if guitar_sheet_svg is not None:
         svgs.append({NAME:SVG_GUITAR, 'path':guitar_sheet_svg})
 
