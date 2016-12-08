@@ -21,8 +21,8 @@ HYMN_NUMBER = 'hymn_number'
 META_DATA = 'meta_data'
 LYRICS = 'lyrics'
 SVG = 'svg'
-SVG_PIANO = 'piano'
-SVG_GUITAR = 'guitar'
+SVG_PIANO = 'Piano'
+SVG_GUITAR = 'Guitar'
 
 debug = False
 
