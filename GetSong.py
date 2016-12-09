@@ -53,10 +53,10 @@ def extract_svg(soup):
     svgs = []
     piano_sheet_svg = get_svg_from_div(soup.find('div',{'class':SVG_PIANO.lower()}))
     if piano_sheet_svg is not None:
-        svgs.append({NAME:SVG_PIANO, 'path':piano_sheet_svg})
+        svgs.append({VALUE:SVG_PIANO, 'path':piano_sheet_svg})
     guitar_sheet_svg = get_svg_from_div(soup.find('div',{'class':SVG_GUITAR.lower()}))
     if guitar_sheet_svg is not None:
-        svgs.append({NAME:SVG_GUITAR, 'path':guitar_sheet_svg})
+        svgs.append({VALUE:SVG_GUITAR, 'path':guitar_sheet_svg})
 
     if len(svgs) > 0:
         return get_meta_data_object(SVG, svgs)
