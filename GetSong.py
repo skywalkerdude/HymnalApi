@@ -93,12 +93,21 @@ def get_hymn():
         message['status_code'] = 400
         return (json.dumps(message), 400)
 
-    # data to be returned as json
-    json_data = {}
+    # if there are any additional query parameters, then pass it directly to hymnal.net
+    additional_args = request.args.copy()
+    del additional_args['hymn_type']
+    del additional_args['hymn_number']
+    if 'check_exists' in additional_args:
+        del additional_args['check_exists']
 
-    # create path
+    # create path by plugging in the hymn type and number and appending all query params
     path = HYMN_PATH_FORMAT % (hymn_type, hymn_number)
-    
+    for index, key in enumerate(additional_args):
+        if index == 0:
+            path += '?' + key + '=' + additional_args.get(key)
+        else:
+            path += '&' + key + '=' + additional_args.get(key)
+
     # make http GET request to song path
     r = requests.get(GET_SONG_URL_FORMAT % path)
     log('request sent for: %s' % path)
@@ -115,6 +124,9 @@ def get_hymn():
             message = {Constants.PUBLIC : Constants.NOT_REAL_SONG % (hymn_type, hymn_number)}
             message['status_code'] = 400
             return (json.dumps(message), 400)
+
+    # data to be returned as json
+    json_data = {}
     
     # fill in title
     json_data[soup.title.name] = soup.title.string

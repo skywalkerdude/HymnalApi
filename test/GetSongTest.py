@@ -48,8 +48,8 @@ class FlaskrTestCase(unittest.TestCase):
         assert rv.status_code == 400
         assert 'Song h 1151p is not a real song' in rv.data
 
-    # test classical hymn 1131
-    def test_h_1131(self):
+    # test classical hymn 1331
+    def test_h_1331(self):
         self.assert_mock_get_hymn('h', '1331')
         self.assert_get_hymn('h', '1331')
 
@@ -79,36 +79,54 @@ class FlaskrTestCase(unittest.TestCase):
     def test_h_1197(self):
         self.assert_mock_get_hymn('h', '1197')
         self.assert_get_hymn('h', '1197')
-    
+
     # test song that is in the form /en/hymn/ns/6i (for Indonesian)
     def test_ns_6i(self):
         self.assert_mock_get_hymn('ns', '6i')
         self.assert_get_hymn('ns', '6i')
-    
-    def assert_mock_get_hymn(self, hymn_type, hymn_number, external_url = None, external_data = None):
+
+    # test song that is in the form /en/hymn/ch/7?gb=1&query=2 (for Indonesian)
+    def test_ch_7_query_param(self):
+        self.assert_mock_get_hymn('ch', '7', query_params={'gb':'1', 'query':'2'})
+        self.assert_get_hymn('ch', '7', query_params={'gb':'1', 'query':'2'})
+
+    def assert_mock_get_hymn(self, hymn_type, hymn_number, external_url = None, external_data = None, query_params = None):
+        
+        stubbed_path = GetSong.HYMN_PATH_FORMAT % (hymn_type, hymn_number)
+        for index, key in enumerate(query_params or []):
+            if index == 0:
+                stubbed_path += '?' + key + '=' + query_params.get(key)
+            else:
+                stubbed_path += '&' + key + '=' + query_params.get(key)
+
         # url to stub out
-        path = GetSong.HYMN_PATH_FORMAT % (hymn_type, hymn_number)
-        url = GetSong.GET_SONG_URL_FORMAT % path
+        stubbed_url = GetSong.GET_SONG_URL_FORMAT % stubbed_path
+        
         # mock out hymnal.net response
         # https://docs.python.org/3/library/unittest.mock.html
         mock_response = Mock()
-        mock_response.content = open('test_data/get_song_html_{}_{}.txt'.format(hymn_type, hymn_number), 'r').read()
+        mock_data_format = 'test_data/get_song_html_{}_{}'
+        for key in query_params or []:
+            mock_data_format += key + query_params[key]
+        mock_data_format += '.txt'
+        
+        mock_response.content = open(mock_data_format.format(hymn_type, hymn_number), 'r').read()
         
         # http://stackoverflow.com/questions/15753390/python-mock-requests-and-the-response
         # http://mock.readthedocs.org/en/latest/patch.html
         if (external_url):
             external_mock = Mock()
             external_mock.content = open(external_data.format(hymn_type, hymn_number), 'r').read()
-            patcher = patch('requests.get', Mock(side_effect = lambda k:{url: mock_response, external_url: external_mock}.get(k, 'unhandled request %s' % k)))
+            patcher = patch('requests.get', Mock(side_effect = lambda k:{stubbed_url: mock_response, external_url: external_mock}.get(k, 'unhandled request %s' % k)))
         else :
-            patcher = patch('requests.get', Mock(side_effect = lambda k:{url: mock_response}.get(k, 'unhandled request %s' % k)))
+            patcher = patch('requests.get', Mock(side_effect = lambda k:{stubbed_url: mock_response}.get(k, 'unhandled request %s' % k)))
         
         # start patcher, do assertions, then stop patcher
         patcher.start()
-        self.assert_get_hymn(hymn_type, hymn_number)
+        self.assert_get_hymn(hymn_type, hymn_number, query_params)
         patcher.stop()
 
-    def assert_get_hymn(self, hymn_type, hymn_number):
+    def assert_get_hymn(self, hymn_type, hymn_number, query_params = None):
         # checks that two meta data objects are equal
         def check_meta_data(expected, actual):
             assert_equal(len(expected), len(actual))
@@ -127,10 +145,18 @@ class FlaskrTestCase(unittest.TestCase):
                 assert_equal(expected[i]['verse_content'], actual[i]['verse_content'])
 
         # make request to get hymn
-        rv = self.app.get('hymn?hymn_type={}&hymn_number={}'.format(hymn_type, hymn_number))
+        path = 'hymn?hymn_type={}&hymn_number={}'.format(hymn_type, hymn_number)
+        for key in query_params or []:
+            # append the query parameters to the path
+            path += '&' + key + '=' + query_params[key]
+        rv = self.app.get(path)
         actual_result = json.loads(rv.data)
         # open saved test data
-        expected_result = json.loads(open('test_data/get_song_{}_{}.txt'.format(hymn_type, hymn_number), 'r').read())
+        expected_result_path = 'test_data/get_song_{}_{}'.format(hymn_type,hymn_number)
+        for key in query_params or []:
+            expected_result_path += key + query_params[key]
+        expected_result_path += '.txt'
+        expected_result = json.loads(open(expected_result_path, 'r').read())
         # assert that components are equal
         assert_equal(expected_result['title'], actual_result['title'])
         check_meta_data(expected_result['meta_data'], actual_result['meta_data'])
