@@ -1,5 +1,5 @@
 import sys; sys.path.append('..')
-import hymnalnetapi, unittest, GetSong, flask, json, collections, urllib
+import hymnalnetapi, unittest, GetSong, flask, json, urllib
 from unittest.mock import create_autospec, patch, MagicMock as Mock
 from nose.tools import assert_equal
 
@@ -155,7 +155,6 @@ class FlaskrTestCase(unittest.TestCase):
         rv = self.app.get(path)
         actual_result = json.loads(rv.get_data(as_text=True))
         # open saved test data
-        query_params = collections.OrderedDict(sorted(query_params, key=lambda i: i[0]))
         params = '?' + urllib.parse.urlencode(query_params) if query_params else ''
         expected_result_path = 'test_data/get_song_{}_{}'.format(hymn_type,hymn_number) + params
         expected_result_path += '.txt'
