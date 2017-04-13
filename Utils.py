@@ -5,7 +5,8 @@ PATH = 'path'
 
 # clears all children of a particular soup element
 def clear_children(element):
-    map(lambda child: child.clear(), element.findChildren())
+    for c in element.findChildren():
+        c.extract()
 
 # extracts all links out of a container into a dictionary
 def extract_links(container, name_key = NAME, path_key=PATH, should_clear_children=True):

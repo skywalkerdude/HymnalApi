@@ -17,7 +17,7 @@ class FlaskrTestCase(unittest.TestCase):
         # https://blog.safaribooksonline.com/2013/12/05/flask-with-mock-and-nose/
         rv = self.app.get('/')
         assert_equal(rv.status_code, 200)
-        assert 'Welcome to my API' in rv.data
+        assert 'Welcome to my API' in rv.get_data(as_text=True)
 
 
 if __name__ == '__main__':

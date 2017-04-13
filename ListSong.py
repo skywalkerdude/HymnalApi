@@ -31,7 +31,7 @@ debug = False
 
 def log(msg):
     if (debug):
-        print msg
+        print(msg)
 
 @list_song.route('/list')
 # args: song_type, letter, testament

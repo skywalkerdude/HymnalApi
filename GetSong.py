@@ -28,7 +28,7 @@ debug = False
 
 def log(msg):
     if (debug):
-        print msg
+        print(msg)
 
 # returns a meta data object from it's name and data
 def get_meta_data_object(name, data):
@@ -113,7 +113,7 @@ def get_hymn():
     log('request sent for: %s' % path)
     
     # create BeautifulSoup object out of html content
-    soup = BeautifulSoup(r.content, "html.parser")
+    soup = BeautifulSoup(r.text, "html.parser")
 
     # If the song doesn't exist, hymnal.net will randomly generate a song that doesn't make sense.
     # However, it does it at run time, meaning if you request it twice, it'll have a different title.
@@ -190,7 +190,7 @@ def get_hymn():
             log('request sent for: %s' % url)
         
             # BeautifulSoup randomly adds a </table> tag in the middle which screws up the scraping, so we need to use regex to find the table with the lyrics
-            content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_response.content)[0]
+            content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_response.text)[0]
         
         # create BeautifulSoup object out of html content
         external_soup = BeautifulSoup(content, "html.parser")

@@ -1,6 +1,7 @@
+import sys; sys.path.append('..')
 import unittest, Utils
 from bs4 import BeautifulSoup, element
-from mock import create_autospec, call
+from unittest.mock import create_autospec, call
 
 import os, requests, re, simplejson as json
 
@@ -20,9 +21,9 @@ class UtilsTest(unittest.TestCase):
 
         Utils.clear_children(element_mock)
 
-        child_mock1.clear.assert_called_once_with()
-        child_mock2.clear.assert_called_once_with()
-        child_mock3.clear.assert_called_once_with()
+        child_mock1.extract.assert_called_once_with()
+        child_mock2.extract.assert_called_once_with()
+        child_mock3.extract.assert_called_once_with()
         assert not child_mock4.clear.called, 'child_mock4.clear was called and should not have been'
 
 
