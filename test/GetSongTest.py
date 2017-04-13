@@ -1,7 +1,7 @@
 import sys; sys.path.append('..')
 import hymnalnetapi, unittest, GetSong, flask, json, urllib, Utils
 from unittest.mock import create_autospec, patch, MagicMock as Mock
-from nose.tools import assert_equal
+from nose.tools import assert_equal, assert_false
 
 class FlaskrTestCase(unittest.TestCase):
     
@@ -149,6 +149,8 @@ class FlaskrTestCase(unittest.TestCase):
                 assert_equal(expected[i]['verse_content'], actual[i]['verse_content'])
                 if 'transliteration' in expected[i]:
                     assert_equal(expected[i]['transliteration'], actual[i]['transliteration'])
+                else:
+                    assert_false('transliteration' in actual[i])
 
         # open saved test data
         expected_result_path = Utils.add_query_to_url('test_data/get_song_{}_{}'.format(hymn_type,hymn_number), query_params)
