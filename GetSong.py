@@ -1,4 +1,4 @@
-import os, requests, re, simplejson as json, Utils, Constants, urllib
+import os, requests, re, simplejson as json, Utils, Constants, urllib, pinyin
 from bs4 import BeautifulSoup
 from flask import Blueprint, request
 
@@ -10,6 +10,7 @@ HYMN_PATH_FORMAT = '%s/%s'
 EXTERNAL_LYRICS_TABLE_REGEX = '<!-- \*+Main Body Starts\*+ -->.*<table width=\d+.*?>(.*?)</table>'
 VERSE_TYPE = 'verse_type'
 VERSE_CONTENT = 'verse_content'
+VERSE_TRANSLITERATION = 'transliteration'
 CHORUS = 'chorus'
 VERSE = 'verse'
 OTHER = 'other'
@@ -249,6 +250,10 @@ def get_hymn():
 
             # append finished stanza to lyrics hash
             lyrics.append(verse)
+
+    for lyric in lyrics:
+        if hymn_type in ('ch', 'ts'):
+            lyric[VERSE_TRANSLITERATION] = [pinyin.get(line) for line in stanza_content]
 
     json_data[LYRICS] = lyrics
 

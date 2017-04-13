@@ -1,8 +1,9 @@
 Flask==0.12
 Jinja2==2.6
-Werkzeug==0.11
+Werkzeug==0.12
 gunicorn==0.17.2
 requests==2.13
 simplejson==3.10.0
 beautifulsoup4==4.5
+pinyin==0.4
 nose==1.3

@@ -1,3 +1,4 @@
+import sys; sys.path.append('..')
 import hymnalnetapi, unittest, flask
 from nose.tools import assert_equal
 
