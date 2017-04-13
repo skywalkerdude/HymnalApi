@@ -1,5 +1,5 @@
 import sys; sys.path.append('..')
-import hymnalnetapi, unittest, GetSong, flask, json, urllib
+import hymnalnetapi, unittest, GetSong, flask, json, urllib, Utils
 from unittest.mock import create_autospec, patch, MagicMock as Mock
 from nose.tools import assert_equal
 
@@ -92,16 +92,16 @@ class FlaskrTestCase(unittest.TestCase):
         self.assert_get_hymn('ch', '7', query_params=(('gb', '1'), ('query', '2')))
 
     def assert_mock_get_hymn(self, hymn_type, hymn_number, external_url = None, external_data = None, query_params = tuple()):
-        params = '?' + urllib.parse.urlencode(query_params) if query_params else ''
-        stubbed_path = GetSong.HYMN_PATH_FORMAT % (hymn_type, hymn_number) + params
+        stubbed_path = GetSong.HYMN_PATH_FORMAT % (hymn_type, hymn_number)
 
         # url to stub out
-        stubbed_url = GetSong.GET_SONG_URL_FORMAT % stubbed_path
+        url = GetSong.GET_SONG_URL_FORMAT % stubbed_path
+        stubbed_url = Utils.add_query_to_url(url, query_params)
         
         # mock out hymnal.net response
         # https://docs.python.org/3/library/unittest.mock.html
         mock_response = Mock()
-        mock_data_format = 'test_data/get_song_html_{}_{}' + params
+        mock_data_format = Utils.add_query_to_url('test_data/get_song_html_{}_{}', query_params)
         mock_data_format += '.txt'
         
         mock_response.text = open(mock_data_format.format(hymn_type, hymn_number), 'r').read()
@@ -148,16 +148,15 @@ class FlaskrTestCase(unittest.TestCase):
                 assert_equal(expected[i]['verse_type'], actual[i]['verse_type'])
                 assert_equal(expected[i]['verse_content'], actual[i]['verse_content'])
 
-        # make request to get hymn
-        params = '&' + urllib.parse.urlencode(query_params) if query_params else ''
-        path = 'hymn?hymn_type={}&hymn_number={}'.format(hymn_type, hymn_number) + params
-        rv = self.app.get(path)
-        actual_result = json.loads(rv.get_data(as_text=True))
         # open saved test data
-        params = '?' + urllib.parse.urlencode(query_params) if query_params else ''
-        expected_result_path = 'test_data/get_song_{}_{}'.format(hymn_type,hymn_number) + params
+        expected_result_path = Utils.add_query_to_url('test_data/get_song_{}_{}'.format(hymn_type,hymn_number), query_params)
         expected_result_path += '.txt'
         expected_result = json.loads(open(expected_result_path, 'r').read())
+        # make request to get hymn
+        query_params = (('hymn_type', hymn_type), ('hymn_number', hymn_number)) + query_params
+        path = Utils.add_query_to_url('hymn', query_params)
+        rv = self.app.get(path)
+        actual_result = json.loads(rv.get_data(as_text=True))
         # assert that components are equal
         assert_equal(expected_result['title'], actual_result['title'])
         check_meta_data(expected_result['meta_data'], actual_result['meta_data'])

@@ -1,7 +1,13 @@
+from urllib import parse as urlparse
 from bs4 import BeautifulSoup
 
 NAME = 'name'
 PATH = 'path'
+
+def add_query_to_url(url, query):
+    url_parts = list(urlparse.urlparse(url))
+    url_parts[4] = urlparse.urlencode(query)
+    return urlparse.urlunparse(url_parts)
 
 # clears all children of a particular soup element
 def clear_children(element):

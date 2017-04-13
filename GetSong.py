@@ -101,10 +101,9 @@ def get_hymn():
         del additional_args['check_exists']
 
     # create path by plugging in the hymn type and number and appending all query params
-    params = '?' + urllib.parse.urlencode(additional_args) if additional_args else ''
-    path = HYMN_PATH_FORMAT % (hymn_type, hymn_number) + params
+    path = HYMN_PATH_FORMAT % (hymn_type, hymn_number)
     # make http GET request to song path
-    r = requests.get(GET_SONG_URL_FORMAT % path)
+    r = requests.get(Utils.add_query_to_url(GET_SONG_URL_FORMAT % path, additional_args))
     log('request sent for: %s' % path)
     
     # create BeautifulSoup object out of html content
