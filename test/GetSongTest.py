@@ -110,7 +110,7 @@ class FlaskrTestCase(unittest.TestCase):
         def get_url(url):
             parsed_url = urllib.parse.urlparse(url)
             params = urllib.parse.parse_qsl(parsed_url.query)
-            assert_equal(query_params, tuple(params))
+            assert_equal(dict(query_params), dict(params))
             if parsed_url.geturl() == external_url:
                 return external_mock
             elif parsed_url.geturl() == stubbed_url:

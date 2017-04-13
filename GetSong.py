@@ -1,4 +1,4 @@
-import os, requests, re, simplejson as json, Utils, Constants
+import os, requests, re, simplejson as json, Utils, Constants, urllib
 from bs4 import BeautifulSoup
 from flask import Blueprint, request
 
@@ -101,13 +101,8 @@ def get_hymn():
         del additional_args['check_exists']
 
     # create path by plugging in the hymn type and number and appending all query params
-    path = HYMN_PATH_FORMAT % (hymn_type, hymn_number)
-    for index, key in enumerate(additional_args):
-        if index == 0:
-            path += '?' + key + '=' + additional_args.get(key)
-        else:
-            path += '&' + key + '=' + additional_args.get(key)
-
+    params = '?' + urllib.parse.urlencode(additional_args) if additional_args else ''
+    path = HYMN_PATH_FORMAT % (hymn_type, hymn_number) + params
     # make http GET request to song path
     r = requests.get(GET_SONG_URL_FORMAT % path)
     log('request sent for: %s' % path)
