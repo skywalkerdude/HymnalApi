@@ -147,6 +147,8 @@ class FlaskrTestCase(unittest.TestCase):
             for i in range(len(expected)):
                 assert_equal(expected[i]['verse_type'], actual[i]['verse_type'])
                 assert_equal(expected[i]['verse_content'], actual[i]['verse_content'])
+                if 'transliteration' in expected[i]:
+                    assert_equal(expected[i]['transliteration'], actual[i]['transliteration'])
 
         # open saved test data
         expected_result_path = Utils.add_query_to_url('test_data/get_song_{}_{}'.format(hymn_type,hymn_number), query_params)
