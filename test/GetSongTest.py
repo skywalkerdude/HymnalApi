@@ -119,7 +119,6 @@ class FlaskrTestCase(unittest.TestCase):
         # http://stackoverflow.com/questions/15753390/python-mock-requests-and-the-response
         # http://mock.readthedocs.org/en/latest/patch.html
         external_mock = Mock()
-
         if (external_url):
             external_mock.text = open(external_data.format(hymn_type, hymn_number), 'r').read()
             patcher = patch('requests.get', Mock(side_effect=get_url))
@@ -132,10 +131,10 @@ class FlaskrTestCase(unittest.TestCase):
         patcher.stop()
 
     def assert_get_hymn(self, hymn_type, hymn_number, query_params = tuple()):
-        # checks that two meta data objects are equal 
-        def check_meta_data(expected, actual): 
-            assert_equal(len(expected), len(actual)) 
-            for i in range(len(expected)): 
+        # checks that two meta data objects are equal
+        def check_meta_data(expected, actual):
+            assert_equal(len(expected), len(actual))
+            for i in range(len(expected)):
                 assert_equal(expected[i]['name'], actual[i]['name'])
                 # don't check value of 'See Also' field because it changes every request
                 if expected[i]['name'] == 'See Also':
