@@ -253,8 +253,9 @@ def get_hymn():
 
     if Utils.has_transliteration(hymn_type):
         for lyric in lyrics:
+            # split the original characters, then transliterate and add a space between them
             chars = [list(line) for line in verse[VERSE_CONTENT]]
-            lyric[VERSE_TRANSLITERATION] = [' '.join(char_list) for char_list in chars]
+            lyric[VERSE_TRANSLITERATION] = [' '.join([pinyin.get(char) for char in char_list]) for char_list in chars]
 
     json_data[LYRICS] = lyrics
 
