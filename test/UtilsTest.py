@@ -1,7 +1,9 @@
 import sys; sys.path.append('..')
 import unittest, Utils
 from bs4 import BeautifulSoup, element
+from urllib import parse as urlparse
 from unittest.mock import create_autospec, call
+from nose.tools import assert_equal
 
 import os, requests, re, simplejson as json
 
@@ -165,6 +167,20 @@ class UtilsTest(unittest.TestCase):
     
         # reset extract_links back to it's original value
         Utils.extract_links = funct
+
+    def test_add_query_to_url(self):
+        url = 'hymn'
+        query = tuple()
+        assert_equal('hymn', Utils.add_query_to_url(url, query))
+
+        query = (('gb', '1'),)
+        assert_equal('hymn?gb=1', Utils.add_query_to_url(url, query))
+
+        url = 'hymn?gb=1'
+        query = (('query', '2'),)
+        result = Utils.add_query_to_url(url, query)
+        resulting_query = dict(urlparse.parse_qsl(urlparse.urlparse(result).query))
+        assert_equal({'gb': '1', 'query': '2'}, resulting_query)
 
 if __name__ == '__main__':
     unittest.main()
