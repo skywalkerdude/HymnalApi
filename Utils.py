@@ -19,7 +19,7 @@ def add_query_to_url(url, query):
 # clears all children of a particular soup element
 def clear_children(element):
     for c in element.findChildren():
-        c.extract()
+        c.clear()
 
 # extracts all links out of a container into a dictionary
 def extract_links(container, name_key = NAME, path_key=PATH, should_clear_children=True):
