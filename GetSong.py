@@ -251,9 +251,10 @@ def get_hymn():
             # append finished stanza to lyrics hash
             lyrics.append(verse)
 
-    for lyric in lyrics:
-        if Utils.has_transliteration(hymn_type):
-            lyric[VERSE_TRANSLITERATION] = [' '.join(list(pinyin.get(line))) for line in stanza_content]
+    if Utils.has_transliteration(hymn_type):
+        for lyric in lyrics:
+            chars = [list(line) for line in verse[VERSE_CONTENT]]
+            lyric[VERSE_TRANSLITERATION] = [' '.join(char_list) for char_list in chars]
 
     json_data[LYRICS] = lyrics
 
