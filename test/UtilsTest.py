@@ -177,10 +177,10 @@ class UtilsTest(unittest.TestCase):
         assert_equal('hymn?gb=1', Utils.add_query_to_url(url, query))
 
         url = 'hymn?gb=1'
-        query = (('query', '2'),)
+        query = (('query', '2'), ('test', '1'))
         result = Utils.add_query_to_url(url, query)
         resulting_query = dict(urlparse.parse_qsl(urlparse.urlparse(result).query))
-        assert_equal({'gb': '1', 'query': '2'}, resulting_query)
+        assert_equal({'gb': '1', 'query': '2', 'test': '1'}, resulting_query)
 
 if __name__ == '__main__':
     unittest.main()
