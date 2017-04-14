@@ -252,7 +252,7 @@ def get_hymn():
             lyrics.append(verse)
 
     for lyric in lyrics:
-        if hymn_type in ('ch', 'ts'):
+        if Utils.has_transliteration(hymn_type):
             lyric[VERSE_TRANSLITERATION] = [pinyin.get(line) for line in stanza_content]
 
     json_data[LYRICS] = lyrics

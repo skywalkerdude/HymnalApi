@@ -3,6 +3,10 @@ from bs4 import BeautifulSoup
 
 NAME = 'name'
 PATH = 'path'
+TRANSLITERATABLE = ('ts', 'ch')
+
+def has_transliteration(hymn_type):
+    return hymn_type in TRANSLITERATABLE
 
 def add_query_to_url(url, query):
     url_parts = list(urlparse.urlparse(url))
