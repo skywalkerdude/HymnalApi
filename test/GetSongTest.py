@@ -104,7 +104,8 @@ class FlaskrTestCase(unittest.TestCase):
         mock_data_format = Utils.add_query_to_url('test_data/get_song_html_{}_{}', query_params)
         mock_data_format += '.txt'
         
-        mock_response.text = open(mock_data_format.format(hymn_type, hymn_number), 'r').read()
+        with open(mock_data_format.format(hymn_type, hymn_number), 'r') as m:
+            mock_response.text = m.read()
 
         # key order doesn't matter for dict equality, so compare query parameter dicts
         def get_url(url):
@@ -120,7 +121,8 @@ class FlaskrTestCase(unittest.TestCase):
         # http://mock.readthedocs.org/en/latest/patch.html
         external_mock = Mock()
         if (external_url):
-            external_mock.text = open(external_data.format(hymn_type, hymn_number), 'r').read()
+            with open(external_data.format(hymn_type, hymn_number), 'r') as e:
+                external_mock.text = e.read()
             patcher = patch('requests.get', Mock(side_effect=get_url))
         else :
             patcher = patch('requests.get', Mock(side_effect=get_url))
@@ -155,7 +157,8 @@ class FlaskrTestCase(unittest.TestCase):
         # open saved test data
         expected_result_path = Utils.add_query_to_url('test_data/get_song_{}_{}'.format(hymn_type,hymn_number), query_params)
         expected_result_path += '.txt'
-        expected_result = json.loads(open(expected_result_path, 'r').read())
+        with open(expected_result_path, 'r') as e:
+            expected_result = json.loads(e.read())
         # make request to get hymn
         query_params = (('hymn_type', hymn_type), ('hymn_number', hymn_number)) + query_params
         path = Utils.add_query_to_url('hymn', query_params)
