@@ -1,5 +1,6 @@
+import sys; sys.path.append('..')
 import hymnalnetapi, unittest, ListSong, flask, json, pdb
-from mock import create_autospec, patch, Mock
+from unittest.mock import create_autospec, patch, Mock
 from nose.tools import assert_equal
 
 class FlaskrTestCase(unittest.TestCase):
@@ -21,13 +22,13 @@ class FlaskrTestCase(unittest.TestCase):
     def test_list_song_negative(self):
         rv = self.app.get('/list')
         assert rv.status_code == 400
-        assert 'Request is missing argument: song_type' in rv.data
+        assert 'Request is missing argument: song_type' in rv.get_data(as_text=True)
         rv = self.app.get('/list?song_type=h')
         assert rv.status_code == 400
-        assert 'Request is missing argument: letter' in rv.data
+        assert 'Request is missing argument: letter' in rv.get_data(as_text=True)
         rv = self.app.get('/list?song_type=scripture&letter=g')
         assert rv.status_code == 400
-        assert 'Request is missing argument: testament' in rv.data
+        assert 'Request is missing argument: testament' in rv.get_data(as_text=True)
 
     # test listing classical hymns
     def test_list_h(self):
@@ -76,21 +77,21 @@ class FlaskrTestCase(unittest.TestCase):
         if song_type == 'h' or song_type == 'ns':
             # make request to get hymn from hymnal.net
             rv = self.app.get('list?song_type={}&letter={}'.format(song_type, letter))
-            actual_result = json.loads(rv.data)
+            actual_result = json.loads(rv.get_data(as_text=True))
             # open saved test data
             expected_result = json.loads(open('test_data/list_song_{}_{}.txt'.format(song_type, letter), 'r').read())
 
         elif song_type == 'nt':
             # make request to get hymn from hymnal.net
             rv = self.app.get('list?song_type={}'.format(song_type))
-            actual_result = json.loads(rv.data)
+            actual_result = json.loads(rv.get_data(as_text=True))
             # open saved test data
             expected_result = json.loads(open('test_data/list_song_{}.txt'.format(song_type), 'r').read())
 
         elif song_type == 'scripture':
             # make request to get hymn from hymnal.net
             rv = self.app.get('list?song_type={}&testament={}'.format(song_type, testament))
-            actual_result = json.loads(rv.data)
+            actual_result = json.loads(rv.get_data(as_text=True))
             # open saved test data
             expected_result = json.loads(open('test_data/list_song_{}_{}.txt'.format(song_type, testament), 'r').read())
 

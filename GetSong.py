@@ -1,4 +1,4 @@
-import os, requests, re, simplejson as json, Utils, Constants
+import os, requests, re, simplejson as json, Utils, Constants, urllib, pinyin
 from bs4 import BeautifulSoup
 from flask import Blueprint, request
 
@@ -10,6 +10,7 @@ HYMN_PATH_FORMAT = '%s/%s'
 EXTERNAL_LYRICS_TABLE_REGEX = '<!-- \*+Main Body Starts\*+ -->.*<table width=\d+.*?>(.*?)</table>'
 VERSE_TYPE = 'verse_type'
 VERSE_CONTENT = 'verse_content'
+VERSE_TRANSLITERATION = 'transliteration'
 CHORUS = 'chorus'
 VERSE = 'verse'
 OTHER = 'other'
@@ -28,7 +29,7 @@ debug = False
 
 def log(msg):
     if (debug):
-        print msg
+        print(msg)
 
 # returns a meta data object from it's name and data
 def get_meta_data_object(name, data):
@@ -102,18 +103,12 @@ def get_hymn():
 
     # create path by plugging in the hymn type and number and appending all query params
     path = HYMN_PATH_FORMAT % (hymn_type, hymn_number)
-    for index, key in enumerate(additional_args):
-        if index == 0:
-            path += '?' + key + '=' + additional_args.get(key)
-        else:
-            path += '&' + key + '=' + additional_args.get(key)
-
     # make http GET request to song path
-    r = requests.get(GET_SONG_URL_FORMAT % path)
+    r = requests.get(Utils.add_query_to_url(GET_SONG_URL_FORMAT % path, additional_args))
     log('request sent for: %s' % path)
     
     # create BeautifulSoup object out of html content
-    soup = BeautifulSoup(r.content, "html.parser")
+    soup = BeautifulSoup(r.text, "html.parser")
 
     # If the song doesn't exist, hymnal.net will randomly generate a song that doesn't make sense.
     # However, it does it at run time, meaning if you request it twice, it'll have a different title.
@@ -190,7 +185,7 @@ def get_hymn():
             log('request sent for: %s' % url)
         
             # BeautifulSoup randomly adds a </table> tag in the middle which screws up the scraping, so we need to use regex to find the table with the lyrics
-            content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_response.content)[0]
+            content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_response.text)[0]
         
         # create BeautifulSoup object out of html content
         external_soup = BeautifulSoup(content, "html.parser")
@@ -255,6 +250,12 @@ def get_hymn():
 
             # append finished stanza to lyrics hash
             lyrics.append(verse)
+
+    if Utils.has_transliteration(hymn_type):
+        for lyric in lyrics:
+            # split the original characters, then transliterate and add a space between them
+            chars = [list(line) for line in lyric[VERSE_CONTENT]]
+            lyric[VERSE_TRANSLITERATION] = [' '.join([pinyin.get(char) for char in char_list]) for char_list in chars]
 
     json_data[LYRICS] = lyrics
 

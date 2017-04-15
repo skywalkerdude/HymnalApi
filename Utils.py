@@ -1,11 +1,25 @@
+from collections import OrderedDict
+from urllib import parse as urlparse
 from bs4 import BeautifulSoup
 
 NAME = 'name'
 PATH = 'path'
+TRANSLITERATABLE = ('ts', 'ch')
+
+def has_transliteration(hymn_type):
+    return hymn_type in TRANSLITERATABLE
+
+def add_query_to_url(url, query):
+    url_parts = list(urlparse.urlparse(url))
+    existing_params = OrderedDict(urlparse.parse_qsl(url_parts[4]))
+    existing_params.update(OrderedDict(query))
+    url_parts[4] = urlparse.urlencode(existing_params)
+    return urlparse.urlunparse(url_parts)
 
 # clears all children of a particular soup element
 def clear_children(element):
-    map(lambda child: child.clear(), element.findChildren())
+    for c in element.findChildren():
+        c.clear()
 
 # extracts all links out of a container into a dictionary
 def extract_links(container, name_key = NAME, path_key=PATH, should_clear_children=True):

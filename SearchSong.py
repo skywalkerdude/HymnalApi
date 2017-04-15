@@ -17,7 +17,7 @@ debug = False
 
 def log(msg):
     if (debug):
-        print msg
+        print(msg)
 
 # fetches the results from a single results page
 def fetch_single_results_page(search_parameter, page_num):
