@@ -6,8 +6,11 @@ NAME = 'name'
 PATH = 'path'
 TRANSLITERATABLE = ('ts', 'ch')
 
-def has_transliteration(hymn_type):
-    return hymn_type in TRANSLITERATABLE
+def has_transliteration(hymn_type, hymn_number):
+    if hymn_type in TRANSLITERATABLE:
+        return True
+    else:
+        return hymn_type == 'ns' and hymn_number[-1:] is 'c'
 
 def add_query_to_url(url, query):
     url_parts = list(urlparse.urlparse(url))

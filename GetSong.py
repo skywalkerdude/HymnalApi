@@ -251,7 +251,7 @@ def get_hymn():
             # append finished stanza to lyrics hash
             lyrics.append(verse)
 
-    if Utils.has_transliteration(hymn_type):
+    if Utils.has_transliteration(hymn_type, hymn_number):
         for lyric in lyrics:
             # split the original characters, then transliterate and add a space between them
             chars = [list(line) for line in lyric[VERSE_CONTENT]]
