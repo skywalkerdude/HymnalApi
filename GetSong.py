@@ -7,7 +7,7 @@ get_song = Blueprint('get_song', __name__)
 GET_SONG_URL_FORMAT = 'http://www.hymnal.net/en/hymn/%s'
 # to create a path like h/1151 or ns/134
 HYMN_PATH_FORMAT = '%s/%s'
-EXTERNAL_LYRICS_TABLE_REGEX = '<!-- \*+Main Body Starts\*+ -->.*<table width=\d+.*?>(.*?)</table>'
+STORED_CLASSIC_LYRICS_REGEX = '<div class=vlinksbox>.+?<\/div>(.*)<div class=vlinksbox>'
 VERSE_TYPE = 'verse_type'
 VERSE_CONTENT = 'verse_content'
 VERSE_TRANSLITERATION = 'transliteration'
@@ -158,72 +158,63 @@ def get_hymn():
 
     # for the songs with "View Lyrics (external site)"
     if raw_lyrics.find('div',{'class':'alert'}):
+        # Only get the numerical number.
+        # This is for when there is a new tune, such as #277b. The "b" doesn't matter when it comes to the lyrics.
+        hymn_number = re.findall("\d+", hymn_number)[0]
         
-        # Certain songs are formatted weirdly on www.witness-lee-hymns.org, so we just store them
-        # as a file on the server and serve up the stored file instead.
-        if hymn_type == 'h' and hymn_number == '152b':
-            external_content = open('stored/h_152b_external.txt', 'r').read()
-            content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_content)[0]
-        elif hymn_type == 'h' and hymn_number == '187':
-            external_content = open('stored/h_187_external.txt', 'r').read()
-            content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_content)[0]
-        elif hymn_type == 'h' and hymn_number == '188':
-            external_content = open('stored/h_188_external.txt', 'r').read()
-            content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_content)[0]
-        elif hymn_type == 'h' and hymn_number == '500':
-            external_content = open('stored/h_500_external.txt', 'r').read()
-            content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_content)[0]
-        elif hymn_type == 'h' and hymn_number == '1110':
-            external_content = open('stored/h_1110_external.txt', 'r').read()
-            content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_content)[0]
-        else:
-            # parse out url from raw_lyrics
-            url = raw_lyrics.find('div',{'class':'alert'}).findChild().get('href').strip()
-        
-            # make http GET request to song path
-            external_response = requests.get(url)
-            log('request sent for: %s' % url)
-        
-            # BeautifulSoup randomly adds a </table> tag in the middle which screws up the scraping, so we need to use regex to find the table with the lyrics
-            content = re.compile(EXTERNAL_LYRICS_TABLE_REGEX, re.DOTALL).findall(external_response.text)[0]
-        
+        external_content = open('stored/classic/' + hymn_number + '.html', 'r').read()
+        content = re.compile(STORED_CLASSIC_LYRICS_REGEX, re.DOTALL).findall(external_content)[0]
+
         # create BeautifulSoup object out of html content
         external_soup = BeautifulSoup(content, "html.parser")
         
         stanza_content = []
         # indicates which stanza we are currently parsing
         stanza_num = 0
-        
-        for line in external_soup.strings:
-            
-            # if line is empty, then skip it
-            if len(line.strip()) == 0:
-                continue
-            
-            # if line is a number or 'Chorus', it indicates that the previous stanza was finished
-            if line.strip().isdigit() or line.strip() == 'Chorus':
-                # stanza is finished, so append stanza to lyrics hash
-                if stanza_num != 0:
-                    
-                    # creates a verse object with the stanza num and content
-                    verse = create_verse(stanza_num, stanza_content)
-                    
-                    # append finished stanza to lyrics hash
-                    lyrics.append(verse)
 
-                    # reset stanza content
+        # find all "div"s, which contains a verse or a chorus
+        lyric_divs = external_soup.findAll("div")
+
+        # creates a verse object with the stanza num and content
+        verse = {}
+
+        # keep track of the previous chorus so we know not to add it if it appears multiple times in a row
+        previous_chorus = []
+
+        for lyric_div in lyric_divs:
+            # class name of div is "verse" or "chrous"
+            isChorus = lyric_div.get("class")[0] == 'chorus'
+            
+            stanza_content = []
+            
+            for line in lyric_div.stripped_strings:
+                # don't need to include the verse number in the result
+                if (line.strip().isdigit()):
+                    continue
+                else:
+                    stanza_content.append(line)
+
+            if isChorus:
+                # previous chrous is the same as the current chorus, so just reset everything and continue without appending to lyrics
+                if previous_chorus == stanza_content:
+                    # reset verse object for next verse
+                    verse = {}
+                    # reset stanza_content for good measure
                     stanza_content = []
-                # new stanza number
-                stanza_num = line.strip()
+                    continue
+                else:
+                    previous_chorus = stanza_content
+                verse[VERSE_TYPE] = CHORUS
             else:
-                stanza_content.append(line)
+                verse[VERSE_TYPE] = VERSE
+            verse[VERSE_CONTENT] = stanza_content
 
-        # after loop is over, create verse object and append to lyrics hash
-        verse = create_verse(stanza_num, stanza_content)
-        lyrics.append(verse)
-            
-        # reset stanza_content for good measure
-        stanza_content = []
+            # append finished stanza to lyrics hash
+            lyrics.append(verse)
+            # reset verse object for next verse
+            verse = {}
+            # reset stanza_content for good measure
+            stanza_content = []
     else:
         for td in raw_lyrics.findAll('td'):
             stanza_content = []
@@ -260,3 +251,5 @@ def get_hymn():
     json_data[LYRICS] = lyrics
 
     return json.dumps(json_data, sort_keys=True)
+
+# TODO same tune, language reference
