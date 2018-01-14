@@ -23,7 +23,7 @@ class FlaskrTestCase(unittest.TestCase):
     def test_create_verse(self):
         stanza_num = 'test_stanza_num'
         stanza_content = 'test_stanza_content'
-        
+
         # regular stanza number
         verse = GetSong.create_verse(stanza_num, stanza_content)
         assert_equal(verse[GetSong.VERSE_TYPE], GetSong.VERSE)
@@ -33,7 +33,7 @@ class FlaskrTestCase(unittest.TestCase):
         verse = GetSong.create_verse('Chorus', stanza_content)
         assert_equal(verse[GetSong.VERSE_TYPE], GetSong.CHORUS)
         assert_equal(verse[GetSong.VERSE_CONTENT], stanza_content)
-    
+
     # test the negative cases that return Bad request
     def test_get_hymn_negative(self):
         rv = self.app.get('/hymn')
@@ -67,14 +67,14 @@ class FlaskrTestCase(unittest.TestCase):
     # test classical hymn 17 (goes to external website)
     def test_h_17(self):
         # need to hard code url to external site
-        self.assert_mock_get_hymn('h', '17', external_url = 'http://www.witness-lee-hymns.org/hymns/H0017.html', external_data = 'test_data/get_song_html_h_17_external.txt')
-        self.assert_get_hymn('h', '17')
+        self.assert_mock_get_hymn('h', '17', stored_content_path = 'stored/classic/17.html')
+        self.assert_get_hymn('h', '17', stored_content_path = 'stored/classic/17.html')
 
     # test classical hymn 10 (goes to external website but starts with '<table width=400 border=0>' instead of '<table width=500>'
     def test_h_10(self):
         # need to hard code url to external site
-        self.assert_mock_get_hymn('h', '10', external_url = 'http://www.witness-lee-hymns.org/hymns/H0010.html', external_data = 'test_data/get_song_html_h_10_external.txt')
-        self.assert_get_hymn('h', '10')
+        self.assert_mock_get_hymn('h', '10', stored_content_path = 'stored/classic/10.html')
+        self.assert_get_hymn('h', '10', stored_content_path = 'stored/classic/10.html')
 
     # test classical hymn 1197 (multiple choruses)
     def test_h_1197(self):
@@ -91,7 +91,7 @@ class FlaskrTestCase(unittest.TestCase):
         self.assert_mock_get_hymn('ch', '7', query_params=(('gb', '1'), ('query', '2')))
         self.assert_get_hymn('ch', '7', query_params=(('gb', '1'), ('query', '2')))
 
-    def assert_mock_get_hymn(self, hymn_type, hymn_number, external_url = None, external_data = None, query_params = tuple()):
+    def assert_mock_get_hymn(self, hymn_type, hymn_number, stored_content_path = None, query_params = tuple()):
         stubbed_path = GetSong.HYMN_PATH_FORMAT % (hymn_type, hymn_number)
 
         # url to stub out
@@ -112,27 +112,13 @@ class FlaskrTestCase(unittest.TestCase):
             parsed_url = urllib.parse.urlparse(url)
             params = urllib.parse.parse_qsl(parsed_url.query)
             assert_equal(dict(query_params), dict(params))
-            if parsed_url.geturl() == external_url:
-                return external_mock
-            elif parsed_url.geturl() == stubbed_url:
-                return mock_response
-        
-        # http://stackoverflow.com/questions/15753390/python-mock-requests-and-the-response
-        # http://mock.readthedocs.org/en/latest/patch.html
-        external_mock = Mock()
-        if (external_url):
-            with open(external_data.format(hymn_type, hymn_number), 'r') as e:
-                external_mock.text = e.read()
-            patcher = patch('requests.get', Mock(side_effect=get_url))
-        else :
-            patcher = patch('requests.get', Mock(side_effect=get_url))
-        
-        # start patcher, do assertions, then stop patcher
-        patcher.start()
-        self.assert_get_hymn(hymn_type, hymn_number, query_params)
-        patcher.stop()
+            return mock_response
 
-    def assert_get_hymn(self, hymn_type, hymn_number, query_params = tuple()):
+        # http://stackoverflow.com/questions/15753390/python-mock-requests-and-the-response
+        with patch('requests.get', Mock(side_effect=get_url)) as n:
+            self.assert_get_hymn(hymn_type, hymn_number, query_params, stored_content_path)
+
+    def assert_get_hymn(self, hymn_type, hymn_number, query_params = tuple(), stored_content_path = None):
         # checks that two meta data objects are equal
         def check_meta_data(expected, actual):
             assert_equal(len(expected), len(actual))
@@ -162,7 +148,25 @@ class FlaskrTestCase(unittest.TestCase):
         # make request to get hymn
         query_params = (('hymn_type', hymn_type), ('hymn_number', hymn_number)) + query_params
         path = Utils.add_query_to_url('hymn', query_params)
-        rv = self.app.get(path)
+
+        # store original open method, so we can call it later
+        original_open_method = open
+
+        # this method will be called by the app code when it calls the open(...) method
+        def mocked_open_method(path, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None):
+            if (path == stored_content_path):
+                # if the path is the same as the stored_content_path, then we open it
+                return original_open_method('../' + path, mode)
+            else:
+                # otherwise we just call the original method
+                return original_open_method(path, mode)
+        
+        if (stored_content_path):
+            with patch('builtins.open', Mock(side_effect=mocked_open_method)):
+                rv = self.app.get(path)
+        else:
+            rv = self.app.get(path)
+        
         actual_result = json.loads(rv.get_data(as_text=True))
         # assert that components are equal
         assert_equal(expected_result['title'], actual_result['title'])
