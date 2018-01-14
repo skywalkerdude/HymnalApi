@@ -162,8 +162,10 @@ def get_hymn():
         # This is for when there is a new tune, such as #277b. The "b" doesn't matter when it comes to the lyrics.
         hymn_number = re.findall("\d+", hymn_number)[0]
         
-        external_content = open('stored/classic/' + hymn_number + '.html', 'r').read()
-        content = re.compile(STORED_CLASSIC_LYRICS_REGEX, re.DOTALL).findall(external_content)[0]
+        with open('stored/classic/{}.html'.format(hymn_number), 'r') as data:
+            stored_content = data.read()
+        
+        content = re.compile(STORED_CLASSIC_LYRICS_REGEX, re.DOTALL).findall(stored_content)[0]
 
         # create BeautifulSoup object out of html content
         external_soup = BeautifulSoup(content, "html.parser")
