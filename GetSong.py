@@ -7,7 +7,9 @@ get_song = Blueprint('get_song', __name__)
 GET_SONG_URL_FORMAT = 'http://www.hymnal.net/en/hymn/%s'
 # to create a path like h/1151 or ns/134
 HYMN_PATH_FORMAT = '%s/%s'
-STORED_CLASSIC_LYRICS_REGEX = '<div class=vlinksbox>.+?<\/div>(.*)<div class=vlinksbox>'
+# ?: --> do not extract whatever is matched
+# .+? --> match 1 or more of an character, but stop a the first instance
+STORED_CLASSIC_LYRICS_REGEX = '(?:(?:<div class=vlinksbox>.+?<\/div>(.*)<div class=vlinksbox>)|(?:<div class="linksbox">.+?<\/div>.*?(<div class=singleverse>.*)<div class="linksbox">))'
 VERSE_TYPE = 'verse_type'
 VERSE_CONTENT = 'verse_content'
 VERSE_TRANSLITERATION = 'transliteration'
@@ -164,8 +166,9 @@ def get_hymn():
         
         with open('stored/classic/{}.html'.format(hymn_number), 'r') as data:
             stored_content = data.read()
-        
         content = re.compile(STORED_CLASSIC_LYRICS_REGEX, re.DOTALL).findall(stored_content)[0]
+        # filter out the empty items and grab first non-empty item
+        content = [str for str in content if str != ''][0]
 
         # create BeautifulSoup object out of html content
         external_soup = BeautifulSoup(content, "html.parser")

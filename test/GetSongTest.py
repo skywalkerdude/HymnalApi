@@ -64,13 +64,23 @@ class FlaskrTestCase(unittest.TestCase):
         self.assert_mock_get_hymn('ns', '157')
         self.assert_get_hymn('ns', '157')
 
+    # test new song 487 (single-verse song)
+    def test_h_487(self):
+        self.assert_mock_get_hymn('h', '487', stored_content_path = 'stored/classic/487.html')
+        self.assert_get_hymn('h', '487', stored_content_path = 'stored/classic/487.html')
+
+    # test new song 68 (as a weird grave "e" character)
+    def test_h_68(self):
+        self.assert_mock_get_hymn('h', '68', stored_content_path = 'stored/classic/68.html')
+        self.assert_get_hymn('h', '68', stored_content_path = 'stored/classic/68.html')
+
     # test classical hymn 17 (goes to external website)
     def test_h_17(self):
         # need to hard code url to external site
         self.assert_mock_get_hymn('h', '17', stored_content_path = 'stored/classic/17.html')
         self.assert_get_hymn('h', '17', stored_content_path = 'stored/classic/17.html')
 
-    # test classical hymn 10 (goes to external website but starts with '<table width=400 border=0>' instead of '<table width=500>'
+    # test classical hymn 10 (goes to external website)
     def test_h_10(self):
         # need to hard code url to external site
         self.assert_mock_get_hymn('h', '10', stored_content_path = 'stored/classic/10.html')
