@@ -7,8 +7,8 @@ LATEST_CLIENT_VERSION = 'latest_client_version'
 
 @latest_client_version.route('/latestVersionNumberAndroid')
 def get_latest_android_version_number():
-    return json.dumps({LATEST_CLIENT_VERSION : 22}, sort_keys=False)
+    return json.dumps({LATEST_CLIENT_VERSION : 23}, sort_keys=False)
 
 @latest_client_version.route('/latestVersionAndroid')
 def get_hymn():
-    return redirect("https://drive.google.com/file/d/1gET4vxWd_Yffe_tzy3ot2ksBFmmTocyV/view?usp=sharing", code=302)
+    return redirect("https://drive.google.com/file/d/13k643Nmz50P-F5mYe6mhgHcD-NdVVEGN/view?usp=sharing", code=302)
