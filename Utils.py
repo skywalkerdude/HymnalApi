@@ -21,8 +21,12 @@ def add_query_to_url(url, query):
 
 # clears all children of a particular soup element
 def clear_children(element):
-    for c in element.findChildren():
-        c.clear()
+    for child in element.findChildren():
+        # do not clear the 'ut-title' class because there are special new songs with that class
+        if child.has_attr('class') and 'ut-title' in child['class']:
+            continue
+        else:
+            child.clear()
 
 # extracts all links out of a container into a dictionary
 def extract_links(container, name_key = NAME, path_key=PATH, should_clear_children=True):

@@ -26,7 +26,7 @@ class FlaskrTestCase(unittest.TestCase):
         self.assert_search_results(search_parameter='drink')
     
     # test searching for a specific page of songs matching a particular search parameter
-    def test_search_all(self):
+    def test_search_page(self):
         self.assert_mock_search_results(search_parameter='drink', page_num=3)
         self.assert_mock_search_results(search_parameter='God', page_num=52)
     
