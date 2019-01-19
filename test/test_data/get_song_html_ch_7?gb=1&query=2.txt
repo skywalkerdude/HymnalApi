@@ -746,7 +746,7 @@
                 <label class="col-xs-5 col-sm-4">Lyrics:</label>
 
                 <div class="col-xs-7 col-sm-8 no-padding">
-                                        <a href="/en/search/all/author/Witness+Lee?t=ch&n=7">李常受</a>&nbsp;<wbr/>(1905-1997) <a class="label label-info" href="http://www.witnesslee.org" target="_blank" rel="noopener noreferrer">bio</a>
+                                        <a href="/en/search/all/author/Witness+Lee?t=ch&n=7">李常受</a>&nbsp;<wbr/>(1905-1997) <a class="label label-info" href="https://www.witnesslee.org" target="_blank" rel="noopener noreferrer">bio</a>
                 </div>
             </div>
                             <div class="row">
