@@ -2,7 +2,6 @@ import sys; sys.path.append('..')
 import hymnalnetapi, unittest, GetSong, flask, json, urllib, Utils
 from unittest.mock import create_autospec, patch, MagicMock as Mock
 from nose.tools import assert_equal, assert_false
-import pdb
 
 class FlaskrTestCase(unittest.TestCase):
     
