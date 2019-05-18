@@ -22,19 +22,25 @@ def log(msg):
 # fetches the results from a single results page
 def fetch_single_results_page(search_parameter, page_num):
     # make http GET request to search page
-    r = requests.get(URL_FORMAT % (search_parameter, page_num))
+    req = requests.get(URL_FORMAT % (search_parameter, page_num))
     log('request sent for: %s, Page %d' % (search_parameter, page_num))
-
+    
     # create BeautifulSoup object out of html content
-    soup = BeautifulSoup(r.content, "html.parser")
+    soup = BeautifulSoup(req.content, "html.parser")
 
     # extract results from the single page along with whether page_num is the last page
     return (Utils.extract_results_single_page(soup), Utils.is_last_page(soup, page_num))
 
+@search_song.route('/v2/search/<string:search_parameter>/<int:page_num>')
+def search_hymn_v2(search_parameter, page_num):
+    return search_hymn_internal(search_parameter, page_num)
+
+@search_song.route('/v2/search/<string:search_parameter>')
+def search_all_hymns_v2(search_parameter):
+    return search_hymn_internal(search_parameter, None)
+
 @search_song.route('/search')
 def search_hymn():
-    
-    # initialize arguments
     search_parameter = request.args.get('search_parameter')
     page_num = request.args.get('page_num', type=int)
     
@@ -44,6 +50,9 @@ def search_hymn():
         message['status_code'] = 400
         return (json.dumps(message), 400)
 
+    return search_hymn_internal(search_parameter, page_num)
+
+def search_hymn_internal(search_parameter, page_num):
     if page_num is None:
         return search_hymn_all(search_parameter)
     else:

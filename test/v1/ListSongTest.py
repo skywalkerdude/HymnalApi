@@ -95,6 +95,7 @@ class FlaskrTestCase(unittest.TestCase):
             # open saved test data
             expected_result = json.loads(open('test_data/list_song_{}_{}.txt'.format(song_type, testament), 'r').read())
 
+        assert_equal.__self__.maxDiff = None
         assert_equal(actual_result, expected_result)
 
     def build_url_mapping(self):

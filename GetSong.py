@@ -75,14 +75,18 @@ def get_svg_from_div(div):
         return None
     return child.text
 
+@get_song.route('/v2/hymn/<string:hymn_type>/<string:hymn_number>')
+def get_hymn_v2(hymn_type, hymn_number):
+    # pass all query parameters through
+    additional_args = request.args.copy()
+    return get_hymn_internal(hymn_type, hymn_number, additional_args)
+
 @get_song.route('/hymn')
 def get_hymn():
     
     # initialize arguments
     hymn_type = request.args.get('hymn_type', type=str)
     hymn_number = request.args.get('hymn_number', type=str)
-    # whether or not we need to check if the song exists.
-    check_exists = request.args.get('check_exists', type=bool)
     
     # error checking
     message = None
@@ -96,10 +100,18 @@ def get_hymn():
         message['status_code'] = 400
         return (json.dumps(message), 400)
 
-    # if there are any additional query parameters, then pass it directly to hymnal.net
+    # if there are any additional query parameters, then pass them through
     additional_args = request.args.copy()
     del additional_args['hymn_type']
     del additional_args['hymn_number']
+    return get_hymn_internal(hymn_type, hymn_number, additional_args)
+
+def get_hymn_internal(hymn_type, hymn_number, additional_args):
+    
+    # whether or not we need to check if the song exists.
+    check_exists = additional_args.get('check_exists', type=bool)
+
+    # if there are any additional query parameters, then pass it directly to hymnal.net
     if 'check_exists' in additional_args:
         del additional_args['check_exists']
 
