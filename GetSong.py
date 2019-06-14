@@ -1,4 +1,4 @@
-import os, requests, re, simplejson as json, Utils, Constants, urllib, pinyin
+import os, requests, re, simplejson as json, Utils, Constants, urllib, pinyin, pdb
 from bs4 import BeautifulSoup
 from flask import Blueprint, request
 
@@ -176,8 +176,13 @@ def get_hymn_internal(hymn_type, hymn_number, additional_args):
         # This is for when there is a new tune, such as #277b. The "b" doesn't matter when it comes to the lyrics.
         hymn_number = re.findall("\d+", hymn_number)[0]
         
-        with open('stored/classic/{}.html'.format(hymn_number), 'r') as data:
-            stored_content = data.read()
+        try:
+            with open('stored/classic/{}.html'.format(hymn_number), 'r') as data:
+                stored_content = data.read()
+        except FileNotFoundError:
+            json_data[LYRICS] = None
+            return json.dumps(json_data, sort_keys=True)
+    
         content = re.compile(STORED_CLASSIC_LYRICS_REGEX, re.DOTALL).findall(stored_content)[0]
         # filter out the empty items and grab first non-empty item
         content = [str for str in content if str != ''][0]

@@ -59,6 +59,11 @@ class FlaskrTestCase(unittest.TestCase):
         self.assert_mock_get_hymn('h', '19')
         self.assert_get_hymn('h', '19')
 
+    # test classical hymn 8310 -- lyrics not available
+    def test_h_8310(self):
+        self.assert_mock_get_hymn('h', '8310')
+        self.assert_get_hymn('h', '8310')
+
     # test new song 157 (multiple scripture links)
     def test_ns_157(self):
         self.assert_mock_get_hymn('ns', '157')
@@ -141,6 +146,9 @@ class FlaskrTestCase(unittest.TestCase):
                     assert_equal(expected[i]['data'], actual[i]['data'])
         # checks that two lyrics objects are equal
         def check_lyrics(expected, actual):
+            # if the two objects are equal, then we can return early
+            if expected == actual:
+                return
             assert_equal(len(expected), len(actual))
             for i in range(len(expected)):
                 assert_equal(expected[i]['verse_type'], actual[i]['verse_type'])
