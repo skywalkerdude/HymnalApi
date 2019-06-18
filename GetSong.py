@@ -153,8 +153,10 @@ def get_hymn_internal(hymn_type, hymn_number, additional_args):
         if len(labels) == 0:
             continue
         for label in labels:
-            name = label.text.replace(':','')
+            name = label.text.replace(':','') # remove the ":" that is in the value (e.g. Music:)
             data = Utils.extract_links(label.findNextSibling(), name_key=VALUE)
+            if len(data) == 0:
+                continue
             
             # append meta data to meta_data list if it doesn't exist already
             meta_data_object = get_meta_data_object(name, data)

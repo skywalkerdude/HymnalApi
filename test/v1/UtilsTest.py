@@ -37,6 +37,8 @@ class UtilsTest(unittest.TestCase):
         element_mock2 = create_autospec(BeautifulSoup)
         element_mock3 = create_autospec(BeautifulSoup)
         element_mock4 = create_autospec(BeautifulSoup)
+        empty_value_mock = create_autospec(BeautifulSoup)
+        empty_href_mock = create_autospec(BeautifulSoup)
         
         # populate mocks with data
         i = 1
@@ -47,7 +49,13 @@ class UtilsTest(unittest.TestCase):
             element.get.return_value = 'link' + str(i)
             i += 1
         
-        container_mock.findAll.return_value = [element_mock1, element_mock2, element_mock3]
+        empty_value_mock.text = ''
+        empty_value_mock.get.return_value = 'empty_value_mock href'
+        
+        empty_href_mock.text = 'empty_href_mock text'
+        empty_href_mock.get.return_value = ''
+        
+        container_mock.findAll.return_value = [element_mock1, element_mock2, element_mock3, empty_value_mock, empty_href_mock]
 
         # mock out clear_children call
         funct = Utils.clear_children
@@ -58,7 +66,7 @@ class UtilsTest(unittest.TestCase):
         
         # call with clear_children
         search_results = Utils.extract_links(container_mock, should_clear_children = True)
-
+        
         test_results = [{'name' : 'element_mock1', 'path' : 'link1'},
                         {'name' : 'element_mock2', 'path' : 'link2'},
                         {'name' : 'element_mock3', 'path' : 'link3'}]
@@ -69,11 +77,11 @@ class UtilsTest(unittest.TestCase):
         # http://www.voidspace.org.uk/python/mock/helpers.html#calls-as-tuples
         calls = [call(element_mock1), call(element_mock2), call(element_mock3)]
         Utils.clear_children.assert_has_calls(calls)
-        assert Utils.clear_children.call_count == 3
+        assert Utils.clear_children.call_count == 5
         
         calls = [call('a'), call('a')]
         container_mock.findAll.assert_has_calls(calls)
-        container_mock.findAll.call_count == 3
+        container_mock.findAll.call_count == 5
         
         calls = [call(), call()]
         element_mock1.text.strip.assert_has_calls(calls)

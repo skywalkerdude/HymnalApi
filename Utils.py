@@ -44,8 +44,12 @@ def extract_links(container, name_key = NAME, path_key=PATH, should_clear_childr
     
         # search_results dictionary with attributes name_key and value_key
         search_result = {}
-        search_result[name_key] = element.text.strip()
-        search_result[path_key] = element.get('href')
+        text = element.text.strip()
+        href = element.get('href')
+        if not text or not href:
+            continue
+        search_result[name_key] = text
+        search_result[path_key] = href
         search_results.append(search_result)
 
     return search_results

@@ -63,6 +63,26 @@ class FlaskrTestCase(unittest.TestCase):
     def test_h_8310(self):
         self.assert_mock_get_hymn('h', '8310')
         self.assert_get_hymn('h', '8310')
+    
+    # test tagalog hymn c333 - empty category
+    def test_ht_c333(self):
+        self.assert_mock_get_hymn('ht', 'c333')
+        self.assert_get_hymn('ht', 'c333')
+    
+    # test classic hymn 1360 - empty author
+    def test_h_1360(self):
+        self.assert_mock_get_hymn('h', '1360')
+        self.assert_get_hymn('h', '1360')
+    
+    # test classic hymn 1005 - empty scriptures
+    def test_h_1360(self):
+        self.assert_mock_get_hymn('h', '1005')
+        self.assert_get_hymn('h', '1005')
+    
+    # test new song 493 - empty hymn code
+    def test_ns_493(self):
+        self.assert_mock_get_hymn('ns', '493')
+        self.assert_get_hymn('ns', '493')
 
     # test new song 157 (multiple scripture links)
     def test_ns_157(self):
