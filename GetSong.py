@@ -1,4 +1,4 @@
-import os, requests, re, simplejson as json, Utils, Constants, urllib, pinyin, pdb
+import os, requests, re, simplejson as json, Utils, Constants, urllib, pinyin
 from bs4 import BeautifulSoup
 from flask import Blueprint, request
 
