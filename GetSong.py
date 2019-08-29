@@ -1,5 +1,5 @@
 import os, requests, re, simplejson as json, Utils, Constants, urllib, pinyin
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, NavigableString, Tag
 from flask import Blueprint, request
 
 get_song = Blueprint('get_song', __name__)
@@ -17,7 +17,8 @@ CHORUS = 'chorus'
 VERSE = 'verse'
 OTHER = 'other'
 NAME = 'name'
-VALUE= 'value'
+VALUE = 'value'
+PATH = 'path'
 DATA = 'data'
 HYMN_TYPE = 'hymn_type'
 HYMN_NUMBER = 'hymn_number'
@@ -154,7 +155,7 @@ def get_hymn_internal(hymn_type, hymn_number, additional_args):
             continue
         for label in labels:
             name = label.text.replace(':','') # remove the ":" that is in the value (e.g. Music:)
-            data = Utils.extract_links(label.findNextSibling(), name_key=VALUE)
+            data = split_by_semicolon(label.findNextSibling())
             if len(data) == 0:
                 continue
             
@@ -275,5 +276,73 @@ def get_hymn_internal(hymn_type, hymn_number, additional_args):
     json_data[LYRICS] = lyrics
 
     return json.dumps(json_data, sort_keys=True)
+
+# extracts all links out of a container into a dictionary, where the text is delimited by semicolons
+def split_by_semicolon(container):
+    
+    # list of results to return
+    search_results = []
+    
+    # find all link elements of the div
+    elements = container.findAll('a')
+    for element in elements:
+        # clear children to get rid of any excess info that we don't want
+        # eg: <span class="label label-default">New Tunes</span> elements
+        Utils.clear_children(element)
+
+    contents = container.contents
+    # keep a running tab on the text and href to add to the dictionary to be returned
+    text = ""
+    href = ""
+    for content in contents:
+        if type(content) is NavigableString:
+            content_string = str(content)
+        elif type(content) is Tag:
+            content_string = content.text
+            if content_string == 'bio':
+                continue
+            if content.get('href'):
+                href += content.get('href')
+            elif content.find('a') and content.find('a').get('href'):
+                href += content.find('a').get('href')
+        else:
+            raise ValueError(str(content) + ' had an unexpected type: ' + type(content))
+        
+        search_result = {}
+        if ';' in content_string or ',' in content_string:
+            if ';' in content_string:
+                # split the string by the semicolon
+                split_strings = content_string.split(';')
+            elif ',' in content_string:
+                # split the string by the semicolon
+                split_strings = content_string.split(',')
+            
+            # take everything before the semicolon and add it to "text"
+            before_semicolon = split_strings[0]
+            text += before_semicolon
+            if not text or not href:
+                continue
+            # write text and href to the dictionary to be returned
+            search_result[VALUE] = text.strip()
+            search_result[PATH] = href.strip()
+            search_results.append(search_result)
+            
+            # reset text and href and add everything after the semicolon to the text
+            after_semicolon = split_strings[1]
+            text = after_semicolon
+            href = ""
+        elif content_string:
+            # if there is no semicolon, strip out white space and add to running "text" tab
+            text += content_string
+
+    # after we have looped through the contents, we add the text and href that we've calculated
+    # to the dictionary to be returned
+    if text.strip() and href.strip():
+        search_result[VALUE] = text.strip()
+        search_result[PATH] = href.strip()
+        search_results.append(search_result)
+
+    # return the dictionary
+    return search_results
 
 # TODO same tune, language reference

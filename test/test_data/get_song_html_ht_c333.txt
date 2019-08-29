@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -285,7 +286,7 @@
                 
         <div class="row text-center audio-player">
                             <audio id="main-audio" controls="controls" airplay="allow" class="main-audio" loop="loop" preload="auto">
-                    <source src="https://www.hymnal.net/Hymns/Hymnal/ogg/e0437_i.ogg" type="audio/mpeg"/>
+                    <source src="https://www.hymnal.net/Hymns/Hymnal/mp3/e0437_i.mp3" type="audio/mpeg"/>
                     <source src="https://www.hymnal.net/Hymns/Hymnal/ogg/e0437_i.ogg" type="audio/ogg"/>
                     The music cannot be played on your browser.
                 </audio>
@@ -683,7 +684,7 @@
         </div>
     </div>
     <input type="hidden" name="type" value="add-comment"/>
-    <input type="hidden" name="host-ip" value="67.180.86.80"/>
+    <input type="hidden" name="host-ip" value="183.177.122.116"/>
     <input type="hidden" name="t" value="ht"/>
     <input type="hidden" name="n" value="c333"/>
 </form>
@@ -888,7 +889,7 @@
 <span id="hl" class="hidden">36</span>
 
 <script type="text/javascript">
-    var mp3File = 'https://www.hymnal.net/Hymns/Hymnal/ogg/e0437_i.ogg?v=1';
+    var mp3File = 'https://www.hymnal.net/Hymns/Hymnal/mp3/e0437_i.mp3?v=1';
     var midiLength = 36;
     var loopFlag = true;
     var autoStartFlag = false;
@@ -911,8 +912,8 @@
 
 </div>
 
-    <span id="ssk" class="hidden">36a8f634d4321e42cb916400a8350276115c13f5</span>
-    <span id="ss" class="hidden">27f8879c0b4ea518b7e09066424866cf560200c4</span>
+    <span id="ssk" class="hidden">e82461b1ea45b536c5cafacdaa65992be1d45bf5</span>
+    <span id="ss" class="hidden">fe3e927556772ad5f9e6c65d1db23cb8962b4575</span>
 <span id="root" class="hidden">https://www.hymnal.net</span>
 <span id="phproot" class="hidden">/en</span>
 <span id="language" class="hidden">en</span>
@@ -949,3 +950,4 @@
 
 </body>
 </html>
+

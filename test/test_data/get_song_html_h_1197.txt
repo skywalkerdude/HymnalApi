@@ -4,275 +4,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hymn: God is light, and in Him there is no darkness at all</title>
-    <link rel="alternate" type="application/rss+xml" title="hymnal.net RSS Feed" href="/feed.rss"/>
-    <meta name="description"
-          content="Christian hymns and spiritual songs with wonderful truths and music.}"/>
-    <meta name="keywords" content="midi, mp3, hymnal, hymns, songs, Christian, music, videos, spiritual, bible, christ, jesus, god"/>
-            <link rel="canonical" href="https://www.hymnal.net/en/hymn/h/1197?"/>
-        <meta property="og:url" content="https://www.hymnal.net/en/hymn/h/1197?"/>
-        <meta property="og:title" content="Hymn: God is light, and in Him there is no darkness at all"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:locale" content="en_US"/>
-    <meta property="og:description"
-          content="Christian hymns and spiritual songs with wonderful truths and music."/>
-    <meta property="og:image" content="https://www.hymnal.net/images/favicon-196x196.png"/>
-    <meta property="fb:app_id" content="1450015931921030"/>
+  <title>Hymn: God is light, and in Him there is no darkness at all</title>
+  <link rel="alternate" type="application/rss+xml" title="hymnal.net RSS Feed" href="/feed.rss" />
+  <meta name="description"
+        content="Christian hymns and spiritual songs with wonderful truths and music.}" />
+  <meta name="keywords" content="midi, mp3, hymnal, hymns, songs, Christian, music, videos, spiritual, bible, christ, jesus, god" />
+    <link rel="canonical" href="https://www.hymnal.net/en/hymn/h/1197" />
+  <meta property="og:url" content="https://www.hymnal.net/en/hymn/h/1197" />
+    <meta property="og:title" content="Hymn: God is light, and in Him there is no darkness at all" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:description"
+        content="Christian hymns and spiritual songs with wonderful truths and music." />
+  <meta property="og:image" content="https://www.hymnal.net/images/favicon-196x196.png" />
+  <meta property="fb:app_id" content="1450015931921030" />
 
+      <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@hymnalnet">
+  <meta name="twitter:title" content="God is light, and in Him there is no darkness at all">
+  <meta name="twitter:description" content="God is light, and in Him there is no darkness at all! Oh, how we love within His presence to dwell! In this light we enjoy a constant…">
+  <meta name="twitter:creator" content="@hymnalnet">
+  <meta name="twitter:image:src" content="https://www.hymnal.net/images/favicon-196x196.png">
+  <meta name="twitter:domain" content="hymnal.net">
     
-        <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@hymnalnet">
-    <meta name="twitter:title" content="God is light, and in Him there is no darkness at all">
-    <meta name="twitter:description" content="God is light, and in Him there is no darkness at all! Oh, how we love within His presence to dwell! In this light we enjoy a constant…">
-    <meta name="twitter:creator" content="@hymnalnet">
-    <meta name="twitter:image:src" content="https://www.hymnal.net/images/favicon-196x196.png">
-    <meta name="twitter:domain" content="hymnal.net">
-        
+  
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/selectize.min.css" rel="stylesheet" />
+  <link href="/css/custom.min.css" rel="stylesheet" />
 
-    
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/css/custom.min.css" rel="stylesheet"/>
+  <link rel="manifest" href="/manifest.json">
 
-    
     <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png">
-    <link rel="icon" type="image/png" href="/images/favicon-196x196.png" sizes="196x196">
-    <link rel="icon" type="image/png" href="/images/favicon-160x160.png" sizes="160x160">
-    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
-    <meta name="msapplication-TileColor" content="#5c9afd">
-    <meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/images/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/images/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#5c9afd">
+  <meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
+  
     
-
-    
-    
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-            ga('create', 'UA-1151646-2', 'auto');
-            ga('send', 'pageview');
-        </script>
-    
-    
-
-    
-    
-        <script type="text/javascript">
-            var Tynt=Tynt||[];Tynt.push('cDwqiW238r45xhacwqm_6r');
-            (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='//tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})();
-        </script>
-    
-</head>
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-1151646-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+  
+    <script src='//www.google.com/recaptcha/api.js' defer async></script>
+  </head>
 <body class="hymn">
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {
+    return;
+  }
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1450015931921030&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
 <div class="device-xs visible-xs"></div>
 <div class="device-sm visible-sm"></div>
 <div class="device-md visible-md"></div>
 <div class="device-lg visible-lg"></div>
 <div class="container">
-<div class="row header">
+  <div class="row header">
     <div class="col-xs-5 col-md-6 logo">
-        <a href="/en/home">
-            <img class="img-responsive" src="/images/logo.png"
-                 alt="hymnal.net" width="138" height="40"/>
-        </a>
+      <a href="/en/home">
+        <img class="img-responsive" src="/images/logo.png"
+             alt="hymnal.net" width="138" height="40" />
+      </a>
     </div>
-    
-    <div class="col-xs-7 col-md-6 text-right">
-        <div class="header-content">
-                            <div class="profile-links btn-group">
-                    <button type="button" class="btn btn-default profile-button dropdown-toggle"
-                            data-toggle="dropdown">
-                        <i class="fa fa-user fa-fw"></i>
-                        <span class="hidden-xs">Login/Sign Up</span>
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu pull-left" role="menu">
-                        <li>
-                            <a href="/en/login">Login</a>
-                        </li>
-                        <li>
-                            <a href="/en/register">Sign up</a>
-                        </li>
-                    </ul>
-                </div>
+        <div class="col-xs-7 col-md-6 text-right">
+      <div class="header-content">
+                <div class="profile-links btn-group">
+          <button type="button" class="btn btn-default profile-button dropdown-toggle"
+                  data-toggle="dropdown">
+            <i class="fa fa-user fa-fw"></i>
+            <span class="hidden-xs">Login/Sign Up</span>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu">
+            <li>
+              <a href="/en/login">Login</a>
+            </li>
+            <li>
+              <a href="/en/register">Sign up</a>
+            </li>
+          </ul>
+        </div>
                 
-            
-            <div class="social-links btn-group">
-                <button type="button" class="hidden-sm hidden-md hidden-lg btn btn-default dropdown-toggle"
-                        data-toggle="dropdown">
-                    <i class="fa fa-share"></i> <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu pull-left" role="menu">
-                    <li class="hidden-xs follow-us">
-                        Follow us:
-                    </li>
-                    <li>
-                        <a href="http://facebook.com/www.hymnal.net" target="_blank">
+        <div class="social-links btn-group">
+          <button type="button" class="hidden-sm hidden-md hidden-lg btn btn-default dropdown-toggle"
+                  data-toggle="dropdown">
+            <i class="fa fa-share"></i> <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu">
+            <li class="hidden-xs follow-us">
+              Follow us:
+            </li>
+            <li>
+              <a href="http://facebook.com/www.hymnal.net" target="_blank" rel="noopener noreferrer">
                                 <span class="fa-stack fa-lg">
                                   <i class="fa fa-circle color-white fa-stack-2x fa-stack-2-1x"></i>
                                   <i class="fa fa-circle fa-facebook-color fa-stack-2x stacked-line-height"></i>
                                   <i class="fa fa-facebook fa-stack-1x fa-inverse stacked-line-height-2"></i>
                                 </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://twitter.com/hymnalnet" target="_blank">
+              </a>
+            </li>
+            <li>
+              <a href="http://twitter.com/hymnalnet" target="_blank" rel="noopener noreferrer">
                                 <span class="fa-stack fa-lg">
                                   <i class="fa fa-circle color-white fa-stack-2x fa-stack-2-1x"></i>
                                   <i class="fa fa-circle fa-twitter-color fa-stack-2x stacked-line-height"></i>
                                   <i class="fa fa-twitter fa-stack-1x fa-inverse stacked-line-height-2"></i>
                                 </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/feed.rss" target="_blank">
+              </a>
+            </li>
+            <li>
+              <a href="/feed.rss" target="_blank" rel="noopener noreferrer">
                                 <span class="fa-stack fa-lg">
                                   <i class="fa fa-circle color-white fa-stack-2x fa-stack-2-1x"></i>
                                   <i class="fa fa-circle fa-rss-color fa-stack-2x stacked-line-height"></i>
                                   <i class="fa fa-rss fa-stack-1x fa-inverse stacked-line-height-2"></i>
                                 </span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            
+              </a>
+            </li>
+          </ul>
         </div>
-        
-    </div>
-    
-</div>
-
-
-<div class="row menu">
+              </div>
+          </div>
+      </div>
+  
+  <div class="row menu">
     <div class="col-xs-12">
-        <nav class="navbar navbar-default" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse"
-                            data-target="#navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <div class="visible-xs col-xs-9">
-                        <form class="search-form" role="search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" maxlength="80"
-                                       placeholder="Search" name="s"/>
-
-                                <div class="input-group-btn">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="visible-xs col-xs-9">
+              <form class="search-form" role="search">
+                <div class="input-group">
+                  <div class="form-group has-feedback has-clear">
+                    <input type="text" class="form-control" maxlength="80"
+                           placeholder="Search" name="s" />
+                    <span class="form-control-clear fa fa-times form-control-feedback hidden"></span>
+                  </div>
+                  <span class="input-group-btn">
                                     <button class="btn btn-default" type="submit">
                                         <i class="fa fa-search"></i>
                                     </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    
+                                </span>
                 </div>
-                
-
-                <div class="collapse navbar-collapse" id="navbar-collapse">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li>
-                            <a href="/en/home"><span class="glyphicon glyphicon-home"></span></a>
-                        </li>
-                        <li class="active">
-                            <a href="/en/song-categories/h">Classic</a>
-                        </li>
-                        <li>
-                            <a href="/en/song-categories/nt">New Tunes</a>
-                        </li>
-                        <li>
-                            <a href="/en/song-categories/ns">New Songs</a>
-                        </li>
-                        <li>
-                            <a href="/en/song-categories/c">Children</a>
-                        </li>
-                        <li>
-                            <a href="/en/scripture-songs/nt">Scripture</a>
-                        </li>
-                        <li class="js-more-dropdown dropdown">
-                            <a href="#" class="dropdown-toggle"
-                               data-toggle="dropdown">More
-                                <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li class="visible-sm col-sm-12 more-search">
-                                    <form class="search-form" role="search">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" maxlength="80"
-                                                   placeholder="Search" name="s"/>
-
-                                            <div class="input-group-btn">
+              </form>
+            </div>
+                      </div>
+          
+          <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+              <li>
+                <a href="/en/home"><span class="glyphicon glyphicon-home"></span></a>
+              </li>
+              <li class="active">
+                <a href="/en/song-categories/h">Classic</a>
+              </li>
+              <li>
+                <a href="/en/song-categories/nt">New Tunes</a>
+              </li>
+              <li>
+                <a href="/en/song-categories/ns">New Songs</a>
+              </li>
+              <li>
+                <a href="/en/song-categories/c">Children</a>
+              </li>
+              <li>
+                <a href="/en/scripture-songs/nt">Scripture</a>
+              </li>
+              <li class="js-more-dropdown dropdown">
+                <a href="#" class="dropdown-toggle"
+                   data-toggle="dropdown">More
+                  <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li class="visible-sm col-sm-12 more-search">
+                    <form class="search-form" role="search">
+                      <div class="input-group">
+                        <div class="form-group has-feedback has-clear">
+                          <input type="text" class="form-control" maxlength="80"
+                                 placeholder="Search" name="s" />
+                          <span class="form-control-clear fa fa-times form-control-feedback hidden"></span>
+                        </div>
+                        <span class="input-group-btn">
                                                 <button class="btn btn-default" type="submit">
                                                     <i class="fa fa-search"></i>
                                                 </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </li>
-                                <li>
-                                    <a href="/en/recently-commented-songs">Recently Commented Songs</a>
-                                </li>
-                                <li>
-                                    <a href="/en/faq">FAQ</a>
-                                </li>
-                                <li>
-                                    <a href="/en/links">Links</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                                            </span>
+                      </div>
+                    </form>
+                  </li>
+                  <li>
+                    <a
+                      href="/en/recently-commented-songs">Recently Commented Songs</a>
+                  </li>
+                  <li>
+                    <a href="/en/faq">FAQ</a>
+                  </li>
+                  <li>
+                    <a href="/en/links">Links</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
 
-                    <div class="hidden-xs hidden-sm col-md-3 pull-right">
-                        <form class="search-form" role="search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" maxlength="80"
-                                       placeholder="Search" name="s"/>
-
-                                <div class="input-group-btn">
+            <div class="hidden-xs hidden-sm col-md-3 pull-right">
+              <form class="search-form" role="search">
+                <div class="input-group">
+                  <div class="form-group has-feedback has-clear">
+                    <input type="text" class="form-control" maxlength="80"
+                           placeholder="Search" name="s" />
+                    <span class="form-control-clear fa fa-times form-control-feedback hidden"></span>
+                  </div>
+                  <span class="input-group-btn">
                                     <button class="btn btn-default" type="submit">
                                         <i class="fa fa-search"></i>
                                     </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    
+                                </span>
                 </div>
-                
+              </form>
             </div>
-            
-        </nav>
+                      </div>
+                  </div>
+              </nav>
     </div>
-    
-    <!--[if lt IE 9]>
+        <!--[if lt IE 9]>
     <div class="col-xs-12">
-        <div class="alert alert-warning">
-            You are using an older, unsupported browser. Please upgrade to the latest version of <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://www.apple.com/safari/" target="_blank">Safari</a>, <a href="http://www.mozilla.com/firefox/" target="_blank">Firefox</a>, or <a href="http://www.microsoft.com/windows/products/winfamily/ie/default.mspx" target="_blank">Internet Explorer</a> to access this site.
-        </div>
+      <div class="alert alert-warning">
+        You are using an older, unsupported browser. Please upgrade to the latest version of <a href="http://www.google.com/chrome" target="_blank" rel="noopener noreferrer">Chrome</a>, <a href="http://www.apple.com/safari/" target="_blank" rel="noopener noreferrer">Safari</a>, <a href="http://www.mozilla.com/firefox/" target="_blank" rel="noopener noreferrer">Firefox</a>, or <a href="http://www.microsoft.com/windows/products/winfamily/ie/default.mspx" target="_blank" rel="noopener noreferrer">Internet Explorer</a> to access this site.
+      </div>
     </div>
-    
-    <![endif]-->
-</div>
-
-
-
+        <![endif]-->
+  </div>
+  
 <div id="fb-root"></div>
 <div class="row main-content">
     <div class="col-md-8 common-panel">
@@ -280,11 +283,10 @@
                         God is light, and in Him there is no darkness at all
         </h1>
 
-        
-        
+                
         <div class="row text-center audio-player">
                             <audio id="main-audio" controls="controls" airplay="allow" class="main-audio" loop="loop" preload="auto">
-                    <source src="https://www.hymnal.net/Hymns/Hymnal/ogg/e1197_i.ogg" type="audio/mpeg"/>
+                    <source src="https://www.hymnal.net/Hymns/Hymnal/mp3/e1197_i.mp3" type="audio/mpeg"/>
                     <source src="https://www.hymnal.net/Hymns/Hymnal/ogg/e1197_i.ogg" type="audio/ogg"/>
                     The music cannot be played on your browser.
                 </audio>
@@ -321,8 +323,7 @@
                     <span class="svg">https://www.hymnal.net/Hymns/Hymnal/svg/e1197_g.svg</span></div>
                     </div>
 
-        
-        <div id="tabs" class="row tabs">
+                <div id="tabs" class="row tabs">
             <div class="col-xs-12 tabs-content">
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#comments" data-toggle="tab"><i class="fa fa-comment"></i></a></li>
@@ -336,7 +337,7 @@
                         <div class="add-comment-section">
                             <button type="button" class="btn btn-primary"
                                     name="addcomment">Comment</button>
-                                                            <span class="badge pull-right">2</span>
+                                                            <span class="badge pull-right">8</span>
                                                         <div class="response">
                             </div>
                         </div>
@@ -386,7 +387,7 @@
         <label for="country" class="col-sm-2 control-label">Country</label>
 
         <div class="col-sm-10">
-            <select name="country" class="combobox form-control">
+            <select id="country" name="country" class="form-control">
                 <option value="" selected="selected"></option>
 <option value="af">Afghanistan</option>
 <option value="ax">Aland Islands</option>
@@ -491,7 +492,6 @@
 <option value="in">India</option>
 <option value="id">Indonesia</option>
 <option value="iq">Iraq</option>
-<option value="xe">Iraq-Saudi Arabia Neutral Zone</option>
 <option value="ie">Ireland</option>
 <option value="il">Israel</option>
 <option value="it">Italy</option>
@@ -663,16 +663,145 @@
         </div>
     </div>
     <input type="hidden" name="type" value="add-comment"/>
-    <input type="hidden" name="host-ip" value="75.18.253.79"/>
+    <input type="hidden" name="host-ip" value="183.177.122.116"/>
     <input type="hidden" name="t" value="h"/>
     <input type="hidden" name="n" value="1197"/>
 </form>
 
-
                         
                         <div class="comments-or-excerpts comments">
                                 <div class="row no-paging"></div>
-
+        <div class="existing-comment">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 text-center">
+            <div class="post-date">
+                <span class="month">Feb</span>
+                <span class="day">10</span>
+                <span class="year">2019</span>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+                        <cite>Zenaida Galangcerdena</cite><br/>
+            <p class="location">San Pedro, Laguna, Philippines</p>
+        </div>
+    </div>
+    <div class="row comment">
+        <div class="col-xs-12">
+                            <p>Truly God dwells on us and it is our obligation to praise and worship Him everyday for He is our Saviour, Redeemer and our salvation. He is the only begotten Son who will save us from all sins.</p>
+                    </div>
+    </div>
+            <hr/>
+    </div>
+        <div class="existing-comment">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 text-center">
+            <div class="post-date">
+                <span class="month">Dec</span>
+                <span class="day">7</span>
+                <span class="year">2018</span>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+                        <cite>Toyin Diyan</cite><br/>
+            <p class="location">London, United Kingdom</p>
+        </div>
+    </div>
+    <div class="row comment">
+        <div class="col-xs-12">
+                            <p>God is Light!!! And He calls us to abide with Him in the Light. What should our response be? Amen Lord! Make us those who love the light! Triune God we love You. Amen.</p>
+                    </div>
+    </div>
+            <hr/>
+    </div>
+        <div class="existing-comment">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 text-center">
+            <div class="post-date">
+                <span class="month">Sep</span>
+                <span class="day">30</span>
+                <span class="year">2017</span>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+                        <cite>Grace</cite><br/>
+            <p class="location">Kh, Taiwan</p>
+        </div>
+    </div>
+    <div class="row comment">
+        <div class="col-xs-12">
+                            <p>IF we confess our sins, He is faithful    </p>
+                            <p> and righteous to forgive us our sins </p>
+                            <p> </p>
+                            <p>      and cleanse us from all </p>
+                            <p>  unrighteousness.  Praise of Lord.😐</p>
+                            <p>.</p>
+                    </div>
+    </div>
+            <hr/>
+    </div>
+        <div class="existing-comment">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 text-center">
+            <div class="post-date">
+                <span class="month">Nov</span>
+                <span class="day">23</span>
+                <span class="year">2016</span>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+                        <cite>Joshua Fang</cite><br/>
+            <p class="location">Houston, Texas, United States</p>
+        </div>
+    </div>
+    <div class="row comment">
+        <div class="col-xs-12">
+                            <p>Amen! We are cleansed from every sin!</p>
+                    </div>
+    </div>
+            <hr/>
+    </div>
+        <div class="existing-comment">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 text-center">
+            <div class="post-date">
+                <span class="month">Nov</span>
+                <span class="day">13</span>
+                <span class="year">2016</span>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+                        <cite>Nico</cite><br/>
+            <p class="location">Alldays, Vivo, South Africa</p>
+        </div>
+    </div>
+    <div class="row comment">
+        <div class="col-xs-12">
+                            <p>Lord we Love You. You are faithful to forgive and cleanse us, if we confess. Praise Your Name.</p>
+                    </div>
+    </div>
+            <hr/>
+    </div>
+        <div class="existing-comment">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 text-center">
+            <div class="post-date">
+                <span class="month">Feb</span>
+                <span class="day">28</span>
+                <span class="year">2016</span>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+                        <cite>Joanna</cite><br/>
+            <p class="location">Tulsa, Oklahoma, United States</p>
+        </div>
+    </div>
+    <div class="row comment">
+        <div class="col-xs-12">
+                            <p>Amen!! Lord Jesus, I confess my sins! Thank You Lord that Your blood is constantly cleansing! Praise You Lord for Your precious blood!!</p>
+                    </div>
+    </div>
+            <hr/>
+    </div>
         <div class="existing-comment">
     <div class="row">
         <div class="col-xs-4 col-sm-2 text-center">
@@ -694,7 +823,6 @@
     </div>
             <hr/>
     </div>
-
         <div class="existing-comment">
     <div class="row">
         <div class="col-xs-4 col-sm-2 text-center">
@@ -715,18 +843,14 @@
                     </div>
     </div>
     </div>
-
     <div class="row no-paging"></div>
-
-
                         </div>
                     </div>
                                                                             </div>
             </div>
         </div>
 
-        
-        <div class="top-right-button visible-xs visible-sm">
+                <div class="top-right-button visible-xs visible-sm">
             <a href="#" class="jump-to-details" title="Jump to Details">
                 <i class="fa fa-info-circle fa-2x"></i>
             </a>
@@ -761,8 +885,7 @@
                 <label class="col-xs-5 col-sm-4">Music:</label>
 
                 <div class="col-xs-7 col-sm-8 no-padding">
-                                        <a href="/en/search/all/composer/Orien+G.+Johnson?t=h&n=1197">Orien G. Johnson</a>&nbsp;<wbr/><span class="label label-default">1956</span>
-                </div>
+                                        <a href="/en/search/all/composer/Orien+G.+Johnson?t=h&n=1197">Orien G. Johnson</a>&nbsp;<wbr/>(1956)                </div>
             </div>
                             <div class="row">
                 <label class="col-xs-5 col-sm-4">Key:</label>
@@ -800,36 +923,38 @@
             </div>
                     </div>
 </div>
-
                     <div class="row sidebar-title">
     <h4>Share</h4>
 </div>
 <div class="row common-panel hymn-share">
     <div class="col-xs-12">
         <div class="row external-share">
-            <div style="width: 180px;" class="fb-like" data-send="false" data-width="180" data-show-faces="true"
+            <div style="width: 180px;" class="fb-like" data-width="180" data-show-faces="true"
+                 data-layout="standard" data-action="like" data-share="true"
                  data-href="https://www.hymnal.net/en/hymn/h/1197"></div>
         </div>
         <div class="row external-share">
-            <g:plusone size="medium" data-href="https://www.hymnal.net/en/hymn/h/1197" data-callback="globalConfig.googlePlusHandler"></g:plusone>
+            <g:plusone size="medium"
+                       data-href="https://www.hymnal.net/en/hymn/h/1197"
+                       data-callback="globalConfig.googlePlusHandler"></g:plusone>
         </div>
         <div class="row external-share">
             <a href="//twitter.com/share" class="twitter-share-button" data-count="horizontal"
                data-via="hymnalnet">Tweet</a>
         </div>
                 <div class="row">
-            <label class="col-xs-2 text-right">
-                                    <i class="fa fa-star-o fa-2x"></i>
+            <label class="col-xs-2 hn-share">
+                                    <i class="fa fa-star-o fa-lg"></i>
                             </label>
 
             <div class="col-xs-10 share-text">
-                                                            Added to 30 users' list
+                                                            Added to 63 users' list
                                                     </div>
         </div>
         <div class="row">
-            <label class="col-xs-2 text-right">
+            <label class="col-xs-2 hn-share">
                 <a class="email-song" href="mailto:?subject=Hymn: God is light, and in Him there is no darkness at all&body=Link: https://www.hymnal.net/en/hymn/h/1197/">
-                    <i class="fa fa-envelope-o fa-2x"></i>
+                    <i class="fa fa-envelope-o fa-lg"></i>
                 </a>
             </label>
 
@@ -840,9 +965,9 @@
             </div>
         </div>
                     <div class="row hidden-xs">
-                <label class="col-xs-2 text-right">
+                <label class="col-xs-2 hn-share">
                     <a href="/en/widget-setup/h/1197" class="js-add-to-site">
-                        <i class="fa fa-globe fa-2x"></i>
+                        <i class="fa fa-globe fa-lg"></i>
                     </a>
                 </label>
 
@@ -854,7 +979,6 @@
             </div>
             </div>
 </div>
-
                     <div class="row sidebar-title">
     <h4>Related Songs</h4>
 </div>
@@ -866,39 +990,22 @@
                 <div class="col-xs-7 col-sm-8 no-padding">
                     <a href="/en/hymn/ts/444?gb=1">诗歌(简)</a>, <a href="/en/hymn/ts/444">詩歌(繁)</a>, <a href="/en/hymn/hd/14">Dutch</a>, <a href="/en/hymn/ht/1197">Tagalog</a>                </div>
             </div>
-                        
-            
-                
-                    
-
-                    
-                        
-                            
-                                
-                                    
-                                       
-                                
-                            
-                        
-                    
-                
-            
-        
-                    <div class="row">
+                                                                        
+                                                                                                                                                                                                                                                                                                                                                   <div class="row">
                 <label class="col-xs-5 col-sm-4 text-right">See Also:</label>
 
                 <div class="col-xs-12">
                     <div class="list-group text-left">
-                                                    <a class="list-group-item" href="/en/hymn/h/1200">There&#8217;s a stormy wind a-blowing from the north</a>
-                                                    <a class="list-group-item" href="/en/hymn/h/601">My heart is resting, O my God</a>
-                                                    <a class="list-group-item" href="/en/hymn/ns/320">All-fitting Life</a>
-                                                    <a class="list-group-item" href="/en/hymn/lb/87">The love of God constrains me</a>
+                                                    <a class="list-group-item" href="/en/hymn/h/1198">A mighty flowing-out is God</a>
+                                                    <a class="list-group-item" href="/en/hymn/ns/343
+">God is processed, this I know</a>
+                                                    <a class="list-group-item" href="/en/hymn/h/8450
+">The proper story of God and man</a>
                                             </div>
                 </div>
             </div>
             </div>
 </div>
-
                     <div class="row sidebar-title">
     <h4>Downloads</h4>
 </div>
@@ -921,7 +1028,6 @@
             </div>
             </div>
 </div>
-
                         <div class="row sidebar-title">
         <h4>
             Jukebox
@@ -968,7 +1074,6 @@
                 </form>
                     </div>
     </div>
-
             </div>
 </div>
 
@@ -977,10 +1082,10 @@
 <span id="hl" class="hidden">69</span>
 
 <script type="text/javascript">
-    var mp3File = 'https://www.hymnal.net/Hymns/Hymnal/ogg/e1197_i.ogg?v=1';
+    var mp3File = 'https://www.hymnal.net/Hymns/Hymnal/mp3/e1197_i.mp3?v=1';
     var midiLength = 69;
     var loopFlag = true;
-    var autoStartFlag = true;
+    var autoStartFlag = false;
 </script>
 
 <div class="row footer">
@@ -989,21 +1094,19 @@
         <span class="separator fa fa-ellipsis-v"></span>
                     English
                 <span class="separator fa fa-ellipsis-v"></span>
-                            <a href="/cn/hymn/h/1197?">简体</a>
+                            <a href="/cn/hymn/h/1197">简体</a>
                 <span class="separator fa fa-ellipsis-v"></span>
-                    <a href="/zh/hymn/h/1197?">繁體</a>
+                    <a href="/zh/hymn/h/1197">繁體</a>
             </div>
     <div class="col-sm-6 col-sm-pull-6 text-left">
-        &copy; 2014 <a href="/en/aboutus">hymnal.net</a>
+        &copy; 2019 <a href="/en/aboutus">hymnal.net</a>
     </div>
 </div>
 
-
 </div>
 
-
-    <span id="ssk" class="hidden">070bca7dbf61f3e4034858ed4f3e19f380db9a1a</span>
-    <span id="ss" class="hidden">90d2efd6ed83cc888a5b75cd81cb40fed10e20a5</span>
+    <span id="ssk" class="hidden">2eaff691384d8e2b2adb408215584e7c4a458be2</span>
+    <span id="ss" class="hidden">0adf89a8c1172287b13901ae6fe4ca32e2f33df3</span>
 <span id="root" class="hidden">https://www.hymnal.net</span>
 <span id="phproot" class="hidden">/en</span>
 <span id="language" class="hidden">en</span>
@@ -1014,53 +1117,6 @@
 <script src="/includes/mediaelementplayer/mediaelement-and-player.min.js"></script>
 <script src="/en/js_i18n" type="text/javascript"></script>
 
-
-
-    <script type="text/javascript">
-        !function(a,b){if(void 0===b[a]){b["_"+a]={},b[a]=function(c){b["_"+a].clients=b["_"+a].clients||{},b["_"+a].clients[c.projectId]=this,this._config=c},b[a].ready=function(c){b["_"+a].ready=b["_"+a].ready||[],b["_"+a].ready.push(c)};for(var c=["addEvent","setGlobalProperties","trackExternalLink","on"],d=0;d<c.length;d++){var e=c[d],f=function(a){return function(){return this["_"+a]=this["_"+a]||[],this["_"+a].push(arguments),this}};b[a].prototype[e]=f(e)}var g=document.createElement("script");g.type="text/javascript",g.async=!0,g.src="https://d26b395fwzu5fz.cloudfront.net/3.0.0/keen.min.js";var h=document.getElementsByTagName("script")[0];h.parentNode.insertBefore(g,h)}}("Keen",this);
-
-        var keenClient = new Keen({
-            projectId: "539f670800111c037e000009",
-            writeKey: "2241dca018e7a889723067f3833d71a1df17b25ca3ebfff6f48a6a6c1819dfafb5c70fca7997fe732d9274ab7ca27f95fb32478b0744549dfe3917b0570abb4da244d9a184e5bb0ed55db4a3c8dccb50efb8fcdecbd6a99b675a9c86adcaf70ad1d1612cd2a5acfc9a56e0fbe1332f7d", // required for sending events
-            readKey: "8f9b58010a6c49f5cf398e97d546c72c8a792bc231d3e4e422176d70839a12b4a9821c1a12181f34b441be21ce78254117635dadd30f1906881b5880aecc19b22e6b5ac6c0179dcedaf7f98689054c2905a79afe17aad2a14186e987ccc6cd0255589ccb23371f8511572e4966aac903"    // required for doing analysis
-        });
-    </script>
-
-
-
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId: '1450015931921030',
-                xfbml: true,
-                version: 'v2.0'
-            });
-            FB.Event.subscribe('edge.create', globalConfig.facebookHandler);
-        };
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id; js.async = true;
-            
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-
-
-    
-        <script type="text/javascript">
-            (function () {
-                var po = document.createElement("script");
-                po.type = "text/javascript";
-                po.async = true;
-                po.src = "https://apis.google.com/js/plusone.js";
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(po, s);
-            })();
-        </script>
-    
 
     
         <script type="text/javascript">
@@ -1082,9 +1138,9 @@
         </script>
     
 
+<script src="/js/selectize.min.js" type="text/javascript"></script>
 <script src="/js/main.min.js" type="text/javascript"></script>
 
 </body>
 </html>
-
 
