@@ -110,6 +110,12 @@ class FlaskrTestCase(unittest.TestCase):
         # need to hard code url to external site
         self.assert_mock_get_hymn('h', '10', stored_content_path = 'stored/classic/10.html')
         self.assert_get_hymn('h', '10', stored_content_path = 'stored/classic/10.html')
+    
+    # test classical hymn 10 (goes to external website and has an "other" verse type)
+    def test_h_171(self):
+        # need to hard code url to external site
+        self.assert_mock_get_hymn('h', '171', stored_content_path = 'stored/classic/171.html')
+        self.assert_get_hymn('h', '171', stored_content_path = 'stored/classic/171.html')
 
     # test classical hymn 1197 (multiple choruses)
     def test_h_1197(self):

@@ -230,6 +230,8 @@ def get_hymn_internal(hymn_type, hymn_number, additional_args):
                 else:
                     previous_chorus = stanza_content
                 verse[VERSE_TYPE] = CHORUS
+            elif lyric_div.get("class")[0] == 'other':
+                verse[VERSE_TYPE] = OTHER
             else:
                 verse[VERSE_TYPE] = VERSE
             verse[VERSE_CONTENT] = stanza_content
