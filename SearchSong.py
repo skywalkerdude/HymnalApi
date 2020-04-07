@@ -8,7 +8,6 @@ URL_FORMAT = 'http://www.hymnal.net/en/search/all/all/%s/%d'
 
 # for error messages
 SEARCH_PARAMETER = 'search_parameter'
-EMPTY_RESULT_ERROR_MESSAGE = 'Did not find any songs matching:\n\"%s\"\nPlease try a different request'
 
 # maximum number of times we can loop, to avoid infinite loops
 MAX_LOOP_COUNT = 100
@@ -86,10 +85,6 @@ def search_hymn_all(search_parameter):
         search_results.extend(page_results)
 
     json_data[Constants.RESULTS] = search_results
-    
-    # search results is empty return bad search parameter message
-    if len(search_results) == 0:
-        json_data[Constants.EMPTY_LIST_MESSAGE] = EMPTY_RESULT_ERROR_MESSAGE % search_parameter
 
     return json.dumps(json_data, sort_keys=False)
 
@@ -102,10 +97,6 @@ def search_hymn_page(search_parameter, page_num):
     
     json_data[Constants.RESULTS] = search_results
     json_data[Constants.HAS_MORE_PAGES] = not is_last_page
-    
-    # search results is empty return bad search parameter message
-    if len(search_results) == 0:
-        json_data[Constants.EMPTY_LIST_MESSAGE] = EMPTY_RESULT_ERROR_MESSAGE % search_parameter
     
     return json.dumps(json_data, sort_keys=False)
 

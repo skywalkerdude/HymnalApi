@@ -27,7 +27,7 @@
         <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@hymnalnet">
     <meta name="twitter:title" content="Just taste and see that the Lord is good">
-    <meta name="twitter:description" content="Just taste and see that the Lord is good; Just taste and see that the Lord is good. He&#8217;s good for You, as He is for me; So whatever…">
+    <meta name="twitter:description" content="Just taste and see that the Lord is good; Just taste and see that the Lord is good. He&#8217;s good for you, as He is for me; So whatever…">
     <meta name="twitter:creator" content="@hymnalnet">
     <meta name="twitter:image:src" content="https://www.hymnal.net/images/favicon-196x196.png">
     <meta name="twitter:domain" content="hymnal.net">
@@ -305,7 +305,7 @@
                                                                                                             <td>
                                             <div class="stanza-num">1</div>
                                         </td>
-                                        <td>Just taste and see that the Lord is good;<br/>Just taste and see that the Lord is good.<br/>He&#8217;s good for You, as He is for me;<br/>So whatever you do, just taste and see.</td>
+                                        <td>Just taste and see that the Lord is good;<br/>Just taste and see that the Lord is good.<br/>He&#8217;s good for you, as He is for me;<br/>So whatever you do, just taste and see.</td>
                                                                                                 </tr>
                                                     <tr>
                                                                                                             <td>
