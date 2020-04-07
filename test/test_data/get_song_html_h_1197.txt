@@ -919,7 +919,7 @@
                 <label class="col-xs-5 col-sm-4">Scriptures:</label>
 
                 <div class="col-xs-7 col-sm-8 no-padding">
-                    <a href="http://online.recoveryversion.bible/BibleChapters.cfm?cid=1" target="_blank">1 John 1:5-7</a>                </div>
+                    <a href="http://online.recoveryversion.bible/BibleChapters.cfm?cid=231" target="_blank">1 John 1:5-7</a>                </div>
             </div>
                     </div>
 </div>
